@@ -20,9 +20,9 @@
     <style>
         :root {
             --bg: #030712;
-            --bg-glass: rgba(11, 19, 38, 0.78);
-            --surface-card: rgba(13, 22, 44, 0.7);
-            --surface-card-hover: rgba(19, 32, 62, 0.92);
+            --bg-glass: rgba(11, 19, 38, 0.88);
+            --surface-card: rgba(13, 22, 44, 0.82);
+            --surface-card-hover: rgba(19, 32, 62, 0.95);
             --border: rgba(56, 189, 248, 0.18);
             --border-glow: rgba(56, 189, 248, 0.55);
             --border-purple: rgba(168, 85, 247, 0.3);
@@ -44,14 +44,14 @@
             --radius-lg: 20px;
             --radius-md: 12px;
             --radius-sm: 8px;
-            --aurora-opacity: 0.14;
+            --aurora-opacity: 0.12;
         }
 
         /* Light Mode High-Contrast Ultra-Clean Theme */
         [data-theme="light"] {
             --bg: #f8fafc;
-            --bg-glass: rgba(255, 255, 255, 0.88);
-            --surface-card: rgba(255, 255, 255, 0.85);
+            --bg-glass: rgba(255, 255, 255, 0.94);
+            --surface-card: rgba(255, 255, 255, 0.92);
             --surface-card-hover: #ffffff;
             --border: rgba(14, 165, 233, 0.22);
             --border-glow: rgba(2, 132, 199, 0.6);
@@ -71,7 +71,7 @@
             --text-muted: #475569;
             --text-dim: #64748b;
             --code-bg: #0f172a;
-            --aurora-opacity: 0.08;
+            --aurora-opacity: 0.06;
         }
 
         * {
@@ -79,7 +79,6 @@
             padding: 0;
             box-sizing: border-box;
             -webkit-tap-highlight-color: transparent;
-            transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
         }
 
         html {
@@ -94,13 +93,14 @@
             overflow-x: hidden;
             font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
             padding-bottom: 68px;
+            -webkit-overflow-scrolling: touch;
         }
 
         @media (min-width: 992px) {
             body { padding-bottom: 0; }
         }
 
-        /* Ambient Background Canvas & Aurora */
+        /* Ambient Background Canvas - Optimized for 60-120fps */
         #bgCanvas {
             position: fixed;
             top: 0;
@@ -109,39 +109,25 @@
             height: 100vh;
             z-index: -2;
             pointer-events: none;
+            display: none; /* Disabled on mobile for buttery smooth scrolling */
+        }
+
+        @media (min-width: 768px) {
+            #bgCanvas { display: block; }
         }
 
         .ambient-aurora {
             position: fixed;
             top: 5%;
             left: 50%;
-            transform: translateX(-50%);
-            width: 820px;
-            max-width: 96vw;
-            height: 480px;
-            background: radial-gradient(circle, rgba(56, 189, 248, var(--aurora-opacity)) 0%, rgba(168, 85, 247, 0.08) 45%, transparent 75%);
-            filter: blur(85px);
+            transform: translateX(-50%) translateZ(0);
+            width: 600px;
+            max-width: 90vw;
+            height: 380px;
+            background: radial-gradient(circle, rgba(56, 189, 248, var(--aurora-opacity)) 0%, rgba(168, 85, 247, 0.05) 50%, transparent 75%);
+            filter: blur(40px);
             z-index: -1;
             pointer-events: none;
-            animation: floatGlow 14s ease-in-out infinite alternate;
-        }
-
-        @keyframes floatGlow {
-            0% { transform: translateX(-50%) translateY(0) scale(1); }
-            100% { transform: translateX(-48%) translateY(28px) scale(1.08); }
-        }
-
-        /* Top Progress Bar */
-        #scrollProgress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            width: 0%;
-            background: var(--primary-gradient);
-            z-index: 99999;
-            box-shadow: 0 0 12px rgba(56, 189, 248, 0.9);
-            transition: width 0.06s linear;
         }
 
         .container {
@@ -156,12 +142,12 @@
         }
 
         section {
-            padding: 34px 0;
+            padding: 30px 0;
             position: relative;
         }
 
         @media (min-width: 768px) {
-            section { padding: 46px 0; }
+            section { padding: 44px 0; }
         }
 
         .navbar {
@@ -169,14 +155,15 @@
             top: 0;
             z-index: 1000;
             background: var(--bg-glass);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
-            transition: all 0.28s ease;
+            transform: translateZ(0);
+            will-change: transform;
         }
 
         .navbar.scrolled {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
             border-bottom-color: var(--border-glow);
         }
 
@@ -202,11 +189,10 @@
             background: var(--surface-card);
             position: relative;
             overflow: hidden;
-            backdrop-filter: blur(14px);
-            box-shadow: 0 0 18px rgba(56, 189, 248, 0.15);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 0 14px rgba(56, 189, 248, 0.12);
             border: 1px solid var(--border);
             max-width: 72vw;
+            transform: translateZ(0);
         }
 
         @media (min-width: 768px) {
@@ -401,13 +387,21 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 34px;
-            height: 34px;
-            border-radius: 8px;
+            width: 36px;
+            height: 36px;
+            border-radius: 9px;
             background: var(--surface-card);
             border: 1px solid var(--border);
             color: var(--text-main);
             cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .mobile-menu-btn.is-active {
+            background: rgba(239, 68, 68, 0.15);
+            border-color: #ef4444;
+            color: #ef4444;
+            box-shadow: 0 0 12px rgba(239, 68, 68, 0.3);
         }
 
         @media (min-width: 992px) {
@@ -421,19 +415,43 @@
             left: 0;
             width: 100%;
             background: var(--bg-glass);
-            backdrop-filter: blur(25px);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--border);
             padding: 12px 16px 18px;
             z-index: 999;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-            animation: slideDown 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.5);
+            animation: slideDown 0.2s ease-out;
         }
 
         .mobile-drawer.active { display: block; }
 
         @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
+            from { opacity: 0; transform: translateY(-8px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        .mobile-drawer-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mobile-drawer-close-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 5px 10px;
+            border-radius: 8px;
+            background: rgba(239, 68, 68, 0.12);
+            border: 1px solid rgba(239, 68, 68, 0.35);
+            color: #ef4444;
+            cursor: pointer;
         }
 
         .mobile-drawer-links {
@@ -455,7 +473,7 @@
             font-weight: 600;
             background: rgba(125, 125, 125, 0.05);
             border: 1px solid transparent;
-            transition: all 0.2s ease;
+            transition: all 0.15s ease;
         }
 
         .mobile-drawer-links a:hover,
@@ -1839,13 +1857,15 @@
             left: 0;
             width: 100%;
             background: var(--bg-glass);
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             border-top: 1px solid var(--border);
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             padding: 5px 4px;
             z-index: 9999;
-            box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.3);
+            transform: translateZ(0);
         }
 
         @media (min-width: 992px) {
@@ -1862,7 +1882,7 @@
             text-decoration: none;
             font-size: 9px;
             font-weight: 700;
-            padding: 3px 0;
+            padding: 4px 0;
         }
 
         .dock-btn i {
@@ -1948,7 +1968,7 @@
 </head>
 <body>
 
-    <div id="scrollProgress"></div>
+    <!-- Ambient Glow & Performance Background -->
     <div class="ambient-aurora"></div>
     <canvas id="bgCanvas"></canvas>
 
@@ -1985,7 +2005,7 @@
                     <a href="Ratna-Prasad-Tharu-CV.pdf" id="navCVBtn" class="btn-nav-cta">
                         <i data-lucide="file-down" style="width: 13px; height: 13px;"></i> CV
                     </a>
-                    <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Open Navigation Menu">
+                    <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
                         <i data-lucide="menu" id="mobileMenuIcon" style="width: 18px; height: 18px;"></i>
                     </button>
                 </div>
@@ -1993,15 +2013,20 @@
         </div>
 
         <div class="mobile-drawer" id="mobileDrawer">
+            <div class="mobile-drawer-header">
+                <span style="font-size: 11.5px; font-weight: 700; font-family: 'JetBrains Mono', monospace; color: var(--primary);">NAVIGATION MENU</span>
+                <button class="mobile-drawer-close-btn" id="mobileDrawerCloseBtn">
+                    <i data-lucide="x" style="width: 13px; height: 13px;"></i> Cancel
+                </button>
+            </div>
             <ul class="mobile-drawer-links">
                 <li><a href="#home" class="drawer-link"><i data-lucide="home" style="width: 15px; height: 15px;"></i> Home</a></li>
                 <li><a href="#pdfnotes" class="drawer-link"><i data-lucide="file-text" style="width: 15px; height: 15px; color: #ef4444;"></i> PDF Notes & Handbooks</a></li>
-                <li><a href="#vault" class="drawer-link"><i data-lucide="cpu" style="width: 15px; height: 15px;"></i> PRABIN TECH Vault</a></li>
+                <li><a href="#vault" class="drawer-link"><i data-lucide="cpu" style="width: 15px; height: 15px; color: var(--primary);"></i> PRABIN TECH Vault</a></li>
                 <li><a href="#curriculum" class="drawer-link"><i data-lucide="book-open" style="width: 15px; height: 15px;"></i> Curriculum Modules</a></li>
                 <li><a href="#skills" class="drawer-link"><i data-lucide="bar-chart" style="width: 15px; height: 15px;"></i> Technical Skills</a></li>
                 <li><a href="#services" class="drawer-link"><i data-lucide="layers" style="width: 15px; height: 15px;"></i> Solutions</a></li>
                 <li><a href="#experience" class="drawer-link"><i data-lucide="briefcase" style="width: 15px; height: 15px;"></i> Career Timeline</a></li>
-                <li><a href="#projects" class="drawer-link"><i data-lucide="folder-git-2" style="width: 15px; height: 15px;"></i> Projects</a></li>
                 <li><a href="#inquiry" class="drawer-link"><i data-lucide="send" style="width: 15px; height: 15px;"></i> Direct Inquiry</a></li>
             </ul>
         </div>
@@ -2826,8 +2851,9 @@
             <i data-lucide="file-text" style="color: #ef4444;"></i>
             <span>PDF Notes</span>
         </a>
+        <!-- Updated Tech Vault distinct icon: Microchip / CPU terminal badge -->
         <a href="#vault" class="dock-btn">
-            <i data-lucide="terminal" style="color: var(--primary);"></i>
+            <i data-lucide="cpu" style="color: #38bdf8;"></i>
             <span>Tech Vault</span>
         </a>
         <a href="Ratna-Prasad-Tharu-CV.pdf" id="dockCVBtn" class="dock-btn">
@@ -2895,7 +2921,7 @@
             triggerToast(`Switched to ${newTheme.toUpperCase()} Mode`);
         });
 
-        // 4. Toast Notification (Never browser alert)
+        // 4. Toast Notification
         function triggerToast(text) {
             const toast = document.getElementById("toastBox");
             const msg = document.getElementById("toastMsg");
@@ -3273,77 +3299,57 @@ Disable AutoPlay via \`gpedit.msc\` to prevent malicious scripts from executing 
             triggerToast("Snippet copied to clipboard!");
         });
 
-        // 11. Constellation Canvas Animation
+        // 11. Lightweight Canvas Animation (Runs only on Desktop for 60+ FPS performance)
         const canvas = document.getElementById("bgCanvas");
-        const ctx = canvas.getContext("2d");
-        let particles = [];
-        let pointer = { x: null, y: null, rad: 110 };
+        if (canvas && window.innerWidth >= 768) {
+            const ctx = canvas.getContext("2d");
+            let particles = [];
+            let pointer = { x: null, y: null, rad: 90 };
 
-        function setDims() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        setDims();
-        window.addEventListener("resize", setDims);
-        window.addEventListener("mousemove", (e) => { pointer.x = e.clientX; pointer.y = e.clientY; });
-        window.addEventListener("mouseleave", () => { pointer.x = null; pointer.y = null; });
-
-        class StarNode {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 1.5 + 0.6;
-                this.vx = (Math.random() - 0.5) * 0.45;
-                this.vy = (Math.random() - 0.5) * 0.45;
+            function setDims() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
             }
-            step() {
-                this.x += this.vx;
-                this.y += this.vy;
-                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-                if (pointer.x && pointer.y) {
-                    const dx = pointer.x - this.x;
-                    const dy = pointer.y - this.y;
-                    const d = Math.sqrt(dx * dx + dy * dy);
-                    if (d < pointer.rad) {
-                        this.x -= (dx / d) * 1.4;
-                        this.y -= (dy / d) * 1.4;
-                    }
+            setDims();
+            window.addEventListener("resize", setDims, { passive: true });
+            window.addEventListener("mousemove", (e) => { pointer.x = e.clientX; pointer.y = e.clientY; }, { passive: true });
+            window.addEventListener("mouseleave", () => { pointer.x = null; pointer.y = null; }, { passive: true });
+
+            class StarNode {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 1.4 + 0.6;
+                    this.vx = (Math.random() - 0.5) * 0.35;
+                    this.vy = (Math.random() - 0.5) * 0.35;
+                }
+                step() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                }
+                render() {
+                    ctx.fillStyle = "rgba(56, 189, 248, 0.35)";
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
                 }
             }
-            render() {
-                ctx.fillStyle = "rgba(56, 189, 248, 0.4)";
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
 
-        const nodeLimit = Math.min(Math.floor(window.innerWidth / 24), 45);
-        for (let i = 0; i < nodeLimit; i++) particles.push(new StarNode());
+            const nodeLimit = Math.min(Math.floor(window.innerWidth / 40), 25);
+            for (let i = 0; i < nodeLimit; i++) particles.push(new StarNode());
 
-        function loopCanvas() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].step();
-                particles[i].render();
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-                    if (dist < 100) {
-                        ctx.strokeStyle = `rgba(56, 189, 248, ${0.12 - dist / 800})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                    }
+            function loopCanvas() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].step();
+                    particles[i].render();
                 }
+                requestAnimationFrame(loopCanvas);
             }
-            requestAnimationFrame(loopCanvas);
+            loopCanvas();
         }
-        loopCanvas();
 
         // 12. Role Typewriter
         const roles = [
@@ -3400,7 +3406,7 @@ Disable AutoPlay via \`gpedit.msc\` to prevent malicious scripts from executing 
             metricsDone = true;
             document.querySelectorAll(".metric-value").forEach(c => {
                 const target = +c.getAttribute("data-target");
-                const duration = 1300;
+                const duration = 1200;
                 const step = target / (duration / 25);
                 let cur = 0;
                 const timer = setInterval(() => {
@@ -3432,39 +3438,69 @@ Disable AutoPlay via \`gpedit.msc\` to prevent malicious scripts from executing 
         }, { threshold: 0.1 });
         reveals.forEach(el => observer.observe(el));
 
-        // 15. Scroll Tracking & Mobile Drawer
-        const progressBar = document.getElementById("scrollProgress");
+        // 15. Smooth Throttled Scroll Tracking
         const navEl = document.getElementById("mainNavbar");
         const toTopBtn = document.getElementById("toTop");
         const sections = document.querySelectorAll("section");
         const navLinks = document.querySelectorAll(".nav-link");
+        let ticking = false;
 
         window.addEventListener("scroll", () => {
-            const currentScroll = window.scrollY;
-            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-            progressBar.style.width = `${(currentScroll / (maxScroll || 1)) * 100}%`;
-            if (currentScroll > 40) navEl.classList.add("scrolled");
-            else navEl.classList.remove("scrolled");
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const currentScroll = window.scrollY;
+                    if (currentScroll > 40) navEl.classList.add("scrolled");
+                    else navEl.classList.remove("scrolled");
 
-            if (currentScroll > 300) toTopBtn.classList.add("show");
-            else toTopBtn.classList.remove("show");
+                    if (currentScroll > 300) toTopBtn.classList.add("show");
+                    else toTopBtn.classList.remove("show");
 
-            let activeId = "home";
-            sections.forEach(s => {
-                if (currentScroll >= s.offsetTop - 140) activeId = s.getAttribute("id");
-            });
-            navLinks.forEach(link => {
-                link.classList.remove("active");
-                if (link.getAttribute("href") === `#${activeId}`) link.classList.add("active");
-            });
-        });
+                    let activeId = "home";
+                    sections.forEach(s => {
+                        if (currentScroll >= s.offsetTop - 140) activeId = s.getAttribute("id");
+                    });
+                    navLinks.forEach(link => {
+                        link.classList.remove("active");
+                        if (link.getAttribute("href") === `#${activeId}`) link.classList.add("active");
+                    });
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
 
         toTopBtn?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
+        // 16. Mobile Menu Toggle with Clean Close/Cancel Button
         const menuBtn = document.getElementById("mobileMenuToggle");
+        const menuIcon = document.getElementById("mobileMenuIcon");
         const drawer = document.getElementById("mobileDrawer");
-        menuBtn?.addEventListener("click", () => drawer.classList.toggle("active"));
-        document.querySelectorAll(".drawer-link").forEach(l => l.addEventListener("click", () => drawer.classList.remove("active")));
+        const drawerCloseBtn = document.getElementById("mobileDrawerCloseBtn");
+
+        function openDrawer() {
+            drawer.classList.add("active");
+            menuBtn.classList.add("is-active");
+            menuIcon.setAttribute("data-lucide", "x");
+            lucide.createIcons();
+        }
+
+        function closeDrawer() {
+            drawer.classList.remove("active");
+            menuBtn.classList.remove("is-active");
+            menuIcon.setAttribute("data-lucide", "menu");
+            lucide.createIcons();
+        }
+
+        menuBtn?.addEventListener("click", () => {
+            if (drawer.classList.contains("active")) {
+                closeDrawer();
+            } else {
+                openDrawer();
+            }
+        });
+
+        drawerCloseBtn?.addEventListener("click", closeDrawer);
+        document.querySelectorAll(".drawer-link").forEach(l => l.addEventListener("click", closeDrawer));
     </script>
 </body>
 </html>
