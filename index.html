@@ -1,98 +1,46 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prabin Chaudhary (Ratna Prasad Tharu) | Official Portfolio & Prince Digital Zone</title>
-    <meta name="title" content="Prabin Chaudhary (Ratna Prasad Tharu) | Official Portfolio">
-    <meta name="description" content="Official portfolio of Prabin Chaudhary (Legal Name: Ratna Prasad Tharu) - IT Instructor, Web Developer, and Founder of Prince Digital Zone, Rupandehi, Nepal.">
-    <meta name="keywords" content="Prabin Chaudhary, Ratna Prasad Tharu, Prince Digital Zone, infoprabintech, Web Developer Nepal, IT Instructor Rupandehi">
+    <title>Prabin Chaudhary | Official Portfolio & IT Specialist</title>
+    <meta name="title" content="Prabin Chaudhary | Official Portfolio">
+    <meta name="description" content="Official portfolio of Prabin Chaudhary - IT Instructor, Web Developer, and Computer Specialist, Rupandehi, Nepal.">
     <meta name="author" content="Prabin Chaudhary">
-    <meta name="robots" content="index, follow">
 
-    <!-- Open Graph / Social Media Preview -->
-    <meta property="og:type" content="profile">
-    <meta property="og:title" content="Prabin Chaudhary (Ratna Prasad Tharu) | Official">
-    <meta property="og:description" content="IT Instructor, Web Developer & Founder of Prince Digital Zone in Rupandehi.">
-    <meta property="og:url" content="https://infoprabintech-cpu.github.io/prabin-chaudhary-official/">
-
-    <!-- Google Knowledge Graph (Person Schema) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Prabin Chaudhary",
-      "legalName": "Ratna Prasad Tharu",
-      "alternateName": ["Ratna Prasad Tharu", "Prabin Tech"],
-      "url": "https://infoprabintech-cpu.github.io/prabin-chaudhary-official/",
-      "jobTitle": "IT Instructor & Entrepreneur",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Prince Digital Zone"
-      },
-      "sameAs": [
-        "https://www.facebook.com/prabinchaudhary.official/",
-        "https://github.com/infoprabintech-cpu"
-      ]
-    }
-    </script>
-    
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
         :root {
             --bg: #030712;
-            --bg-glass: rgba(11, 19, 38, 0.88);
-            --surface-card: rgba(13, 22, 44, 0.82);
-            --surface-card-hover: rgba(19, 32, 62, 0.95);
+            --bg-glass: rgba(11, 19, 38, 0.92);
+            --surface-card: rgba(13, 22, 44, 0.85);
             --border: rgba(56, 189, 248, 0.18);
             --border-glow: rgba(56, 189, 248, 0.55);
-            --border-purple: rgba(168, 85, 247, 0.3);
             --primary: #38bdf8;
-            --primary-rgb: 56, 189, 248;
             --cyan: #06b6d4;
-            --indigo: #6366f1;
             --purple: #a855f7;
             --emerald: #10b981;
-            --amber: #f59e0b;
-            --rose: #f43f5e;
-            --pdf-red: #ef4444;
-            --primary-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
-            --name-gradient: linear-gradient(110deg, #ffffff 0%, #38bdf8 30%, #c084fc 65%, #38bdf8 100%);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --text-dim: #64748b;
-            --code-bg: #020617;
-            --radius-lg: 20px;
-            --radius-md: 12px;
-            --radius-sm: 8px;
-            --aurora-opacity: 0.12;
+            --primary-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+            --name-gradient: linear-gradient(110deg, #ffffff 0%, #38bdf8 30%, #c084fc 65%, #38bdf8 100%);
+            --radius-lg: 16px;
+            --radius-md: 10px;
         }
 
         [data-theme="light"] {
             --bg: #f8fafc;
-            --bg-glass: rgba(255, 255, 255, 0.94);
-            --surface-card: rgba(255, 255, 255, 0.92);
-            --surface-card-hover: #ffffff;
+            --bg-glass: rgba(255, 255, 255, 0.95);
+            --surface-card: #ffffff;
             --border: rgba(14, 165, 233, 0.22);
             --border-glow: rgba(2, 132, 199, 0.6);
-            --border-purple: rgba(147, 51, 234, 0.25);
             --primary: #0284c7;
-            --primary-rgb: 2, 132, 199;
-            --cyan: #0891b2;
-            --indigo: #4f46e5;
-            --purple: #7c3aed;
-            --emerald: #059669;
-            --amber: #d97706;
-            --rose: #e11d48;
-            --pdf-red: #dc2626;
-            --primary-gradient: linear-gradient(135deg, #0284c7 0%, #6366f1 50%, #9333ea 100%);
-            --name-gradient: linear-gradient(110deg, #0f172a 0%, #0284c7 35%, #7c3aed 70%, #0f172a 100%);
             --text-main: #0f172a;
             --text-muted: #475569;
             --text-dim: #64748b;
-            --code-bg: #0f172a;
-            --aurora-opacity: 0.06;
         }
 
         * {
@@ -105,74 +53,36 @@
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background-color: var(--bg);
             color: var(--text-main);
             line-height: 1.5;
-            overflow-x: hidden;
-            padding-bottom: 68px;
+            padding-bottom: 70px;
         }
 
         @media (min-width: 992px) {
             body { padding-bottom: 0; }
         }
 
-        #bgCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -2;
-            pointer-events: none;
-            display: none;
-        }
-
-        @media (min-width: 768px) {
-            #bgCanvas { display: block; }
-        }
-
-        .ambient-aurora {
-            position: fixed;
-            top: 5%;
-            left: 50%;
-            transform: translateX(-50%) translateZ(0);
-            width: 600px;
-            max-width: 90vw;
-            height: 380px;
-            background: radial-gradient(circle, rgba(56, 189, 248, var(--aurora-opacity)) 0%, rgba(168, 85, 247, 0.05) 50%, transparent 75%);
-            filter: blur(40px);
-            z-index: -1;
-            pointer-events: none;
-        }
-
         .container {
             width: 100%;
-            max-width: 1160px;
+            max-width: 1120px;
             margin: 0 auto;
             padding: 0 16px;
         }
 
-        @media (min-width: 768px) {
-            .container { padding: 0 24px; }
-        }
-
         section {
-            padding: 30px 0;
-            position: relative;
+            padding: 40px 0;
+            scroll-margin-top: 70px; /* मेनु थिच्दा हेडरले अक्षर नछेकोस् */
         }
 
-        @media (min-width: 768px) {
-            section { padding: 44px 0; }
-        }
-
+        /* NAVBAR */
         .navbar {
             position: sticky;
             top: 0;
             z-index: 1000;
             background: var(--bg-glass);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
         }
 
@@ -180,11 +90,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 60px;
-        }
-
-        @media (min-width: 768px) {
-            .nav-inner { height: 66px; }
+            height: 62px;
         }
 
         .nav-brand-box {
@@ -192,60 +98,22 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 5px 11px;
-            border-radius: 12px;
-            background: var(--surface-card);
-            border: 1px solid var(--border);
-            max-width: 60vw;
-        }
-
-        .brand-icon-box {
-            width: 28px;
-            height: 28px;
-            border-radius: 8px;
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.35), rgba(168, 85, 247, 0.35));
-            border: 1px solid rgba(56, 189, 248, 0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            flex-shrink: 0;
-            position: relative;
-        }
-
-        .brand-pulse-dot {
-            position: absolute;
-            top: -2px;
-            right: -2px;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--emerald);
-        }
-
-        .brand-text {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.15;
-            overflow: hidden;
+            padding: 4px 8px;
         }
 
         .brand-name {
-            font-size: 13px;
+            font-size: 13.5px;
             font-weight: 800;
             background: var(--name-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
 
         .brand-sub {
             font-size: 9.5px;
-            font-family: 'JetBrains Mono', monospace;
             color: var(--primary);
-            white-space: nowrap;
+            display: block;
         }
 
         .nav-menu {
@@ -264,15 +132,14 @@
             color: var(--text-muted);
             font-size: 13px;
             font-weight: 600;
-            padding: 7px 11px;
+            padding: 6px 12px;
             border-radius: 20px;
-            transition: all 0.2s ease;
+            transition: 0.2s;
         }
 
-        .nav-menu a:hover, .nav-menu a.active {
+        .nav-menu a:hover {
             color: var(--text-main);
             background: rgba(56, 189, 248, 0.12);
-            border: 1px solid var(--border-glow);
         }
 
         .nav-actions {
@@ -285,21 +152,20 @@
             background: var(--surface-card);
             border: 1px solid var(--border);
             color: var(--primary);
-            width: 34px;
-            height: 34px;
-            border-radius: 9px;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            transition: all 0.2s ease;
         }
 
-        /* CV र Pay Info बटनहरू (Clean Inline Pill Style) */
+        /* CV र Pay Info Buttons (Inline, No Wrap) */
         .btn-nav-cta {
             padding: 6px 12px;
-            height: 34px;
-            font-size: 12px;
+            height: 32px;
+            font-size: 11.5px;
             font-weight: 700;
             border-radius: 20px;
             background: var(--primary-gradient);
@@ -307,17 +173,14 @@
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 5px;
+            gap: 4px;
             white-space: nowrap;
-            box-shadow: 0 2px 10px rgba(56, 189, 248, 0.35);
-            transition: transform 0.2s ease;
         }
 
         .btn-nav-pay {
             padding: 6px 12px;
-            height: 34px;
-            font-size: 12px;
+            height: 32px;
+            font-size: 11.5px;
             font-weight: 700;
             border-radius: 20px;
             background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
@@ -325,16 +188,8 @@
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 5px;
+            gap: 4px;
             white-space: nowrap;
-            box-shadow: 0 2px 10px rgba(16, 185, 129, 0.35);
-            transition: transform 0.2s ease;
-        }
-
-        .btn-nav-cta:hover, .btn-nav-pay:hover {
-            transform: translateY(-1.5px);
-            opacity: 0.95;
         }
 
         .mobile-menu-btn {
@@ -343,7 +198,7 @@
             justify-content: center;
             width: 34px;
             height: 34px;
-            border-radius: 9px;
+            border-radius: 8px;
             background: var(--surface-card);
             border: 1px solid var(--border);
             color: var(--text-main);
@@ -354,256 +209,84 @@
             .mobile-menu-btn { display: none; }
         }
 
+        /* Mobile Drawer */
         .mobile-drawer {
             display: none;
             position: fixed;
-            top: 60px;
+            top: 62px;
             left: 0;
             width: 100%;
             background: var(--bg-glass);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
+            backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
-            padding: 12px 16px 18px;
+            padding: 15px;
             z-index: 999;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
 
         .mobile-drawer.active { display: block; }
-
-        .mobile-drawer-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-bottom: 10px;
-            margin-bottom: 8px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .mobile-drawer-close-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 12px;
-            font-weight: 700;
-            padding: 5px 10px;
-            border-radius: 8px;
-            background: rgba(239, 68, 68, 0.12);
-            border: 1px solid rgba(239, 68, 68, 0.35);
-            color: #ef4444;
-            cursor: pointer;
-        }
 
         .mobile-drawer-links {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 8px;
         }
 
         .mobile-drawer-links a {
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 9px 12px;
+            padding: 10px 12px;
             border-radius: var(--radius-md);
-            color: var(--text-muted);
+            color: var(--text-main);
             text-decoration: none;
-            font-size: 13.5px;
+            font-size: 14px;
             font-weight: 600;
-            background: rgba(125, 125, 125, 0.05);
+            background: rgba(125, 125, 125, 0.08);
         }
 
+        /* Hero Bento */
         .hero-bento {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 14px;
+            gap: 16px;
         }
 
         @media (min-width: 992px) {
-            .hero-bento {
-                grid-template-columns: 320px 1fr;
-                align-items: stretch;
-            }
+            .hero-bento { grid-template-columns: 300px 1fr; }
         }
 
         .spot-card {
             background: var(--surface-card);
             border: 1px solid var(--border);
             border-radius: var(--radius-lg);
-            padding: 18px 16px;
-            backdrop-filter: blur(18px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+            padding: 20px;
         }
 
         .hero-avatar-card {
+            text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
-            justify-content: center;
         }
-
-        .avatar-stage {
-            position: relative;
-            width: 155px;
-            height: 155px;
-            margin: 0 auto 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .orbit-outer {
-            position: absolute;
-            inset: -10px;
-            border-radius: 50%;
-            border: 2px dashed rgba(56, 189, 248, 0.45);
-            animation: spinRing 22s linear infinite;
-        }
-
-        .orbit-inner {
-            position: absolute;
-            inset: -3px;
-            border-radius: 50%;
-            border: 1.5px dotted rgba(168, 85, 247, 0.55);
-            animation: spinRingRev 16s linear infinite;
-        }
-
-        @keyframes spinRing { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        @keyframes spinRingRev { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
 
         .avatar-core {
-            position: relative;
-            width: 136px;
-            height: 136px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
-            padding: 3.5px;
-            background: linear-gradient(145deg, #38bdf8, #818cf8, #a855f7);
-            cursor: pointer;
-            overflow: hidden;
+            padding: 3px;
+            background: var(--primary-gradient);
+            margin: 10px 0;
         }
 
         .avatar-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: 50% 18% !important;
+            object-position: 50% 18%;
             border-radius: 50%;
             display: block;
-        }
-
-        .verified-badge {
-            position: absolute;
-            bottom: 3px;
-            right: 8px;
-            background: var(--emerald);
-            color: #030712;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2.5px solid var(--bg);
-        }
-
-        .live-status-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 4px 11px;
-            border-radius: 100px;
-            background: rgba(16, 185, 129, 0.12);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            color: var(--emerald);
-            font-size: 11px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .pulse-dot {
-            width: 6px;
-            height: 6px;
-            background: var(--emerald);
-            border-radius: 50%;
-        }
-
-        .location-badge-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 4px 12px;
-            border-radius: 100px;
-            background: rgba(56, 189, 248, 0.1);
-            border: 1px solid var(--border);
-            color: var(--primary);
-            font-size: 11px;
-            font-weight: 700;
-            margin-top: 6px;
-        }
-
-        .hero-info-card {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .super-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 10.5px;
-            color: var(--primary);
-            text-transform: uppercase;
-            font-weight: 700;
-            margin-bottom: 6px;
-            background: rgba(56, 189, 248, 0.08);
-            border: 1px solid var(--border);
-            padding: 3px 10px;
-            border-radius: 20px;
-        }
-
-        .brand-headline-name {
-            font-size: clamp(20px, 4.2vw, 30px);
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 6px;
-        }
-
-        .name-highlight {
-            background: var(--name-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .identity-showcase-box {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 8px;
-            padding: 9px 12px;
-            border-radius: var(--radius-md);
-            background: var(--surface-card);
-            border: 1px solid var(--border);
-            margin-bottom: 10px;
-        }
-
-        @media (min-width: 600px) {
-            .identity-showcase-box { grid-template-columns: 1fr 1fr; gap: 10px; }
-        }
-
-        .hero-bio {
-            color: var(--text-muted);
-            font-size: 12.5px;
-            line-height: 1.55;
-            margin-bottom: 10px;
-        }
-
-        .hero-actions-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            align-items: center;
         }
 
         .btn {
@@ -617,92 +300,65 @@
             font-weight: 700;
             text-decoration: none;
             cursor: pointer;
-            border: 1px solid transparent;
+            border: none;
         }
 
-        .btn-primary {
-            background: var(--primary-gradient);
-            color: #030712;
-        }
-
-        .btn-secondary {
-            background: rgba(125, 125, 125, 0.06);
-            border-color: var(--border);
-            color: var(--text-main);
-        }
+        .btn-primary { background: var(--primary-gradient); color: #030712; }
+        .btn-secondary { background: rgba(125, 125, 125, 0.1); border: 1px solid var(--border); color: var(--text-main); }
 
         .bento-metrics-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 8px;
-            margin-top: 12px;
+            gap: 10px;
+            margin-top: 14px;
         }
 
         @media (min-width: 768px) {
-            .bento-metrics-grid { grid-template-columns: repeat(4, 1fr); gap: 12px; }
+            .bento-metrics-grid { grid-template-columns: repeat(4, 1fr); }
         }
 
         .metric-cell {
             background: var(--surface-card);
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
-            padding: 12px 10px;
+            padding: 14px 10px;
             text-align: center;
         }
 
-        .metric-value {
-            font-size: clamp(20px, 3.5vw, 26px);
-            font-weight: 800;
-            color: var(--text-main);
-        }
+        .metric-value { font-size: 22px; font-weight: 800; color: var(--primary); }
+        .metric-label { font-size: 11px; color: var(--text-muted); }
 
-        .metric-label {
-            font-size: 10.5px;
-            color: var(--text-muted);
-            font-weight: 600;
-        }
+        .section-header { text-align: center; margin-bottom: 24px; }
+        .section-title { font-size: 22px; font-weight: 800; }
 
-        .section-header { text-align: center; margin-bottom: 20px; }
-        .section-title { font-size: clamp(20px, 3.6vw, 26px); font-weight: 800; }
-        .section-subline { width: 40px; height: 3px; background: var(--primary-gradient); margin: 6px auto 0; border-radius: 10px; }
-
-        .pdf-vault-wrapper, .matrix-table-wrap, .skill-group-card, .service-card, .timeline-card, .inquiry-form-card {
-            background: var(--surface-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 16px;
-        }
-
-        .pdf-cards-grid, .cards-grid-3 {
+        .grid-2 {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 10px;
-            margin-top: 14px;
+            gap: 12px;
         }
 
         @media (min-width: 768px) {
-            .pdf-cards-grid { grid-template-columns: repeat(2, 1fr); }
-            .cards-grid-3 { grid-template-columns: repeat(3, 1fr); }
+            .grid-2 { grid-template-columns: 1fr 1fr; }
         }
 
-        .pdf-item-card {
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        @media (min-width: 768px) {
+            .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .item-card {
             background: var(--surface-card);
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
-            padding: 14px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            padding: 16px;
         }
 
-        .pdf-card-footer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-top: 8px;
-            border-top: 1px solid var(--border);
-        }
-
+        /* Mobile Bottom Dock */
         .mobile-quick-dock {
             position: fixed;
             bottom: 0;
@@ -713,7 +369,7 @@
             border-top: 1px solid var(--border);
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            padding: 6px 2px;
+            padding: 6px 0;
             z-index: 9999;
         }
 
@@ -727,209 +383,114 @@
             align-items: center;
             text-decoration: none;
             color: var(--text-muted);
-            font-size: 10px;
+            font-size: 9.5px;
             font-weight: 700;
             gap: 2px;
         }
 
-        #toTop {
-            position: fixed;
-            bottom: 74px;
-            right: 14px;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: var(--surface-card);
-            border: 1px solid var(--border-glow);
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            z-index: 999;
-        }
-
-        #toTop.show { opacity: 1; visibility: visible; }
-
-        #toastBox {
-            position: fixed;
-            bottom: 74px;
-            left: 50%;
-            transform: translateX(-50%) translateY(80px);
-            background: var(--surface-card);
-            border: 1px solid var(--primary);
-            color: var(--text-main);
-            padding: 8px 16px;
-            border-radius: 9px;
-            font-size: 12px;
-            font-weight: 600;
-            z-index: 100000;
-            opacity: 0;
-            transition: all 0.25s ease;
-        }
-
-        #toastBox.active { transform: translateX(-50%) translateY(0); opacity: 1; }
-
         footer {
             border-top: 1px solid var(--border);
-            padding: 20px 0;
+            padding: 22px 0;
             text-align: center;
-            font-size: 11.5px;
+            font-size: 12px;
             color: var(--text-dim);
             background: var(--surface-card);
-        }
-
-        /* Mobile specific enhancements */
-        @media (max-width: 768px) {
-            .container { padding: 0 10px; }
-            .btn-nav-cta, .btn-nav-pay { padding: 5px 10px; font-size: 11px; height: 30px; }
         }
     </style>
 </head>
 <body>
-
-    <div class="ambient-aurora"></div>
-    <canvas id="bgCanvas"></canvas>
 
     <!-- NAVBAR -->
     <nav class="navbar" id="mainNavbar">
         <div class="container">
             <div class="nav-inner">
                 <a href="#home" class="nav-brand-box">
-                    <div class="brand-icon-box">
-                        <i data-lucide="terminal" style="width: 15px; height: 15px;"></i>
-                        <span class="brand-pulse-dot"></span>
-                    </div>
-                    <div class="brand-text">
+                    <div>
                         <span class="brand-name">PRABIN CHAUDHARY</span>
                         <span class="brand-sub">Kanchan-05, Rupandehi</span>
                     </div>
                 </a>
 
-                <!-- Desktop Links -->
+                <!-- PC Menus (Clickable with valid section IDs) -->
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="#pdfnotes" class="nav-link">Notes & Vault</a></li>
-                    <li><a href="#curriculum" class="nav-link">Curriculum</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#experience" class="nav-link">Experience</a></li>
-                    <li><a href="#inquiry" class="nav-link">Inquiry</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#pdfnotes">Notes & Vault</a></li>
+                    <li><a href="#curriculum">Curriculum</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#inquiry">Inquiry</a></li>
                 </ul>
 
-                <!-- Desktop & Mobile Actions (NO DUPLICATES) -->
+                <!-- Action Buttons -->
                 <div class="nav-actions">
-                    <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Dark / Light Mode" title="Toggle Theme">
+                    <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme">
                         <i data-lucide="sun" id="themeIcon" style="width: 16px; height: 16px;"></i>
                     </button>
                     
-                    <!-- १. CV बटन -->
-                    <a href="cv.pdf" id="navCVBtn" class="btn-nav-cta" target="_blank">
+                    <a href="cv.pdf" class="btn-nav-cta" target="_blank">
                         <i data-lucide="file-down" style="width: 13px; height: 13px;"></i> CV
                     </a>
 
-                    <!-- २. Pay Info बटन -->
                     <a href="pay.html" class="btn-nav-pay">
                         💳 Pay Info
                     </a>
 
-                    <!-- ३. मोबाइल ३-लाइन बटन -->
-                    <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle navigation">
+                    <!-- Hamburger Button -->
+                    <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Menu">
                         <i data-lucide="menu" id="mobileMenuIcon" style="width: 18px; height: 18px;"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <!-- मोबाइल ड्रयर (३ लाइन थिच्दा खुल्ने) -->
+        <!-- Mobile Drawer -->
         <div class="mobile-drawer" id="mobileDrawer">
-            <div class="mobile-drawer-header">
-                <span style="font-size: 11.5px; font-weight: 700; font-family: 'JetBrains Mono', monospace; color: var(--primary);">NAVIGATION MENU</span>
-                <button class="mobile-drawer-close-btn" id="mobileDrawerCloseBtn">
-                    <i data-lucide="x" style="width: 13px; height: 13px;"></i> Close
-                </button>
-            </div>
             <ul class="mobile-drawer-links">
-                <li><a href="#home" class="drawer-link"><i data-lucide="home" style="width: 15px; height: 15px;"></i> Home</a></li>
-                <li><a href="#pdfnotes" class="drawer-link"><i data-lucide="file-text" style="width: 15px; height: 15px; color: #ef4444;"></i> PDF Notes & Vault</a></li>
-                <li><a href="#curriculum" class="drawer-link"><i data-lucide="book-open" style="width: 15px; height: 15px;"></i> Curriculum</a></li>
-                <li><a href="#skills" class="drawer-link"><i data-lucide="bar-chart" style="width: 15px; height: 15px;"></i> Technical Skills</a></li>
-                <li><a href="#services" class="drawer-link"><i data-lucide="layers" style="width: 15px; height: 15px;"></i> Solutions</a></li>
-                <li><a href="#experience" class="drawer-link"><i data-lucide="briefcase" style="width: 15px; height: 15px;"></i> Career Timeline</a></li>
-                <li><a href="pay.html" class="drawer-link" style="color: #34d399;"><i data-lucide="credit-card" style="width: 15px; height: 15px;"></i> 💳 Pay Info (QR Lock)</a></li>
-                <li><a href="#inquiry" class="drawer-link"><i data-lucide="send" style="width: 15px; height: 15px;"></i> Direct Inquiry</a></li>
+                <li><a href="#home" class="drawer-link"><i data-lucide="home" style="width: 16px; height: 16px;"></i> Home</a></li>
+                <li><a href="#pdfnotes" class="drawer-link"><i data-lucide="file-text" style="width: 16px; height: 16px; color: #ef4444;"></i> Study Notes & Vault</a></li>
+                <li><a href="#curriculum" class="drawer-link"><i data-lucide="book-open" style="width: 16px; height: 16px;"></i> Curriculum Modules</a></li>
+                <li><a href="#skills" class="drawer-link"><i data-lucide="bar-chart" style="width: 16px; height: 16px;"></i> Technical Skills</a></li>
+                <li><a href="#services" class="drawer-link"><i data-lucide="layers" style="width: 16px; height: 16px;"></i> Solutions & Services</a></li>
+                <li><a href="#experience" class="drawer-link"><i data-lucide="briefcase" style="width: 16px; height: 16px;"></i> Career Timeline</a></li>
+                <li><a href="pay.html" class="drawer-link" style="color: #34d399;"><i data-lucide="credit-card" style="width: 16px; height: 16px;"></i> 💳 Pay Info (QR Lock)</a></li>
+                <li><a href="#inquiry" class="drawer-link"><i data-lucide="send" style="width: 16px; height: 16px;"></i> Contact & Inquiry</a></li>
             </ul>
         </div>
     </nav>
 
     <div class="container">
-        <!-- HERO SECTION -->
+        <!-- 1. HOME SECTION -->
         <section class="hero" id="home">
             <div class="hero-bento">
                 <div class="spot-card hero-avatar-card">
-                    <div class="live-status-pill">
-                        <span class="pulse-dot"></span> Available for Training & IT
+                    <div class="avatar-core">
+                        <img src="prabin.jpg" alt="Prabin Chaudhary" class="avatar-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500';">
                     </div>
-
-                    <div class="avatar-stage">
-                        <div class="orbit-outer"></div>
-                        <div class="orbit-inner"></div>
-                        <div class="avatar-core">
-                            <img src="prabin.jpg" alt="Prabin Chaudhary" class="avatar-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500';">
-                        </div>
-                        <div class="verified-badge" title="Verified Professional Instructor">
-                            <i data-lucide="check" style="width: 13px; height: 13px;"></i>
-                        </div>
-                    </div>
-
-                    <h2 style="font-size: 16px; font-weight: 700; margin-bottom: 2px; text-transform: uppercase;">PRABIN CHAUDHARY</h2>
-                    <p style="font-size: 11px; color: var(--primary); font-family: 'JetBrains Mono', monospace; margin-bottom: 4px;">Computer Instructor & IT Specialist</p>
-                    
-                    <div class="location-badge-pill">
-                        <i data-lucide="map-pin" style="width: 11px; height: 11px; color: var(--primary);"></i>
-                        Kanchan-05, Rupandehi, Nepal
-                    </div>
+                    <h2 style="font-size: 16px; font-weight: 800; margin-top: 6px;">PRABIN CHAUDHARY</h2>
+                    <p style="font-size: 12px; color: var(--primary);">Computer Instructor & IT Specialist</p>
+                    <p style="font-size: 11px; color: var(--text-dim); margin-top: 4px;">📍 Kanchan-05, Rupandehi, Nepal</p>
                 </div>
 
-                <div class="spot-card hero-info-card">
+                <div class="spot-card" style="display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <div class="super-tag">
-                            <i data-lucide="sparkles" style="width: 12px; height: 12px;"></i> Computer Instructor & IT Specialist
-                        </div>
-
-                        <h1 class="brand-headline-name">
-                            <span class="name-highlight">PRABIN CHAUDHARY</span>
+                        <h1 style="font-size: clamp(22px, 4vw, 30px); font-weight: 800; margin-bottom: 8px;">
+                            नमस्ते, म <span style="color: var(--primary);">प्रबिन चौधरी</span>
                         </h1>
-
-                        <p class="hero-bio">
-                            Computer Instructor & IT Specialist based in Kanchan-05, Rupandehi, Nepal. Delivering practical training in Workplace AI, Advanced Excel Architecture, Data Analytics, Nepali Typing (Preeti & Unicode), and Lab Systems Infrastructure.
+                        <p style="color: var(--text-muted); font-size: 13.5px; line-height: 1.6;">
+                            कम्प्युटर प्रशिक्षक तथा आइटी स्पेशलिस्ट। Workplace AI, Advanced Excel Architecture, Data Analytics, Nepali Typing (Preeti & Unicode) तथा Computer Hardware & Lab Infrastructure व्यवस्थापनमा ५ वर्षभन्दा बढीको व्यावहारिक अनुभव।
                         </p>
-
-                        <div class="identity-showcase-box">
-                            <div>
-                                <div style="font-size: 10px; color: var(--purple); font-weight: 700; text-transform: uppercase;">Official Legal Identity</div>
-                                <div style="font-size: 13.5px; font-weight: 700; color: var(--text-main);">Ratna Prasad Tharu</div>
-                                <div style="font-size: 10px; color: var(--text-dim);">Academic & Government Records</div>
-                            </div>
-                            <div>
-                                <div style="font-size: 10px; color: var(--primary); font-weight: 700; text-transform: uppercase;">Preferred / Professional Brand</div>
-                                <div style="font-size: 13.5px; font-weight: 700; color: var(--text-main);">Prabin Chaudhary</div>
-                                <div style="font-size: 10px; color: var(--text-dim);">Instruction & IT Industry</div>
-                            </div>
-                        </div>
                     </div>
 
-                    <div class="hero-actions-row">
-                        <a href="#pdfnotes" class="btn btn-primary" style="background: linear-gradient(135deg, #ef4444, #f97316); color: #fff;">
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px;">
+                        <a href="#pdfnotes" class="btn btn-primary">
                             <i data-lucide="file-text" style="width: 14px; height: 14px;"></i> PDF Notes
                         </a>
-                        <a href="https://wa.me/9779716175657" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <a href="https://wa.me/9779716175657" target="_blank" class="btn btn-secondary">
                             <i data-lucide="message-circle" style="width: 14px; height: 14px; color: #22c55e;"></i> WhatsApp
                         </a>
                         <a href="cv.pdf" class="btn btn-secondary" target="_blank">
-                            <i data-lucide="download" style="width: 14px; height: 14px;"></i> CV
+                            <i data-lucide="download" style="width: 14px; height: 14px;"></i> Download CV
                         </a>
                         <a href="#inquiry" class="btn btn-secondary">
                             <i data-lucide="send" style="width: 14px; height: 14px;"></i> Inquiry
@@ -938,7 +499,6 @@
                 </div>
             </div>
 
-            <!-- METRICS -->
             <div class="bento-metrics-grid">
                 <div class="metric-cell">
                     <div class="metric-value">499+</div>
@@ -959,135 +519,207 @@
             </div>
         </section>
 
-        <!-- NOTES VAULT -->
+        <!-- 2. NOTES & VAULT SECTION -->
         <section id="pdfnotes">
             <div class="section-header">
                 <h2 class="section-title">Official Study Notes & PDF Vault</h2>
-                <div class="section-subline"></div>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">सिकाइ सामग्री तथा प्रयोगात्मक गाइडहरू</p>
             </div>
-
-            <div class="pdf-vault-wrapper">
-                <div class="pdf-cards-grid">
-                    <div class="pdf-item-card">
-                        <div>
-                            <h3 style="font-size: 14px; margin-bottom: 4px;">Workplace Generative AI & Prompt Engineering</h3>
-                            <p style="font-size: 12px; color: var(--text-muted);">Practical guidelines for automation and productivity.</p>
-                        </div>
-                        <div class="pdf-card-footer">
-                            <span style="font-size: 11px; color: var(--primary);">Handbook</span>
-                            <a href="#inquiry" class="btn btn-secondary" style="padding: 4px 8px; font-size: 11px;">Request</a>
-                        </div>
-                    </div>
-
-                    <div class="pdf-item-card">
-                        <div>
-                            <h3 style="font-size: 14px; margin-bottom: 4px;">Advanced Excel & Dynamic Formula Architecture</h3>
-                            <p style="font-size: 12px; color: var(--text-muted);">XLOOKUP, INDEX/MATCH, and Dynamic Reporting.</p>
-                        </div>
-                        <div class="pdf-card-footer">
-                            <span style="font-size: 11px; color: var(--primary);">Cheatsheet</span>
-                            <a href="#inquiry" class="btn btn-secondary" style="padding: 4px 8px; font-size: 11px;">Request</a>
-                        </div>
-                    </div>
+            <div class="grid-2">
+                <div class="item-card">
+                    <h3 style="font-size: 15px; margin-bottom: 6px;">Workplace Generative AI & Prompt Engineering</h3>
+                    <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">दैनिक कार्यालयको काम तथा रिसर्चलाई छिटो बनाउने AI प्रम्प्टिङ गाइड।</p>
+                    <a href="#inquiry" class="btn btn-secondary" style="font-size: 11px; padding: 5px 10px;">Request Note</a>
+                </div>
+                <div class="item-card">
+                    <h3 style="font-size: 15px; margin-bottom: 6px;">Advanced Excel & Dynamic Formulas</h3>
+                    <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">XLOOKUP, INDEX/MATCH र Automated Dashboard निर्माणका फर्मुलाहरू।</p>
+                    <a href="#inquiry" class="btn btn-secondary" style="font-size: 11px; padding: 5px 10px;">Request Note</a>
                 </div>
             </div>
         </section>
 
-        <!-- INQUIRY SECTION -->
+        <!-- 3. CURRICULUM SECTION -->
+        <section id="curriculum">
+            <div class="section-header">
+                <h2 class="section-title">Curriculum Modules</h2>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">हामीले प्रदान गर्ने मुख्य तालिम कोर्सहरू</p>
+            </div>
+            <div class="grid-3">
+                <div class="item-card">
+                    <h3 style="font-size: 14.5px; margin-bottom: 6px;">Advanced MS Excel</h3>
+                    <p style="font-size: 12px; color: var(--text-muted);">फर्मुला, पिभोट टेबल, डाटा एनालिसिस तथा रिपोर्टिङ।</p>
+                    <span style="font-size: 11px; color: var(--primary); font-weight: bold; margin-top: 8px; display: inline-block;">४५ घण्टा</span>
+                </div>
+                <div class="item-card">
+                    <h3 style="font-size: 14.5px; margin-bottom: 6px;">Tally Prime & Accounting</h3>
+                    <p style="font-size: 12px; color: var(--text-muted);">भौचर एन्ट्री, भ्याट हिसाब, इन्भेन्टरी तथा लेजर।</p>
+                    <span style="font-size: 11px; color: var(--primary); font-weight: bold; margin-top: 8px; display: inline-block;">४० घण्टा</span>
+                </div>
+                <div class="item-card">
+                    <h3 style="font-size: 14.5px; margin-bottom: 6px;">Hardware & Networking</h3>
+                    <p style="font-size: 12px; color: var(--text-muted);">कम्प्युटर एसेम्ब्लिङ, विन्डोज इन्स्टलेसन तथा ट्रबलसुटिङ।</p>
+                    <span style="font-size: 11px; color: var(--primary); font-weight: bold; margin-top: 8px; display: inline-block;">३० घण्टा</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SKILLS SECTION -->
+        <section id="skills">
+            <div class="section-header">
+                <h2 class="section-title">Technical Skills</h2>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">हाम्रा मुख्य प्राविधिक दक्षताहरू</p>
+            </div>
+            <div class="grid-2">
+                <div class="item-card">
+                    <h3 style="font-size: 14px; margin-bottom: 8px;">Practical Capabilities</h3>
+                    <p style="font-size: 12.5px; color: var(--text-muted); line-height: 1.8;">
+                        ✔ Advanced Excel Modeling & Dashboards<br>
+                        ✔ Generative AI Prompt Frameworks<br>
+                        ✔ Preeti & Nepali Unicode Fast Typing<br>
+                        ✔ Tally Prime / ERP Accounting
+                    </p>
+                </div>
+                <div class="item-card">
+                    <h3 style="font-size: 14px; margin-bottom: 8px;">Hardware & IT Systems</h3>
+                    <p style="font-size: 12.5px; color: var(--text-muted); line-height: 1.8;">
+                        ✔ Workstation Diagnosis & Repair<br>
+                        ✔ Operating System Clean Deployment<br>
+                        ✔ LAN Networking & Static IP Config<br>
+                        ✔ Lab Security & Malware Protection
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SERVICES SECTION -->
+        <section id="services">
+            <div class="section-header">
+                <h2 class="section-title">Solutions & Services</h2>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">हामीबाट उपलब्ध सेवाहरू</p>
+            </div>
+            <div class="grid-3">
+                <div class="item-card">
+                    <h3 style="font-size: 14.5px; margin-bottom: 6px;">Computer Training</h3>
+                    <p style="font-size: 12px; color: var(--text-muted);">विद्यार्थी तथा कर्मचारीका लागि प्रयोगात्मक कम्प्युटर क्लास।</p>
+                </div>
+                <div class="item-card">
+                    <h3 style="font-size: 14.5px; margin-bottom: 6px;">IT Maintenance</h3>
+                    <p style="font-size: 12px; color: var(--text-muted);">कम्प्युटर मर्मत, फर्म्याटिङ तथा नेटवर्क सेटअप।</p>
+                </div>
+                <div class="item-card">
+                    <h3 style="font-size: 14.5px; margin-bottom: 6px;">Data Solutions</h3>
+                    <p style="font-size: 12px; color: var(--text-muted);">एक्सल अटोमेसन, डाटा क्लिनिङ तथा डिजिटल डकुमेन्टेसन।</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. EXPERIENCE SECTION -->
+        <section id="experience">
+            <div class="section-header">
+                <h2 class="section-title">Career Timeline</h2>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">कार्य अनुभव विवरण</p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div class="item-card">
+                    <div style="display: flex; justify-content: space-between;">
+                        <h3 style="font-size: 14px;">Computer Teacher & IT Admin</h3>
+                        <span style="font-size: 11px; color: var(--primary);">2025 – 2026</span>
+                    </div>
+                    <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Janachahana English Boarding School, Rupandehi</p>
+                </div>
+                <div class="item-card">
+                    <div style="display: flex; justify-content: space-between;">
+                        <h3 style="font-size: 14px;">EDP Clerk cum Accountant</h3>
+                        <span style="font-size: 11px; color: var(--primary);">2022 – 2024</span>
+                    </div>
+                    <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">NBK Company, Qatar</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. INQUIRY SECTION -->
         <section id="inquiry">
             <div class="section-header">
-                <h2 class="section-title">Inquiry & Connect</h2>
-                <div class="section-subline"></div>
+                <h2 class="section-title">Inquiry & Contact</h2>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">कुनै पनि जिज्ञासा वा भर्नाका लागि सम्पर्क गर्नुहोस्</p>
             </div>
-
-            <div class="inquiry-form-card" style="max-width: 600px; margin: 0 auto;">
-                <p style="margin-bottom: 15px; font-size: 13px; color: var(--text-muted); text-align: center;">
-                    कुनै पनि कम्प्युटर तालिम, आइटी सपोर्ट वा भुक्तानी जानकारीका लागि सिधै सम्पर्क गर्न सक्नुहुन्छ।
+            <div class="item-card" style="max-width: 500px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
+                    कम्प्युटर तालिम, आइटी सपोर्ट वा भुक्तानी जानकारीका लागि सिधै कुरा गर्न सक्नुहुन्छ:
                 </p>
-                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
                     <a href="https://wa.me/9779716175657" target="_blank" class="btn btn-primary" style="background: #22c55e; color: #fff;">
-                        <i data-lucide="message-circle" style="width: 14px; height: 14px;"></i> WhatsApp मा कुरा गर्नुहोस्
+                        <i data-lucide="message-circle" style="width: 14px; height: 14px;"></i> WhatsApp
                     </a>
-                    <a href="pay.html" class="btn btn-primary" style="background: #2563eb; color: #fff;">
-                        💳 QR भुक्तानी विवरण (Pay Info)
+                    <a href="pay.html" class="btn btn-primary" style="background: #0284c7; color: #fff;">
+                        💳 Pay Info (QR Codes)
                     </a>
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- MOBILE STICKY BOTTOM DOCK -->
+    <!-- Mobile Sticky Dock -->
     <div class="mobile-quick-dock">
         <a href="tel:+9779716175657" class="dock-btn">
-            <i data-lucide="phone-call"></i>
+            <i data-lucide="phone-call" style="width: 16px; height: 16px;"></i>
             <span>Call</span>
         </a>
-        <a href="https://wa.me/9779716175657" target="_blank" rel="noopener noreferrer" class="dock-btn">
-            <i data-lucide="message-circle" style="color: #34d399;"></i>
+        <a href="https://wa.me/9779716175657" target="_blank" class="dock-btn">
+            <i data-lucide="message-circle" style="width: 16px; height: 16px; color: #22c55e;"></i>
             <span>WhatsApp</span>
         </a>
         <a href="#pdfnotes" class="dock-btn">
-            <i data-lucide="file-text" style="color: #ef4444;"></i>
+            <i data-lucide="file-text" style="width: 16px; height: 16px; color: #ef4444;"></i>
             <span>Notes</span>
         </a>
         <a href="pay.html" class="dock-btn">
-            <i data-lucide="credit-card" style="color: #38bdf8;"></i>
+            <i data-lucide="credit-card" style="width: 16px; height: 16px; color: #38bdf8;"></i>
             <span>Pay QR</span>
         </a>
         <a href="cv.pdf" class="dock-btn" target="_blank">
-            <i data-lucide="file-down" style="color: var(--purple);"></i>
+            <i data-lucide="file-down" style="width: 16px; height: 16px; color: var(--purple);"></i>
             <span>CV</span>
         </a>
     </div>
 
-    <button id="toTop" aria-label="Scroll back to top"><i data-lucide="arrow-up" style="width: 17px; height: 17px;"></i></button>
-
+    <!-- FOOTER (Ratna Prasad Tharu हटाइयो) -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 PRABIN CHAUDHARY (Ratna Prasad Tharu). All rights reserved. Kanchan-05, Rupandehi, Nepal.</p>
+            <p>&copy; 2026 PRABIN CHAUDHARY. All rights reserved. Kanchan-05, Rupandehi, Nepal.</p>
         </div>
     </footer>
 
     <script>
+        // Icons Render
         lucide.createIcons();
 
-        // Dark / Light Mode Toggle
-        const themeToggleBtn = document.getElementById("themeToggleBtn");
+        // Theme Toggle
+        const themeBtn = document.getElementById("themeToggleBtn");
         const themeIcon = document.getElementById("themeIcon");
-        const htmlElement = document.documentElement;
-
-        themeToggleBtn?.addEventListener("click", () => {
-            const currentTheme = htmlElement.getAttribute("data-theme");
-            const newTheme = currentTheme === "dark" ? "light" : "dark";
-            htmlElement.setAttribute("data-theme", newTheme);
-            themeIcon.setAttribute("data-lucide", newTheme === "dark" ? "sun" : "moon");
+        themeBtn?.addEventListener("click", () => {
+            const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+            const next = isDark ? "light" : "dark";
+            document.documentElement.setAttribute("data-theme", next);
+            themeIcon.setAttribute("data-lucide", isDark ? "moon" : "sun");
             lucide.createIcons();
         });
 
         // Mobile Menu Drawer Toggle
         const menuBtn = document.getElementById("mobileMenuToggle");
         const drawer = document.getElementById("mobileDrawer");
-        const drawerCloseBtn = document.getElementById("mobileDrawerCloseBtn");
 
         menuBtn?.addEventListener("click", () => {
             drawer.classList.toggle("active");
         });
 
-        drawerCloseBtn?.addEventListener("click", () => {
-            drawer.classList.remove("active");
-        });
-
+        // Close drawer when any link is clicked
         document.querySelectorAll(".drawer-link").forEach(link => {
-            link.addEventListener("click", () => drawer.classList.remove("active"));
+            link.addEventListener("click", () => {
+                drawer.classList.remove("active");
+            });
         });
-
-        // Back to top scroll button
-        const toTopBtn = document.getElementById("toTop");
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) toTopBtn.classList.add("show");
-            else toTopBtn.classList.remove("show");
-        });
-        toTopBtn?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
     </script>
 </body>
 </html>
