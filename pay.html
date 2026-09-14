@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>भुक्तानी विवरण / QR Codes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
+    input[type="password"] {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .qr-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .qr-item {
+      border: 1px solid #e1e4e8;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .qr-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+    .qr-title {
+      font-weight: bold;
+      margin-top: 8px;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2>🔒 भुक्तानी QR कोडहरू</h2>
+
+  <!-- पासवर्ड इनपुट बक्स -->
+  <div id="lock-screen">
+    <p>QR कोडहरू हेर्न कृपया पासवर्ड प्रविष्ट गर्नुहोस्:</p>
+    <input type="password" id="pwdInput" placeholder="पासवर्ड..." />
+    <br>
+    <button onclick="unlockQRs()">अनलक गर्नुहोस्</button>
+    <div id="errMsg" class="error"></div>
+  </div>
+
+  <!-- पासवर्ड मिलेपछि मात्र देखिने QR कोडहरू -->
+  <div id="qr-container" style="display: none;">
+    <div class="qr-grid">
+      <div class="qr-item">
+        <div class="qr-title">eSewa</div>
+        <img id="img-esewa" alt="eSewa QR">
+      </div>
+      <div class="qr-item">
+        <div class="qr-title">Fonepay</div>
+        <img id="img-fonepay" alt="Fonepay QR">
+      </div>
+      <div class="qr-item">
+        <div class="qr-title">Khalti</div>
+        <img id="img-khalti" alt="Khalti QR">
+      </div>
+      <div class="qr-item">
+        <div class="qr-title">Bank Transfer</div>
+        <img id="img-bank" alt="Bank QR">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // पासवर्ड 'saru' को लागि SHA-256 सुरक्षित ह्यास
+  const CORRECT_HASH = "b4aa48ea1121d5a420db5ee1ec80e463a56cf03e5c928424a10df111a68aa09b";
+
+  async function sha256(str) {
+    const buffer = new TextEncoder().encode(str);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+
+  async function unlockQRs() {
+    const inputVal = document.getElementById('pwdInput').value;
+    const errDiv = document.getElementById('errMsg');
+    const hashedInput = await sha256(inputVal);
+
+    if (hashedInput === CORRECT_HASH) {
+      document.getElementById('img-esewa').src = 'esewa.jpg';
+      document.getElementById('img-fonepay').src = 'fonepay.jpg';
+      document.getElementById('img-khalti').src = 'khalti.jpg';
+      document.getElementById('img-bank').src = 'bank.jpg';
+
+      document.getElementById('lock-screen').style.display = 'none';
+      document.getElementById('qr-container').style.display = 'block';
+    } else {
+      errDiv.textContent = 'गलत पासवर्ड! कृपया पुन: प्रयास गर्नुहोस्।';
+    }
+  }
+</script>
+
+</body>
+</html>
