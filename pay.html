@@ -106,33 +106,54 @@
 </div>
 
 <script>
-  // पासवर्ड 'saru' को लागि SHA-256 सुरक्षित ह्यास
-  const CORRECT_HASH = "b4aa48ea1121d5a420db5ee1ec80e463a56cf03e5c928424a10df111a68aa09b";
+  // १. मोबाइल मेनु टगल
+  const hamburgerBtn = document.getElementById('hamburgerBtn');
+  const navMenu = document.getElementById('navMenu');
 
-  async function sha256(str) {
-    const buffer = new TextEncoder().encode(str);
-    const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
-    const hashArray = Array.from(new Uint8Array(hashBuffer));
-    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+  if (hamburgerBtn) {
+    hamburgerBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
   }
 
-  async function unlockQRs() {
-    const inputVal = document.getElementById('pwdInput').value;
-    const errDiv = document.getElementById('errMsg');
-    const hashedInput = await sha256(inputVal);
+  // २. मोडल खोल्ने / बन्द गर्ने
+  function openPaymentModal() {
+    document.getElementById('qrModal').style.display = 'flex';
+    if (navMenu) navMenu.classList.remove('active');
+  }
 
-    if (hashedInput === CORRECT_HASH) {
-      document.getElementById('img-esewa').src = 'esewa.jpg';
-      document.getElementById('img-fonepay').src = 'fonepay.jpg';
-      document.getElementById('img-khalti').src = 'khalti.jpg';
-      document.getElementById('img-bank').src = 'bank.jpg';
+  function closePaymentModal() {
+    document.getElementById('qrModal').style.display = 'none';
+    document.getElementById('errorNotice').textContent = '';
+    document.getElementById('passwordField').value = '';
+  }
 
-      document.getElementById('lock-screen').style.display = 'none';
-      document.getElementById('qr-container').style.display = 'block';
+  // ३. पासवर्ड प्रमाणीकरण (saru वा SARU जुनसुकै लेखे पनि खुल्ने)
+  function verifyPassword() {
+    const rawInput = document.getElementById('passwordField').value;
+    const cleanInput = rawInput.trim().toLowerCase(); // स्पेस हटाउने र सानो अक्षर बनाउने
+    const errorNotice = document.getElementById('errorNotice');
+
+    if (cleanInput === "saru") {
+      // पासवर्ड मिल्यो - फोटोहरू लोड गर्ने
+      document.getElementById('qrEsewa').src = 'esewa.jpg';
+      document.getElementById('qrFonepay').src = 'fonepay.jpg';
+      document.getElementById('qrKhalti').src = 'khalti.jpg';
+      document.getElementById('qrBank').src = 'bank.jpg';
+
+      document.getElementById('lockScreen').style.display = 'none';
+      document.getElementById('qrContent').style.display = 'block';
     } else {
-      errDiv.textContent = 'गलत पासवर्ड! कृपया पुन: प्रयास गर्नुहोस्।';
+      errorNotice.textContent = 'गलत पासवर्ड! कृपया फेरि प्रयास गर्नुहोस्।';
     }
   }
+
+  // इन्टर थिच्दा सिधै अनलक हुने
+  document.getElementById('passwordField').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      verifyPassword();
+    }
+  });
 </script>
 
 </body>
