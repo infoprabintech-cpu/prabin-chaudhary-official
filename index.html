@@ -200,7 +200,9 @@
         @media (min-width: 992px) { .mobile-quick-dock { display: none; } }
         .dock-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); font-size: 8.5px; font-weight: 700; text-decoration: none; }
         
-        footer { border-top: 1px solid var(--border); padding: 16px 0 24px 0; text-align: center; font-size: 11px; color: var(--text-dim); background: var(--surface-card); }
+        /* मोबाइलमा फुटर लुकाउने (Hide) र पीसी/ल्यापटपमा मात्र देखाउने */
+        footer { border-top: 1px solid var(--border); padding: 16px 0 24px 0; text-align: center; font-size: 11px; color: var(--text-dim); background: var(--surface-card); display: none; }
+        @media (min-width: 992px) { footer { display: block; } }
     </style>
 </head>
 <body>
@@ -466,13 +468,13 @@
             </div>
         </section>
 
-        <!-- 8. CONTACT SECTION (+977-9716175657 & SOCIAL LINKS INCLUDED) -->
+        <!-- 8. CONTACT SECTION (NEPALI TEXT REMOVED, +977-9716175657 & SOCIAL LINKS) -->
         <section id="contact">
             <div class="section-header"><h2 class="section-title">Contact & Direct Connect</h2></div>
             <div class="grid-2">
                 <div class="item-card">
                     <h3 style="font-size: 14px; margin-bottom: 6px;">Direct Phone & Social Links</h3>
-                    <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 10px;">तालिम, कम्प्युटर मर्मत वा सामाजिक सञ्जालमार्फत जोिनुहोस्:</p>
+                    <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 10px;">Connect directly via phone, WhatsApp, or official social profiles:</p>
                     
                     <div style="display: flex; flex-direction: column; gap: 8px;">
                         <a href="tel:+9779716175657" class="social-link-btn">
@@ -577,7 +579,7 @@
         <a href="cv.pdf" class="dock-btn" target="_blank"><i data-lucide="file-down" style="width: 14px; height: 14px; color: var(--purple);"></i><span>CV</span></a>
     </div>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (HIDDEN ON MOBILE, VISIBLE ON PC) -->
     <footer>
         <div class="container"><p>&copy; 2026 Prabin Chaudhary. All rights reserved.</p></div>
     </footer>
