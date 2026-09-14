@@ -26,22 +26,17 @@
             --border: rgba(56, 189, 248, 0.16);
             --border-glow: rgba(56, 189, 248, 0.45);
             --primary: #38bdf8;
-            --primary-rgb: 56, 189, 248;
             --cyan: #06b6d4;
-            --indigo: #6366f1;
             --purple: #a855f7;
             --emerald: #10b981;
-            --amber: #f59e0b;
-            --pdf-red: #ef4444;
-            --primary-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
-            --name-gradient: linear-gradient(110deg, #ffffff 0%, #38bdf8 35%, #c084fc 70%, #ffffff 100%);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --text-dim: #64748b;
             --code-bg: #020617;
-            --radius-lg: 14px;
-            --radius-md: 10px;
-            --radius-sm: 6px;
+            --primary-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+            --name-gradient: linear-gradient(110deg, #ffffff 0%, #38bdf8 35%, #c084fc 70%, #ffffff 100%);
+            --radius-lg: 12px;
+            --radius-md: 8px;
             --font-display: 'Outfit', sans-serif;
             --font-body: 'Inter', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
@@ -75,9 +70,9 @@
             font-family: var(--font-body);
             background-color: var(--bg);
             color: var(--text-main);
-            line-height: 1.5;
+            line-height: 1.45;
             overflow-x: hidden;
-            padding-bottom: 64px;
+            padding-bottom: 56px;
             -webkit-overflow-scrolling: touch;
         }
 
@@ -105,11 +100,11 @@
             top: 0;
             left: 50%;
             transform: translateX(-50%) translateZ(0);
-            width: 540px;
+            width: 500px;
             max-width: 90vw;
-            height: 280px;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, rgba(168, 85, 247, 0.04) 50%, transparent 75%);
-            filter: blur(40px);
+            height: 220px;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, rgba(168, 85, 247, 0.03) 50%, transparent 75%);
+            filter: blur(35px);
             z-index: -1;
             pointer-events: none;
         }
@@ -118,32 +113,32 @@
             width: 100%;
             max-width: 1120px;
             margin: 0 auto;
-            padding: 0 14px;
+            padding: 0 12px;
         }
 
         @media (min-width: 768px) {
-            .container { padding: 0 20px; }
+            .container { padding: 0 18px; }
         }
 
-        /* ====== TOP HEADER BANNER (NO UNNECESSARY GAPS) ====== */
+        /* ====== 1. COMPACT BANNER (MINIMAL GAP) ====== */
         .header-top-banner {
             background: linear-gradient(90deg, rgba(3, 7, 18, 0.98), rgba(15, 23, 42, 0.98), rgba(3, 7, 18, 0.98));
             border-bottom: 1px solid var(--border);
-            padding: 4px 10px;
+            padding: 3px 8px;
             text-align: center;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
-            line-height: 1.2;
+            line-height: 1.15;
         }
 
         .header-top-title {
             font-family: var(--font-display);
-            font-size: clamp(12.5px, 2vw, 15px);
+            font-size: clamp(11.5px, 1.8vw, 13.5px);
             font-weight: 800;
-            letter-spacing: 1px;
+            letter-spacing: 0.8px;
             text-transform: uppercase;
             background: var(--name-gradient);
             background-size: 250% auto;
@@ -152,7 +147,7 @@
             animation: textShine 6s linear infinite;
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
         }
 
         @keyframes textShine {
@@ -161,13 +156,13 @@
         }
 
         .header-top-sub {
-            font-size: 9.5px;
+            font-size: 9px;
             font-family: var(--font-mono);
             color: var(--primary);
-            letter-spacing: 0.5px;
+            letter-spacing: 0.4px;
         }
 
-        /* ====== COMPACT STICKY NAVBAR ====== */
+        /* ====== 2. COMPACT NAVBAR ====== */
         .navbar {
             position: sticky;
             top: 0;
@@ -182,27 +177,30 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 52px;
+            height: 46px;
         }
 
         .nav-brand-box {
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 7px;
+            gap: 6px;
             padding: 2px 4px;
         }
 
-        .brand-icon {
+        /* TECHNICAL CODE-BRACKETS SIGN (< / >) */
+        .tech-brand-icon {
             width: 26px;
             height: 26px;
-            border-radius: 7px;
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.3), rgba(168, 85, 247, 0.3));
+            border-radius: 6px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(168, 85, 247, 0.25));
             border: 1px solid var(--primary);
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
             color: var(--primary);
+            box-shadow: 0 0 8px rgba(56, 189, 248, 0.25);
+            flex-shrink: 0;
         }
 
         .brand-name {
@@ -211,10 +209,11 @@
             font-weight: 800;
             color: var(--text-main);
             white-space: nowrap;
+            line-height: 1.1;
         }
 
         .brand-sub {
-            font-size: 9px;
+            font-size: 8.5px;
             font-family: var(--font-mono);
             color: var(--primary);
             display: block;
@@ -234,12 +233,12 @@
         .nav-menu a {
             text-decoration: none;
             color: var(--text-muted);
-            font-size: 12.5px;
+            font-size: 12px;
             font-weight: 600;
-            padding: 5px 11px;
-            border-radius: 16px;
+            padding: 4px 10px;
+            border-radius: 14px;
             border: 1px solid transparent;
-            transition: all 0.18s ease;
+            transition: all 0.16s ease;
             white-space: nowrap;
         }
 
@@ -247,14 +246,14 @@
             color: #38bdf8;
             background: rgba(56, 189, 248, 0.08);
             border-color: rgba(56, 189, 248, 0.35);
-            box-shadow: 0 0 8px rgba(56, 189, 248, 0.2);
+            box-shadow: 0 0 6px rgba(56, 189, 248, 0.2);
         }
 
         .nav-menu a.active {
             color: #ffffff !important;
             background: rgba(56, 189, 248, 0.16) !important;
             border-color: #38bdf8 !important;
-            box-shadow: 0 0 10px rgba(56, 189, 248, 0.35) !important;
+            box-shadow: 0 0 8px rgba(56, 189, 248, 0.35) !important;
         }
 
         .nav-actions {
@@ -267,9 +266,9 @@
             background: var(--surface-card);
             border: 1px solid var(--border);
             color: var(--primary);
-            width: 30px;
-            height: 30px;
-            border-radius: 7px;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -277,35 +276,35 @@
         }
 
         .btn-nav-cta {
-            padding: 4px 10px;
-            height: 30px;
-            font-size: 11px;
+            padding: 3px 9px;
+            height: 28px;
+            font-size: 10.5px;
             font-weight: 700;
-            border-radius: 16px;
+            border-radius: 14px;
             background: var(--primary-gradient);
             color: #030712 !important;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 4px;
+            gap: 3px;
             white-space: nowrap;
-            box-shadow: 0 2px 8px rgba(56, 189, 248, 0.25);
+            box-shadow: 0 2px 6px rgba(56, 189, 248, 0.2);
         }
 
         .btn-nav-pay {
-            padding: 4px 10px;
-            height: 30px;
-            font-size: 11px;
+            padding: 3px 9px;
+            height: 28px;
+            font-size: 10.5px;
             font-weight: 700;
-            border-radius: 16px;
+            border-radius: 14px;
             background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
             color: #ffffff !important;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 4px;
+            gap: 3px;
             white-space: nowrap;
-            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.25);
+            box-shadow: 0 2px 6px rgba(16, 185, 129, 0.2);
         }
 
         .btn-nav-cta:hover, .btn-nav-pay:hover {
@@ -317,9 +316,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 30px;
-            height: 30px;
-            border-radius: 7px;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
             background: var(--surface-card);
             border: 1px solid var(--border);
             color: var(--text-main);
@@ -333,13 +332,13 @@
         .mobile-drawer {
             display: none;
             position: fixed;
-            top: 52px;
+            top: 46px;
             left: 0;
             width: 100%;
             background: var(--bg-glass);
             backdrop-filter: blur(16px);
             border-bottom: 1px solid var(--border);
-            padding: 12px 14px;
+            padding: 10px 12px;
             z-index: 999;
         }
 
@@ -349,44 +348,44 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 4px;
         }
 
         .mobile-drawer-links a {
             display: flex;
             align-items: center;
-            gap: 9px;
-            padding: 8px 12px;
+            gap: 8px;
+            padding: 7px 10px;
             border-radius: var(--radius-md);
             color: var(--text-main);
             text-decoration: none;
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 600;
             background: rgba(125, 125, 125, 0.05);
         }
 
-        /* ====== TIGHTER CONTENT SECTIONS ====== */
+        /* ====== 3. ZERO-WASTE COMPACT SECTIONS (MINIMAL GAP) ====== */
         section {
-            padding: 18px 0;
-            scroll-margin-top: 60px;
+            padding: 10px 0;
+            scroll-margin-top: 50px;
         }
 
         .hero-bento {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 12px;
+            gap: 8px;
         }
 
         @media (min-width: 992px) {
-            .hero-bento { grid-template-columns: 290px 1fr; }
+            .hero-bento { grid-template-columns: 260px 1fr; }
         }
 
         .spot-card {
             background: var(--surface-card);
             border: 1px solid var(--border);
             border-radius: var(--radius-lg);
-            padding: 16px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            padding: 12px 14px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
         }
 
         .hero-avatar-card {
@@ -399,9 +398,9 @@
 
         .avatar-stage {
             position: relative;
-            width: 135px;
-            height: 135px;
-            margin: 4px auto 10px;
+            width: 110px;
+            height: 110px;
+            margin: 2px auto 6px;
             cursor: pointer;
         }
 
@@ -409,11 +408,11 @@
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            padding: 3px;
+            padding: 2.5px;
             background: var(--primary-gradient);
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+            box-shadow: 0 0 16px rgba(56, 189, 248, 0.25);
             overflow: hidden;
-            transition: transform 0.25s ease;
+            transition: transform 0.2s ease;
         }
 
         .avatar-stage:hover .avatar-core {
@@ -431,12 +430,12 @@
 
         .photo-hint {
             position: absolute;
-            bottom: 2px;
-            right: 2px;
+            bottom: 0px;
+            right: 0px;
             background: #0284c7;
             color: #fff;
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -446,26 +445,26 @@
 
         .brand-headline-name {
             font-family: var(--font-display);
-            font-size: clamp(20px, 3.5vw, 26px);
+            font-size: clamp(18px, 3vw, 24px);
             font-weight: 900;
             letter-spacing: -0.3px;
-            line-height: 1.15;
-            margin-bottom: 4px;
+            line-height: 1.1;
+            margin-bottom: 3px;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 5px;
-            padding: 7px 12px;
+            gap: 4px;
+            padding: 5px 10px;
             border-radius: var(--radius-md);
-            font-size: 11.5px;
+            font-size: 11px;
             font-weight: 700;
             text-decoration: none;
             cursor: pointer;
             border: none;
-            transition: 0.18s;
+            transition: 0.16s;
         }
 
         .btn-primary { background: var(--primary-gradient); color: #030712; }
@@ -475,8 +474,8 @@
         .bento-metrics-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 8px;
-            margin-top: 10px;
+            gap: 6px;
+            margin-top: 8px;
         }
 
         @media (min-width: 768px) {
@@ -487,27 +486,27 @@
             background: var(--surface-card);
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
-            padding: 10px 6px;
+            padding: 8px 4px;
             text-align: center;
         }
 
-        .metric-value { font-family: var(--font-display); font-size: 20px; font-weight: 900; color: var(--primary); }
-        .metric-label { font-size: 10.5px; color: var(--text-muted); }
+        .metric-value { font-family: var(--font-display); font-size: 18px; font-weight: 900; color: var(--primary); line-height: 1.1; }
+        .metric-label { font-size: 10px; color: var(--text-muted); }
 
-        .section-header { text-align: center; margin-bottom: 14px; }
-        .section-title { font-family: var(--font-display); font-size: 19px; font-weight: 800; }
+        .section-header { text-align: center; margin-bottom: 8px; }
+        .section-title { font-family: var(--font-display); font-size: 17px; font-weight: 800; line-height: 1.2; }
 
-        .grid-2 { display: grid; grid-template-columns: 1fr; gap: 10px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr; gap: 8px; }
         @media (min-width: 768px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
 
-        .grid-3 { display: grid; grid-template-columns: 1fr; gap: 10px; }
+        .grid-3 { display: grid; grid-template-columns: 1fr; gap: 8px; }
         @media (min-width: 768px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
 
         .item-card {
             background: var(--surface-card);
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
-            padding: 14px;
+            padding: 10px 12px;
         }
 
         /* ====== PHOTO LIGHTBOX MODAL ====== */
@@ -520,7 +519,7 @@
             display: none;
             align-items: center;
             justify-content: center;
-            padding: 16px;
+            padding: 14px;
         }
 
         #photoModal.active { display: flex; }
@@ -529,9 +528,9 @@
             position: relative;
             background: var(--surface-card);
             border: 1.5px solid var(--border-glow);
-            border-radius: 14px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
             max-width: 90vw;
             max-height: 90vh;
             display: flex;
@@ -547,11 +546,11 @@
             object-fit: contain !important;
             display: block;
             border-radius: 6px;
-            margin: 8px;
+            margin: 6px;
         }
 
         .modal-photo-caption {
-            padding: 8px 14px;
+            padding: 6px 12px;
             width: 100%;
             text-align: center;
             background: rgba(11, 19, 38, 0.9);
@@ -560,10 +559,10 @@
 
         .modal-close-btn {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 28px;
-            height: 28px;
+            top: 8px;
+            right: 8px;
+            width: 26px;
+            height: 26px;
             border-radius: 50%;
             background: rgba(239, 68, 68, 0.85);
             border: none;
@@ -585,7 +584,7 @@
             border-top: 1px solid var(--border);
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            padding: 5px 0;
+            padding: 4px 0;
             z-index: 9999;
         }
 
@@ -597,16 +596,16 @@
             align-items: center;
             text-decoration: none;
             color: var(--text-muted);
-            font-size: 9px;
+            font-size: 8.5px;
             font-weight: 700;
-            gap: 2px;
+            gap: 1px;
         }
 
         footer {
             border-top: 1px solid var(--border);
-            padding: 16px 0;
+            padding: 12px 0;
             text-align: center;
-            font-size: 11.5px;
+            font-size: 11px;
             color: var(--text-dim);
             background: var(--surface-card);
         }
@@ -620,20 +619,21 @@
     <!-- 1. COMPACT TOP HEADER BANNER -->
     <header class="header-top-banner">
         <div class="header-top-title">
-            <i data-lucide="sparkles" style="width: 14px; height: 14px; color: #38bdf8;"></i>
+            <i data-lucide="sparkles" style="width: 13px; height: 13px; color: #38bdf8;"></i>
             PRABIN CHAUDHARY OFFICIAL PORTFOLIO
-            <i data-lucide="sparkles" style="width: 14px; height: 14px; color: #a855f7;"></i>
+            <i data-lucide="sparkles" style="width: 13px; height: 13px; color: #a855f7;"></i>
         </div>
         <span class="header-top-sub">COMPUTER INSTRUCTOR • AI & IT SOLUTIONS • RUPANDEHI, NEPAL</span>
     </header>
 
-    <!-- 2. NAVBAR -->
+    <!-- 2. NAVBAR (TECHNICAL CODE BRACKETS SIGN) -->
     <nav class="navbar" id="mainNavbar">
         <div class="container">
             <div class="nav-inner">
                 <a href="#home" class="nav-brand-box">
-                    <div class="brand-icon">
-                        <i data-lucide="terminal" style="width: 15px; height: 15px;"></i>
+                    <!-- Technical Code Icon: < / > -->
+                    <div class="tech-brand-icon">
+                        <i data-lucide="code-2" style="width: 15px; height: 15px;"></i>
                     </div>
                     <div>
                         <span class="brand-name">Prabin Chaudhary</span>
@@ -654,11 +654,11 @@
 
                 <div class="nav-actions">
                     <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme">
-                        <i data-lucide="sun" id="themeIcon" style="width: 14px; height: 14px;"></i>
+                        <i data-lucide="sun" id="themeIcon" style="width: 13px; height: 13px;"></i>
                     </button>
                     
                     <a href="cv.pdf" class="btn-nav-cta" target="_blank">
-                        <i data-lucide="file-down" style="width: 12px; height: 12px;"></i> CV
+                        <i data-lucide="file-down" style="width: 11px; height: 11px;"></i> CV
                     </a>
 
                     <a href="pay.html" class="btn-nav-pay">
@@ -666,7 +666,7 @@
                     </a>
 
                     <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Menu">
-                        <i data-lucide="menu" id="mobileMenuIcon" style="width: 16px; height: 16px;"></i>
+                        <i data-lucide="menu" id="mobileMenuIcon" style="width: 15px; height: 15px;"></i>
                     </button>
                 </div>
             </div>
@@ -675,14 +675,14 @@
         <!-- Mobile Drawer -->
         <div class="mobile-drawer" id="mobileDrawer">
             <ul class="mobile-drawer-links">
-                <li><a href="#home" class="drawer-link"><i data-lucide="home" style="width: 15px; height: 15px;"></i> Home</a></li>
-                <li><a href="#pdfnotes" class="drawer-link"><i data-lucide="file-text" style="width: 15px; height: 15px; color: #ef4444;"></i> Notes & Vault</a></li>
-                <li><a href="#curriculum" class="drawer-link"><i data-lucide="book-open" style="width: 15px; height: 15px;"></i> Curriculum Modules</a></li>
-                <li><a href="#skills" class="drawer-link"><i data-lucide="bar-chart" style="width: 15px; height: 15px;"></i> Technical Skills</a></li>
-                <li><a href="#services" class="drawer-link"><i data-lucide="layers" style="width: 15px; height: 15px;"></i> Solutions & Services</a></li>
-                <li><a href="#experience" class="drawer-link"><i data-lucide="briefcase" style="width: 15px; height: 15px;"></i> Career Timeline</a></li>
-                <li><a href="pay.html" class="drawer-link" style="color: #34d399;"><i data-lucide="credit-card" style="width: 15px; height: 15px;"></i> 💳 Pay Info</a></li>
-                <li><a href="#inquiry" class="drawer-link"><i data-lucide="send" style="width: 15px; height: 15px;"></i> Direct Inquiry</a></li>
+                <li><a href="#home" class="drawer-link"><i data-lucide="home" style="width: 14px; height: 14px;"></i> Home</a></li>
+                <li><a href="#pdfnotes" class="drawer-link"><i data-lucide="file-text" style="width: 14px; height: 14px; color: #ef4444;"></i> Notes & Vault</a></li>
+                <li><a href="#curriculum" class="drawer-link"><i data-lucide="book-open" style="width: 14px; height: 14px;"></i> Curriculum Modules</a></li>
+                <li><a href="#skills" class="drawer-link"><i data-lucide="bar-chart" style="width: 14px; height: 14px;"></i> Technical Skills</a></li>
+                <li><a href="#services" class="drawer-link"><i data-lucide="layers" style="width: 14px; height: 14px;"></i> Solutions & Services</a></li>
+                <li><a href="#experience" class="drawer-link"><i data-lucide="briefcase" style="width: 14px; height: 14px;"></i> Career Timeline</a></li>
+                <li><a href="pay.html" class="drawer-link" style="color: #34d399;"><i data-lucide="credit-card" style="width: 14px; height: 14px;"></i> 💳 Pay Info</a></li>
+                <li><a href="#inquiry" class="drawer-link"><i data-lucide="send" style="width: 14px; height: 14px;"></i> Direct Inquiry</a></li>
             </ul>
         </div>
     </nav>
@@ -692,36 +692,36 @@
         <section class="hero" id="home">
             <div class="hero-bento">
                 <div class="spot-card hero-avatar-card">
-                    <div class="avatar-stage" id="openPhotoModal" title="Click to view full workstation photo">
+                    <div class="avatar-stage" id="openPhotoModal" title="Click to view full photo">
                         <div class="avatar-core">
                             <img src="prabin.jpg" alt="Prabin Chaudhary" class="avatar-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500';">
                         </div>
                         <div class="photo-hint">
-                            <i data-lucide="maximize-2" style="width: 12px; height: 12px;"></i>
+                            <i data-lucide="maximize-2" style="width: 11px; height: 11px;"></i>
                         </div>
                     </div>
-                    <h2 style="font-family: var(--font-display); font-size: 16px; font-weight: 800; margin-top: 2px;">Prabin Chaudhary</h2>
-                    <p style="font-size: 11px; font-family: var(--font-mono); color: var(--primary);">Computer Instructor & IT Specialist</p>
-                    <p style="font-size: 10.5px; color: var(--text-dim); margin-top: 2px;">📍 Kanchan-05, Rupandehi, Nepal</p>
+                    <h2 style="font-family: var(--font-display); font-size: 15px; font-weight: 800; margin-top: 1px;">Prabin Chaudhary</h2>
+                    <p style="font-size: 10px; font-family: var(--font-mono); color: var(--primary);">Computer Instructor & IT Specialist</p>
+                    <p style="font-size: 9.5px; color: var(--text-dim); margin-top: 1px;">📍 Kanchan-05, Rupandehi, Nepal</p>
                 </div>
 
                 <div class="spot-card" style="display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <div style="font-family: var(--font-mono); font-size: 10.5px; color: var(--primary); text-transform: uppercase; margin-bottom: 4px; font-weight: 700;">
+                        <div style="font-family: var(--font-mono); font-size: 9.5px; color: var(--primary); text-transform: uppercase; margin-bottom: 2px; font-weight: 700;">
                             ✨ COMPUTER INSTRUCTOR & IT SPECIALIST
                         </div>
                         <h1 class="brand-headline-name">
                             PRABIN CHAUDHARY
                         </h1>
-                        <div style="font-family: var(--font-mono); font-size: 12.5px; color: var(--cyan); margin-bottom: 6px; min-height: 20px;">
+                        <div style="font-family: var(--font-mono); font-size: 11.5px; color: var(--cyan); margin-bottom: 4px; min-height: 18px;">
                             <span id="roleTypewriter"></span>|
                         </div>
-                        <p style="color: var(--text-muted); font-size: 13px; line-height: 1.55;">
+                        <p style="color: var(--text-muted); font-size: 12px; line-height: 1.45;">
                             Computer Instructor & IT Specialist based in Kanchan-05, Rupandehi, Nepal. Delivering practical training in Workplace AI, Advanced Excel Architecture, Data Analytics, Nepali Typing (Preeti & Unicode), and Lab Systems Infrastructure.
                         </p>
                     </div>
 
-                    <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px;">
+                    <div style="display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px;">
                         <a href="#pdfnotes" class="btn btn-primary" style="background: linear-gradient(135deg, #ef4444, #f97316); color: #fff;">PDF Notes</a>
                         <a href="https://wa.me/9779716175657" target="_blank" class="btn btn-secondary">WhatsApp</a>
                         <a href="cv.pdf" class="btn btn-secondary" target="_blank">Download CV</a>
@@ -745,14 +745,14 @@
             </div>
             <div class="grid-2">
                 <div class="item-card">
-                    <h3 style="font-size: 14.5px; margin-bottom: 4px;">Workplace Generative AI & Prompt Engineering</h3>
-                    <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">Master prompt architecture (Role, Context, Task, Constraints, Examples) for automated drafting and formula fixes.</p>
-                    <a href="#inquiry" class="btn btn-secondary" style="font-size: 11px; padding: 4px 8px;">Request Note</a>
+                    <h3 style="font-size: 13.5px; margin-bottom: 3px;">Workplace Generative AI & Prompt Engineering</h3>
+                    <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 6px;">Master prompt architecture (Role, Context, Task, Constraints, Examples) for automated drafting and formula fixes.</p>
+                    <a href="#inquiry" class="btn btn-secondary" style="font-size: 10px; padding: 3px 6px;">Request Note</a>
                 </div>
                 <div class="item-card">
-                    <h3 style="font-size: 14.5px; margin-bottom: 4px;">Advanced Excel & Dynamic Formulas</h3>
-                    <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 10px;">High-yield reference covering XLOOKUP, INDEX/MATCH, Dynamic Arrays, and automated pivot reporting structures.</p>
-                    <a href="#inquiry" class="btn btn-secondary" style="font-size: 11px; padding: 4px 8px;">Request Note</a>
+                    <h3 style="font-size: 13.5px; margin-bottom: 3px;">Advanced Excel & Dynamic Formulas</h3>
+                    <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 6px;">High-yield reference covering XLOOKUP, INDEX/MATCH, Dynamic Arrays, and automated pivot reporting structures.</p>
+                    <a href="#inquiry" class="btn btn-secondary" style="font-size: 10px; padding: 3px 6px;">Request Note</a>
                 </div>
             </div>
         </section>
@@ -764,19 +764,19 @@
             </div>
             <div class="grid-3">
                 <div class="item-card">
-                    <h3 style="font-size: 14px; margin-bottom: 4px;">Advanced MS Excel</h3>
-                    <p style="font-size: 12px; color: var(--text-muted);">XLOOKUP, Dynamic Arrays, Interactive KPI Dashboards, Slicers & Macros.</p>
-                    <span style="font-size: 10.5px; font-family: var(--font-mono); color: var(--primary); font-weight: bold; margin-top: 5px; display: inline-block;">45 Hours</span>
+                    <h3 style="font-size: 13px; margin-bottom: 3px;">Advanced MS Excel</h3>
+                    <p style="font-size: 11px; color: var(--text-muted);">XLOOKUP, Dynamic Arrays, Interactive KPI Dashboards, Slicers & Macros.</p>
+                    <span style="font-size: 10px; font-family: var(--font-mono); color: var(--primary); font-weight: bold; margin-top: 3px; display: inline-block;">45 Hours</span>
                 </div>
                 <div class="item-card">
-                    <h3 style="font-size: 14px; margin-bottom: 4px;">Tally Prime & Accounting</h3>
-                    <p style="font-size: 12px; color: var(--text-muted);">Double-entry bookkeeping, VAT calculation, inventory reconciliation, balance sheets.</p>
-                    <span style="font-size: 10.5px; font-family: var(--font-mono); color: var(--primary); font-weight: bold; margin-top: 5px; display: inline-block;">40 Hours</span>
+                    <h3 style="font-size: 13px; margin-bottom: 3px;">Tally Prime & Accounting</h3>
+                    <p style="font-size: 11px; color: var(--text-muted);">Double-entry bookkeeping, VAT calculation, inventory reconciliation, balance sheets.</p>
+                    <span style="font-size: 10px; font-family: var(--font-mono); color: var(--primary); font-weight: bold; margin-top: 3px; display: inline-block;">40 Hours</span>
                 </div>
                 <div class="item-card">
-                    <h3 style="font-size: 14px; margin-bottom: 4px;">Hardware & Networking</h3>
-                    <p style="font-size: 12px; color: var(--text-muted);">Assembly, clean Windows 10/11 deployment, IP routing, lab maintenance.</p>
-                    <span style="font-size: 10.5px; font-family: var(--font-mono); color: var(--primary); font-weight: bold; margin-top: 5px; display: inline-block;">30 Hours</span>
+                    <h3 style="font-size: 13px; margin-bottom: 3px;">Hardware & Networking</h3>
+                    <p style="font-size: 11px; color: var(--text-muted);">Assembly, clean Windows 10/11 deployment, IP routing, lab maintenance.</p>
+                    <span style="font-size: 10px; font-family: var(--font-mono); color: var(--primary); font-weight: bold; margin-top: 3px; display: inline-block;">30 Hours</span>
                 </div>
             </div>
         </section>
@@ -788,12 +788,12 @@
             </div>
             <div class="grid-2">
                 <div class="item-card">
-                    <h3 style="font-size: 13.5px; margin-bottom: 6px;">Practical Strengths</h3>
-                    <p style="font-size: 12px; color: var(--text-muted);">Advanced Excel, Generative AI, Preeti/Unicode Typing, Tally Prime, Lab Instruction</p>
+                    <h3 style="font-size: 13px; margin-bottom: 4px;">Practical Strengths</h3>
+                    <p style="font-size: 11.5px; color: var(--text-muted);">Advanced Excel, Generative AI, Preeti/Unicode Typing, Tally Prime, Lab Instruction</p>
                 </div>
                 <div class="item-card">
-                    <h3 style="font-size: 13.5px; margin-bottom: 6px;">Hardware & Infrastructure</h3>
-                    <p style="font-size: 12px; color: var(--text-muted);">OS Setup, LAN Networking, Component Diagnostics, Lab Administration & Protection</p>
+                    <h3 style="font-size: 13px; margin-bottom: 4px;">Hardware & Infrastructure</h3>
+                    <p style="font-size: 11.5px; color: var(--text-muted);">OS Setup, LAN Networking, Component Diagnostics, Lab Administration & Protection</p>
                 </div>
             </div>
         </section>
@@ -805,16 +805,16 @@
             </div>
             <div class="grid-3">
                 <div class="item-card">
-                    <h3 style="font-size: 14px; margin-bottom: 4px;">Computer Training</h3>
-                    <p style="font-size: 12px; color: var(--text-muted);">Structured computing courses tailored for schools, institutes, and workforce skills.</p>
+                    <h3 style="font-size: 13px; margin-bottom: 3px;">Computer Training</h3>
+                    <p style="font-size: 11px; color: var(--text-muted);">Structured computing courses tailored for schools, institutes, and workforce skills.</p>
                 </div>
                 <div class="item-card">
-                    <h3 style="font-size: 14px; margin-bottom: 4px;">IT Maintenance</h3>
-                    <p style="font-size: 12px; color: var(--text-muted);">Diagnostic hardware troubleshooting, OS deployment, and institutional lab administration.</p>
+                    <h3 style="font-size: 13px; margin-bottom: 3px;">IT Maintenance</h3>
+                    <p style="font-size: 11px; color: var(--text-muted);">Diagnostic hardware troubleshooting, OS deployment, and institutional lab administration.</p>
                 </div>
                 <div class="item-card">
-                    <h3 style="font-size: 14px; margin-bottom: 4px;">Data Solutions</h3>
-                    <p style="font-size: 12px; color: var(--text-muted);">Bespoke automated spreadsheets, data validation workflows, and dynamic KPI dashboards.</p>
+                    <h3 style="font-size: 13px; margin-bottom: 3px;">Data Solutions</h3>
+                    <p style="font-size: 11px; color: var(--text-muted);">Bespoke automated spreadsheets, data validation workflows, and dynamic KPI dashboards.</p>
                 </div>
             </div>
         </section>
@@ -824,20 +824,20 @@
             <div class="section-header">
                 <h2 class="section-title">Career Timeline</h2>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; flex-direction: column; gap: 6px;">
                 <div class="item-card">
                     <div style="display: flex; justify-content: space-between;">
-                        <h3 style="font-size: 13.5px;">Computer Teacher & IT Administrator</h3>
-                        <span style="font-size: 10.5px; font-family: var(--font-mono); color: var(--primary);">2025 – 2026</span>
+                        <h3 style="font-size: 13px;">Computer Teacher & IT Administrator</h3>
+                        <span style="font-size: 10px; font-family: var(--font-mono); color: var(--primary);">2025 – 2026</span>
                     </div>
-                    <p style="font-size: 11.5px; color: var(--text-muted); margin-top: 3px;">Janachahana English Boarding School, Rupandehi</p>
+                    <p style="font-size: 11px; color: var(--text-muted); margin-top: 1px;">Janachahana English Boarding School, Rupandehi</p>
                 </div>
                 <div class="item-card">
                     <div style="display: flex; justify-content: space-between;">
-                        <h3 style="font-size: 13.5px;">EDP Clerk cum Accountant</h3>
-                        <span style="font-size: 10.5px; font-family: var(--font-mono); color: var(--primary);">2022 – 2024</span>
+                        <h3 style="font-size: 13px;">EDP Clerk cum Accountant</h3>
+                        <span style="font-size: 10px; font-family: var(--font-mono); color: var(--primary);">2022 – 2024</span>
                     </div>
-                    <p style="font-size: 11.5px; color: var(--text-muted); margin-top: 3px;">NBK Company, Qatar</p>
+                    <p style="font-size: 11px; color: var(--text-muted); margin-top: 1px;">NBK Company, Qatar</p>
                 </div>
             </div>
         </section>
@@ -847,9 +847,9 @@
             <div class="section-header">
                 <h2 class="section-title">Inquiry & Contact</h2>
             </div>
-            <div class="item-card" style="max-width: 480px; margin: 0 auto; text-align: center;">
-                <p style="font-size: 12.5px; color: var(--text-muted); margin-bottom: 14px;">Direct inquiry for computer courses, IT support, or payment details:</p>
-                <div style="display: flex; justify-content: center; gap: 8px; flex-wrap: wrap;">
+            <div class="item-card" style="max-width: 440px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">Direct inquiry for computer courses, IT support, or payment details:</p>
+                <div style="display: flex; justify-content: center; gap: 6px; flex-wrap: wrap;">
                     <a href="https://wa.me/9779716175657" target="_blank" class="btn btn-primary" style="background: #22c55e; color: #fff;">WhatsApp</a>
                     <a href="pay.html" class="btn btn-primary" style="background: #0284c7; color: #fff;">💳 Pay Info</a>
                 </div>
@@ -857,15 +857,15 @@
         </section>
     </div>
 
-    <!-- FULL VIEW PHOTO MODAL -->
+    <!-- FULL PHOTO LIGHTBOX MODAL -->
     <div id="photoModal">
         <div class="modal-photo-container">
             <button class="modal-close-btn" id="closePhotoModal" aria-label="Close photo">
-                <i data-lucide="x" style="width: 16px; height: 16px;"></i>
+                <i data-lucide="x" style="width: 15px; height: 15px;"></i>
             </button>
             <img src="prabin.jpg" alt="Prabin Chaudhary" class="modal-img-full" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800';">
             <div class="modal-photo-caption">
-                <h4 style="font-size: 13.5px; font-weight: 800; color: var(--text-main);">Prabin Chaudhary</h4>
+                <h4 style="font-size: 13px; font-weight: 800; color: var(--text-main);">Prabin Chaudhary</h4>
                 <p style="font-size: 10.5px; color: var(--primary);">Computer Instructor & IT Specialist • Rupandehi, Nepal</p>
             </div>
         </div>
@@ -873,11 +873,11 @@
 
     <!-- Mobile Sticky Bottom Dock -->
     <div class="mobile-quick-dock">
-        <a href="tel:+9779716175657" class="dock-btn"><i data-lucide="phone-call" style="width: 15px; height: 15px;"></i><span>Call</span></a>
-        <a href="https://wa.me/9779716175657" target="_blank" class="dock-btn"><i data-lucide="message-circle" style="width: 15px; height: 15px; color: #22c55e;"></i><span>WhatsApp</span></a>
-        <a href="#pdfnotes" class="dock-btn"><i data-lucide="file-text" style="width: 15px; height: 15px; color: #ef4444;"></i><span>Notes</span></a>
-        <a href="pay.html" class="dock-btn"><i data-lucide="credit-card" style="width: 15px; height: 15px; color: #38bdf8;"></i><span>Pay Info</span></a>
-        <a href="cv.pdf" class="dock-btn" target="_blank"><i data-lucide="file-down" style="width: 15px; height: 15px; color: var(--purple);"></i><span>CV</span></a>
+        <a href="tel:+9779716175657" class="dock-btn"><i data-lucide="phone-call" style="width: 14px; height: 14px;"></i><span>Call</span></a>
+        <a href="https://wa.me/9779716175657" target="_blank" class="dock-btn"><i data-lucide="message-circle" style="width: 14px; height: 14px; color: #22c55e;"></i><span>WhatsApp</span></a>
+        <a href="#pdfnotes" class="dock-btn"><i data-lucide="file-text" style="width: 14px; height: 14px; color: #ef4444;"></i><span>Notes</span></a>
+        <a href="pay.html" class="dock-btn"><i data-lucide="credit-card" style="width: 14px; height: 14px; color: #38bdf8;"></i><span>Pay Info</span></a>
+        <a href="cv.pdf" class="dock-btn" target="_blank"><i data-lucide="file-down" style="width: 14px; height: 14px; color: var(--purple);"></i><span>CV</span></a>
     </div>
 
     <!-- FOOTER -->
