@@ -1,157 +1,182 @@
 <!DOCTYPE html>
 <html lang="ne">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>भुक्तानी विवरण / QR Codes</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>भुक्तानी विवरण | QR Codes</title>
   <style>
-    body {
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
       font-family: Arial, sans-serif;
-      background: #f4f6f8;
+    }
+
+    body {
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: 15px;
       display: flex;
       justify-content: center;
-      padding: 20px;
+      align-items: center;
+      min-height: 100vh;
     }
-    .card {
+
+    .box {
       background: white;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       width: 100%;
-      max-width: 500px;
+      max-width: 460px;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 20px;
       text-align: center;
     }
-    input[type="password"] {
-      width: 80%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 16px;
+
+    h2 {
+      margin-bottom: 8px;
+      color: #1e293b;
     }
-    button {
-      padding: 10px 20px;
-      background: #007bff;
+
+    p.sub {
+      color: #64748b;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    input[type="password"], input[type="text"] {
+      width: 85%;
+      padding: 12px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 16px;
+      text-align: center;
+      outline: none;
+      margin-bottom: 12px;
+    }
+
+    button.btn-unlock {
+      width: 85%;
+      padding: 12px;
+      background: #16a34a;
       color: white;
       border: none;
-      border-radius: 6px;
-      cursor: pointer;
+      border-radius: 8px;
       font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
     }
-    button:hover {
-      background: #0056b3;
+
+    button.btn-unlock:active {
+      background: #15803d;
     }
+
+    .err {
+      color: #dc2626;
+      font-size: 14px;
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    /* QR Grid */
     .qr-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      margin-top: 20px;
+      gap: 12px;
+      margin-top: 15px;
     }
-    .qr-item {
-      border: 1px solid #e1e4e8;
-      padding: 10px;
+
+    @media (max-width: 480px) {
+      .qr-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .qr-card {
+      border: 1px solid #e2e8f0;
       border-radius: 8px;
+      padding: 10px;
+      background: #f8fafc;
     }
-    .qr-item img {
+
+    .qr-card h4 {
+      font-size: 14px;
+      margin-bottom: 8px;
+      color: #334155;
+    }
+
+    .qr-card img {
       width: 100%;
       height: auto;
-      border-radius: 4px;
-    }
-    .qr-title {
-      font-weight: bold;
-      margin-top: 8px;
-    }
-    .error {
-      color: red;
-      font-size: 14px;
-      margin-top: 5px;
+      border-radius: 6px;
+      display: block;
     }
   </style>
 </head>
 <body>
 
-<div class="card">
-  <h2>🔒 भुक्तानी QR कोडहरू</h2>
-
-  <!-- पासवर्ड इनपुट बक्स -->
-  <div id="lock-screen">
-    <p>QR कोडहरू हेर्न कृपया पासवर्ड प्रविष्ट गर्नुहोस्:</p>
-    <input type="password" id="pwdInput" placeholder="पासवर्ड..." />
+<div class="box">
+  <!-- लक स्क्रिन -->
+  <div id="lockScreen">
+    <h2>🔒 QR भुक्तानी लक</h2>
+    <p class="sub">QR कोडहरू हेर्न कृपया पासवर्ड राख्नुहोस्:</p>
+    
+    <input type="text" id="pwdInput" placeholder="पासवर्ड यहाँ लेख्नुहोस्..." autocomplete="off" />
     <br>
-    <button onclick="unlockQRs()">अनलक गर्नुहोस्</button>
-    <div id="errMsg" class="error"></div>
+    <button class="btn-unlock" onclick="checkPass()">अनलक गर्नुहोस्</button>
+    <div id="errorText" class="err"></div>
   </div>
 
-  <!-- पासवर्ड मिलेपछि मात्र देखिने QR कोडहरू -->
-  <div id="qr-container" style="display: none;">
+  <!-- पासवर्ड मिलेपछि देखिने भाग -->
+  <div id="qrScreen" style="display: none;">
+    <h2>✅ भुक्तानी QR कोडहरू</h2>
+    <p class="sub">स्क्यान गरी भुक्तानी गर्नुहोस्</p>
+
     <div class="qr-grid">
-      <div class="qr-item">
-        <div class="qr-title">eSewa</div>
-        <img id="img-esewa" alt="eSewa QR">
+      <div class="qr-card">
+        <h4>eSewa</h4>
+        <img id="img1" alt="eSewa QR">
       </div>
-      <div class="qr-item">
-        <div class="qr-title">Fonepay</div>
-        <img id="img-fonepay" alt="Fonepay QR">
+      <div class="qr-card">
+        <h4>Fonepay</h4>
+        <img id="img2" alt="Fonepay QR">
       </div>
-      <div class="qr-item">
-        <div class="qr-title">Khalti</div>
-        <img id="img-khalti" alt="Khalti QR">
+      <div class="qr-card">
+        <h4>Khalti</h4>
+        <img id="img3" alt="Khalti QR">
       </div>
-      <div class="qr-item">
-        <div class="qr-title">Bank Transfer</div>
-        <img id="img-bank" alt="Bank QR">
+      <div class="qr-card">
+        <h4>Bank Transfer</h4>
+        <img id="img4" alt="Bank QR">
       </div>
     </div>
   </div>
 </div>
 
 <script>
-  // १. मोबाइल मेनु टगल
-  const hamburgerBtn = document.getElementById('hamburgerBtn');
-  const navMenu = document.getElementById('navMenu');
+  function checkPass() {
+    var userText = document.getElementById("pwdInput").value;
+    var cleanText = userText.trim().toLowerCase(); // स्पेस हटाउने र सानो अक्षर बनाउने
+    var err = document.getElementById("errorText");
 
-  if (hamburgerBtn) {
-    hamburgerBtn.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
-  }
+    if (cleanText === "saru") {
+      // फोटोहरू लोड गर्ने
+      document.getElementById("img1").src = "esewa.jpg";
+      document.getElementById("img2").src = "fonepay.jpg";
+      document.getElementById("img3").src = "khalti.jpg";
+      document.getElementById("img4").src = "bank.jpg";
 
-  // २. मोडल खोल्ने / बन्द गर्ने
-  function openPaymentModal() {
-    document.getElementById('qrModal').style.display = 'flex';
-    if (navMenu) navMenu.classList.remove('active');
-  }
-
-  function closePaymentModal() {
-    document.getElementById('qrModal').style.display = 'none';
-    document.getElementById('errorNotice').textContent = '';
-    document.getElementById('passwordField').value = '';
-  }
-
-  // ३. पासवर्ड प्रमाणीकरण (saru वा SARU जुनसुकै लेखे पनि खुल्ने)
-  function verifyPassword() {
-    const rawInput = document.getElementById('passwordField').value;
-    const cleanInput = rawInput.trim().toLowerCase(); // स्पेस हटाउने र सानो अक्षर बनाउने
-    const errorNotice = document.getElementById('errorNotice');
-
-    if (cleanInput === "saru") {
-      // पासवर्ड मिल्यो - फोटोहरू लोड गर्ने
-      document.getElementById('qrEsewa').src = 'esewa.jpg';
-      document.getElementById('qrFonepay').src = 'fonepay.jpg';
-      document.getElementById('qrKhalti').src = 'khalti.jpg';
-      document.getElementById('qrBank').src = 'bank.jpg';
-
-      document.getElementById('lockScreen').style.display = 'none';
-      document.getElementById('qrContent').style.display = 'block';
+      // स्क्रिन फेर्ने
+      document.getElementById("lockScreen").style.display = "none";
+      document.getElementById("qrScreen").style.display = "block";
     } else {
-      errorNotice.textContent = 'गलत पासवर्ड! कृपया फेरि प्रयास गर्नुहोस्।';
+      err.innerText = "गलत पासवर्ड! कृपया फेरि प्रयास गर्नुहोस्।";
     }
   }
 
-  // इन्टर थिच्दा सिधै अनलक हुने
-  document.getElementById('passwordField').addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-      verifyPassword();
+  // किबोर्डको Enter थिच्दा सिधै खुल्ने
+  document.getElementById("pwdInput").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      checkPass();
     }
   });
 </script>
