@@ -61,13 +61,15 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { padding-bottom: 56px; }
+        
+        /* मोबाइलमा डक (Dock) ले छेक्न नदिन बडीमा तलतिर स्पेस दिइएको छ */
+        body { padding-bottom: 75px; }
         @media (min-width: 992px) { body { padding-bottom: 0; } }
 
         .container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 12px; }
         @media (min-width: 768px) { .container { padding: 0 18px; } }
 
-        /* TOP HEADER BANNER (NO TOP GAP) */
+        /* TOP HEADER BANNER */
         .header-top-banner {
             background: linear-gradient(90deg, rgba(3, 7, 18, 0.99), rgba(15, 23, 42, 0.99), rgba(3, 7, 18, 0.99));
             border-bottom: 1px solid var(--border);
@@ -141,7 +143,6 @@
         .avatar-core { width: 100%; height: 100%; border-radius: 50%; padding: 2.5px; background: var(--primary-gradient); box-shadow: 0 0 14px rgba(56, 189, 248, 0.25); overflow: hidden; }
         .avatar-img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 18% !important; border-radius: 50%; display: block; }
 
-        /* STYLISH, COMPACT & CLEAN IDENTITY BADGES */
         .identity-badge-wrap { display: flex; flex-direction: column; gap: 4px; width: 100%; margin-top: 8px; padding-top: 6px; border-top: 1px dashed rgba(56, 189, 248, 0.25); }
         .id-row-card { display: flex; align-items: center; justify-content: space-between; background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.65)); border: 1px solid rgba(56, 189, 248, 0.2); padding: 5px 8px; border-radius: 7px; text-align: left; }
         .id-row-card.pref-card { background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(168, 85, 247, 0.12)); border: 1px solid rgba(56, 189, 248, 0.45); box-shadow: 0 0 8px rgba(56, 189, 248, 0.15); }
@@ -196,7 +197,9 @@
         .mobile-quick-dock { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--bg-glass); backdrop-filter: blur(12px); border-top: 1px solid var(--border); display: grid; grid-template-columns: repeat(5, 1fr); padding: 4px 0; z-index: 9999; }
         @media (min-width: 992px) { .mobile-quick-dock { display: none; } }
         .dock-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); font-size: 8.5px; font-weight: 700; text-decoration: none; }
-        footer { border-top: 1px solid var(--border); padding: 12px 0; text-align: center; font-size: 11px; color: var(--text-dim); background: var(--surface-card); }
+        
+        /* फुटरलाई मोबाइल डकले नछोप्ने गरी सुरक्षित गरिएको छ */
+        footer { border-top: 1px solid var(--border); padding: 16px 0 24px 0; text-align: center; font-size: 11px; color: var(--text-dim); background: var(--surface-card); }
     </style>
 </head>
 <body>
@@ -272,7 +275,6 @@
                     <p style="font-size: 10px; font-family: var(--font-mono); color: var(--primary);">Computer Instructor & IT Specialist</p>
                     <p style="font-size: 9.5px; color: var(--text-dim); margin-top: 1px;">📍 Kanchan-05, Rupandehi, Nepal</p>
 
-                    <!-- STYLISH & COMPACT IDENTITY BADGES -->
                     <div class="identity-badge-wrap">
                         <div class="id-row-card">
                             <span class="id-badge-label legal"><i data-lucide="shield-check" style="width: 10px; height: 10px;"></i> Legal Records:</span>
@@ -484,7 +486,6 @@
                             <i data-lucide="mail" style="width: 15px; height: 15px; color: var(--primary);"></i>
                             <span style="font-size: 12px; font-weight: 600;">info.prabintech@gmail.com</span>
                         </a>
-                        <div style="font-size: 11px; color: var(--text-dim); margin-top: 4px;">📍 Kanchan-05, Rupandehi, Lumbini Province, Nepal</div>
                     </div>
                 </div>
 
@@ -563,9 +564,9 @@
         <a href="cv.pdf" class="dock-btn" target="_blank"><i data-lucide="file-down" style="width: 14px; height: 14px; color: var(--purple);"></i><span>CV</span></a>
     </div>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (LOCATION REMOVED, SAFELY PLACED AT THE VERY END) -->
     <footer>
-        <div class="container"><p>&copy; 2026 Prabin Chaudhary. All rights reserved. Kanchan-05, Rupandehi, Nepal.</p></div>
+        <div class="container"><p>&copy; 2026 Prabin Chaudhary. All rights reserved.</p></div>
     </footer>
 
     <script>
