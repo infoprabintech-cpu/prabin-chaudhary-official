@@ -9,7 +9,7 @@
     <meta name="author" content="Prabin Chaudhary">
     <meta name="robots" content="index, follow">
 
-    <!-- Fonts: Outfit (Titles), Inter (Clean UI), JetBrains Mono (Tech Data) -->
+    <!-- Fonts: Outfit, Inter, JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
@@ -22,7 +22,6 @@
             --bg: #030712;
             --bg-glass: rgba(11, 19, 38, 0.94);
             --surface-card: rgba(13, 22, 44, 0.82);
-            --surface-card-hover: rgba(19, 32, 62, 0.95);
             --border: rgba(56, 189, 248, 0.16);
             --border-glow: rgba(56, 189, 248, 0.45);
             --primary: #38bdf8;
@@ -48,7 +47,6 @@
             --bg: #f8fafc;
             --bg-glass: rgba(255, 255, 255, 0.96);
             --surface-card: #ffffff;
-            --surface-card-hover: #ffffff;
             --border: rgba(14, 165, 233, 0.2);
             --border-glow: rgba(2, 132, 199, 0.6);
             --primary: #0284c7;
@@ -59,572 +57,107 @@
             --name-gradient: linear-gradient(110deg, #0f172a 0%, #0284c7 35%, #7c3aed 70%, #0f172a 100%);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background-color: var(--bg); color: var(--text-main); line-height: 1.45; overflow-x: hidden; padding-bottom: 56px; }
+        @media (min-width: 992px) { body { padding-bottom: 0; } }
 
-        body {
-            font-family: var(--font-body);
-            background-color: var(--bg);
-            color: var(--text-main);
-            line-height: 1.45;
-            overflow-x: hidden;
-            padding-bottom: 56px;
-            -webkit-overflow-scrolling: touch;
-        }
+        .container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 12px; }
+        @media (min-width: 768px) { .container { padding: 0 18px; } }
 
-        @media (min-width: 992px) {
-            body { padding-bottom: 0; }
-        }
+        /* HEADER BANNER */
+        .header-top-banner { background: linear-gradient(90deg, rgba(3, 7, 18, 0.98), rgba(15, 23, 42, 0.98), rgba(3, 7, 18, 0.98)); border-bottom: 1px solid var(--border); padding: 3px 8px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; }
+        .header-top-title { font-family: var(--font-display); font-size: clamp(11.5px, 1.8vw, 13.5px); font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; background: var(--name-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .header-top-sub { font-size: 9px; font-family: var(--font-mono); color: var(--primary); }
 
-        #bgCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -2;
-            pointer-events: none;
-            display: none;
-        }
+        /* NAVBAR */
+        .navbar { position: sticky; top: 0; z-index: 1000; background: var(--bg-glass); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 46px; }
+        .nav-brand-box { text-decoration: none; display: inline-flex; align-items: center; gap: 6px; padding: 2px 4px; }
+        .tech-brand-icon { width: 26px; height: 26px; border-radius: 6px; background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(168, 85, 247, 0.25)); border: 1px solid var(--primary); display: inline-flex; align-items: center; justify-content: center; color: var(--primary); }
+        .brand-name { font-family: var(--font-display); font-size: 13.5px; font-weight: 800; color: var(--text-main); white-space: nowrap; }
+        .brand-sub { font-size: 8.5px; font-family: var(--font-mono); color: var(--primary); display: block; }
 
-        @media (min-width: 768px) {
-            #bgCanvas { display: block; }
-        }
+        .nav-menu { display: none; list-style: none; gap: 2px; align-items: center; }
+        @media (min-width: 992px) { .nav-menu { display: flex; } }
+        .nav-menu a { text-decoration: none; color: var(--text-muted); font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 14px; border: 1px solid transparent; transition: 0.16s; white-space: nowrap; }
+        .nav-menu a:hover, .nav-menu a.active { color: #ffffff !important; background: rgba(56, 189, 248, 0.16) !important; border-color: #38bdf8 !important; }
 
-        .ambient-aurora {
-            position: fixed;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%) translateZ(0);
-            width: 500px;
-            max-width: 90vw;
-            height: 220px;
-            background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, rgba(168, 85, 247, 0.03) 50%, transparent 75%);
-            filter: blur(35px);
-            z-index: -1;
-            pointer-events: none;
-        }
+        .nav-actions { display: flex; align-items: center; gap: 5px; }
+        .theme-toggle-btn, .mobile-menu-btn { background: var(--surface-card); border: 1px solid var(--border); color: var(--primary); width: 28px; height: 28px; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; }
+        .btn-nav-cta, .btn-nav-pay { padding: 3px 9px; height: 28px; font-size: 10.5px; font-weight: 700; border-radius: 14px; text-decoration: none; display: inline-flex; align-items: center; gap: 3px; white-space: nowrap; }
+        .btn-nav-cta { background: var(--primary-gradient); color: #030712 !important; }
+        .btn-nav-pay { background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%); color: #ffffff !important; }
+        @media (min-width: 992px) { .mobile-menu-btn { display: none; } }
 
-        .container {
-            width: 100%;
-            max-width: 1120px;
-            margin: 0 auto;
-            padding: 0 12px;
-        }
-
-        @media (min-width: 768px) {
-            .container { padding: 0 18px; }
-        }
-
-        /* ====== 1. COMPACT BANNER ====== */
-        .header-top-banner {
-            background: linear-gradient(90deg, rgba(3, 7, 18, 0.98), rgba(15, 23, 42, 0.98), rgba(3, 7, 18, 0.98));
-            border-bottom: 1px solid var(--border);
-            padding: 3px 8px;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            flex-wrap: wrap;
-            line-height: 1.15;
-        }
-
-        .header-top-title {
-            font-family: var(--font-display);
-            font-size: clamp(11.5px, 1.8vw, 13.5px);
-            font-weight: 800;
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
-            background: var(--name-gradient);
-            background-size: 250% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: textShine 6s linear infinite;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        @keyframes textShine {
-            0% { background-position: 0% center; }
-            100% { background-position: 250% center; }
-        }
-
-        .header-top-sub {
-            font-size: 9px;
-            font-family: var(--font-mono);
-            color: var(--primary);
-            letter-spacing: 0.4px;
-        }
-
-        /* ====== 2. NAVBAR WITH TECHNICAL ICON ====== */
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: var(--bg-glass);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .nav-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 46px;
-        }
-
-        .nav-brand-box {
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 2px 4px;
-        }
-
-        .tech-brand-icon {
-            width: 26px;
-            height: 26px;
-            border-radius: 6px;
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(168, 85, 247, 0.25));
-            border: 1px solid var(--primary);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            box-shadow: 0 0 8px rgba(56, 189, 248, 0.25);
-            flex-shrink: 0;
-        }
-
-        .brand-name {
-            font-family: var(--font-display);
-            font-size: 13.5px;
-            font-weight: 800;
-            color: var(--text-main);
-            white-space: nowrap;
-            line-height: 1.1;
-        }
-
-        .brand-sub {
-            font-size: 8.5px;
-            font-family: var(--font-mono);
-            color: var(--primary);
-            display: block;
-        }
-
-        .nav-menu {
-            display: none;
-            list-style: none;
-            gap: 2px;
-            align-items: center;
-        }
-
-        @media (min-width: 992px) {
-            .nav-menu { display: flex; }
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--text-muted);
-            font-size: 12px;
-            font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 14px;
-            border: 1px solid transparent;
-            transition: all 0.16s ease;
-            white-space: nowrap;
-        }
-
-        .nav-menu a:hover {
-            color: #38bdf8;
-            background: rgba(56, 189, 248, 0.08);
-            border-color: rgba(56, 189, 248, 0.35);
-            box-shadow: 0 0 6px rgba(56, 189, 248, 0.2);
-        }
-
-        .nav-menu a.active {
-            color: #ffffff !important;
-            background: rgba(56, 189, 248, 0.16) !important;
-            border-color: #38bdf8 !important;
-            box-shadow: 0 0 8px rgba(56, 189, 248, 0.35) !important;
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .theme-toggle-btn {
-            background: var(--surface-card);
-            border: 1px solid var(--border);
-            color: var(--primary);
-            width: 28px;
-            height: 28px;
-            border-radius: 6px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-        .btn-nav-cta {
-            padding: 3px 9px;
-            height: 28px;
-            font-size: 10.5px;
-            font-weight: 700;
-            border-radius: 14px;
-            background: var(--primary-gradient);
-            color: #030712 !important;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 3px;
-            white-space: nowrap;
-            box-shadow: 0 2px 6px rgba(56, 189, 248, 0.2);
-        }
-
-        .btn-nav-pay {
-            padding: 3px 9px;
-            height: 28px;
-            font-size: 10.5px;
-            font-weight: 700;
-            border-radius: 14px;
-            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
-            color: #ffffff !important;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 3px;
-            white-space: nowrap;
-            box-shadow: 0 2px 6px rgba(16, 185, 129, 0.2);
-        }
-
-        .btn-nav-cta:hover, .btn-nav-pay:hover {
-            opacity: 0.92;
-            transform: translateY(-1px);
-        }
-
-        .mobile-menu-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 28px;
-            height: 28px;
-            border-radius: 6px;
-            background: var(--surface-card);
-            border: 1px solid var(--border);
-            color: var(--text-main);
-            cursor: pointer;
-        }
-
-        @media (min-width: 992px) {
-            .mobile-menu-btn { display: none; }
-        }
-
-        .mobile-drawer {
-            display: none;
-            position: fixed;
-            top: 46px;
-            left: 0;
-            width: 100%;
-            background: var(--bg-glass);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border);
-            padding: 10px 12px;
-            z-index: 999;
-        }
-
+        .mobile-drawer { display: none; position: fixed; top: 46px; left: 0; width: 100%; background: var(--bg-glass); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 10px 12px; z-index: 999; }
         .mobile-drawer.active { display: block; }
+        .mobile-drawer-links { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+        .mobile-drawer-links a { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: var(--radius-md); color: var(--text-main); text-decoration: none; font-size: 12.5px; font-weight: 600; background: rgba(125, 125, 125, 0.05); }
 
-        .mobile-drawer-links {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
+        /* SECTIONS */
+        section { padding: 12px 0; scroll-margin-top: 50px; }
+        .hero-bento { display: grid; grid-template-columns: 1fr; gap: 8px; }
+        @media (min-width: 992px) { .hero-bento { grid-template-columns: 270px 1fr; } }
 
-        .mobile-drawer-links a {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 7px 10px;
-            border-radius: var(--radius-md);
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 12.5px;
-            font-weight: 600;
-            background: rgba(125, 125, 125, 0.05);
-        }
+        .spot-card { background: var(--surface-card); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 12px 14px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18); }
+        .hero-avatar-card { text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .avatar-stage { position: relative; width: 110px; height: 110px; margin: 2px auto 6px; cursor: pointer; }
+        .avatar-core { width: 100%; height: 100%; border-radius: 50%; padding: 2.5px; background: var(--primary-gradient); box-shadow: 0 0 16px rgba(56, 189, 248, 0.25); overflow: hidden; }
+        .avatar-img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 18% !important; border-radius: 50%; display: block; }
 
-        /* ====== 3. SECTIONS WITH MINIMAL GAP ====== */
-        section {
-            padding: 10px 0;
-            scroll-margin-top: 50px;
-        }
+        .identity-badge-wrap { display: flex; flex-direction: column; gap: 4px; width: 100%; margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border); }
+        .id-row { display: flex; align-items: center; justify-content: space-between; background: rgba(2, 6, 23, 0.6); border: 1px solid var(--border); padding: 4px 8px; border-radius: 6px; font-size: 11px; text-align: left; }
+        .id-label { font-family: var(--font-mono); font-size: 8.5px; font-weight: 700; text-transform: uppercase; }
+        .id-label.legal { color: var(--purple); }
+        .id-label.pref { color: var(--primary); }
+        .id-val-legal { font-size: 11.5px; font-weight: 700; color: #fff; }
+        .id-val-pref { font-size: 11.5px; font-weight: 800; color: var(--primary); }
 
-        .hero-bento {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 8px;
-        }
-
-        @media (min-width: 992px) {
-            .hero-bento { grid-template-columns: 260px 1fr; }
-        }
-
-        .spot-card {
-            background: var(--surface-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 12px 14px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
-        }
-
-        .hero-avatar-card {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .avatar-stage {
-            position: relative;
-            width: 110px;
-            height: 110px;
-            margin: 2px auto 6px;
-            cursor: pointer;
-        }
-
-        .avatar-core {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            padding: 2.5px;
-            background: var(--primary-gradient);
-            box-shadow: 0 0 16px rgba(56, 189, 248, 0.25);
-            overflow: hidden;
-            transition: transform 0.2s ease;
-        }
-
-        .avatar-stage:hover .avatar-core {
-            transform: scale(1.03);
-        }
-
-        .avatar-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: 50% 18% !important;
-            border-radius: 50%;
-            display: block;
-        }
-
-        .photo-hint {
-            position: absolute;
-            bottom: 0px;
-            right: 0px;
-            background: #0284c7;
-            color: #fff;
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid var(--bg);
-        }
-
-        .brand-headline-name {
-            font-family: var(--font-display);
-            font-size: clamp(18px, 3vw, 24px);
-            font-weight: 900;
-            letter-spacing: -0.3px;
-            line-height: 1.1;
-            margin-bottom: 3px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
-            padding: 5px 10px;
-            border-radius: var(--radius-md);
-            font-size: 11px;
-            font-weight: 700;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-            transition: 0.16s;
-        }
-
+        .brand-headline-name { font-family: var(--font-display); font-size: clamp(18px, 3vw, 24px); font-weight: 900; margin-bottom: 3px; }
+        .btn { display: inline-flex; align-items: center; justifyContent: center; gap: 4px; padding: 5px 10px; border-radius: var(--radius-md); font-size: 11px; font-weight: 700; text-decoration: none; cursor: pointer; border: none; transition: 0.16s; }
         .btn-primary { background: var(--primary-gradient); color: #030712; }
         .btn-secondary { background: rgba(125, 125, 125, 0.08); border: 1px solid var(--border); color: var(--text-main); }
         .btn:hover { transform: translateY(-1px); }
 
-        .bento-metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 6px;
-            margin-top: 8px;
-        }
-
-        @media (min-width: 768px) {
-            .bento-metrics-grid { grid-template-columns: repeat(4, 1fr); }
-        }
-
-        .metric-cell {
-            background: var(--surface-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-md);
-            padding: 8px 4px;
-            text-align: center;
-        }
-
-        .metric-value { font-family: var(--font-display); font-size: 18px; font-weight: 900; color: var(--primary); line-height: 1.1; }
+        .bento-metrics-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; margin-top: 8px; }
+        @media (min-width: 768px) { .bento-metrics-grid { grid-template-columns: repeat(4, 1fr); } }
+        .metric-cell { background: var(--surface-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 8px 4px; text-align: center; }
+        .metric-value { font-family: var(--font-display); font-size: 18px; font-weight: 900; color: var(--primary); }
         .metric-label { font-size: 10px; color: var(--text-muted); }
 
-        .section-header { text-align: center; margin-bottom: 8px; }
-        .section-title { font-family: var(--font-display); font-size: 17px; font-weight: 800; line-height: 1.2; }
+        .section-header { text-align: center; margin-bottom: 10px; }
+        .section-title { font-family: var(--font-display); font-size: 17px; font-weight: 800; }
 
         .grid-2 { display: grid; grid-template-columns: 1fr; gap: 8px; }
         @media (min-width: 768px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
-
         .grid-3 { display: grid; grid-template-columns: 1fr; gap: 8px; }
         @media (min-width: 768px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
 
-        .item-card {
-            background: var(--surface-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-md);
-            padding: 10px 12px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+        .item-card { background: var(--surface-card); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 12px; display: flex; flex-direction: column; justify-content: space-between; }
+        .service-icon-wrap { width: 26px; height: 26px; border-radius: 6px; background: rgba(56, 189, 248, 0.12); color: var(--primary); display: flex; align-items: center; justify-content: center; margin-bottom: 5px; }
 
-        .service-icon-wrap {
-            width: 28px;
-            height: 28px;
-            border-radius: 6px;
-            background: rgba(56, 189, 248, 0.12);
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 6px;
-        }
+        /* EDUCATION STYLES */
+        .edu-timeline { display: flex; flex-direction: column; gap: 8px; }
+        .edu-card { background: var(--surface-card); border: 1px solid var(--border); border-left: 3px solid var(--primary); border-radius: var(--radius-md); padding: 10px 12px; }
 
-        /* ====== PHOTO LIGHTBOX MODAL ====== */
-        #photoModal {
-            position: fixed;
-            inset: 0;
-            background: rgba(3, 7, 18, 0.95);
-            backdrop-filter: blur(14px);
-            z-index: 100001;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 14px;
-        }
+        /* REQUEST NOTE MODAL */
+        #requestNoteModal { position: fixed; inset: 0; background: rgba(3, 7, 18, 0.85); backdrop-filter: blur(10px); z-index: 100002; display: none; align-items: center; justify-content: center; padding: 16px; }
+        #requestNoteModal.active { display: flex; }
+        .req-modal-box { background: var(--surface-card); border: 1px solid var(--border-glow); border-radius: 14px; width: 100%; max-width: 380px; padding: 20px; position: relative; box-shadow: 0 15px 35px rgba(0,0,0,0.6); }
+        .req-close-btn { position: absolute; top: 10px; right: 10px; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); color: #ef4444; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
 
+        /* PHOTO MODAL */
+        #photoModal { position: fixed; inset: 0; background: rgba(3, 7, 18, 0.95); backdrop-filter: blur(14px); z-index: 100001; display: none; align-items: center; justify-content: center; padding: 14px; }
         #photoModal.active { display: flex; }
+        .modal-photo-container { position: relative; background: var(--surface-card); border: 1.5px solid var(--border-glow); border-radius: 12px; overflow: hidden; max-width: 90vw; max-height: 90vh; display: flex; flex-direction: column; align-items: center; }
+        .modal-img-full { width: auto; height: auto; max-width: 80vw; max-height: 75vh; object-fit: contain !important; display: block; border-radius: 6px; margin: 6px; }
+        .modal-close-btn { position: absolute; top: 8px; right: 8px; width: 26px; height: 26px; border-radius: 50%; background: rgba(239, 68, 68, 0.85); border: none; color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; }
 
-        .modal-photo-container {
-            position: relative;
-            background: var(--surface-card);
-            border: 1.5px solid var(--border-glow);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
-            max-width: 90vw;
-            max-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .modal-img-full {
-            width: auto;
-            height: auto;
-            max-width: 80vw;
-            max-height: 75vh;
-            object-fit: contain !important;
-            display: block;
-            border-radius: 6px;
-            margin: 6px;
-        }
-
-        .modal-photo-caption {
-            padding: 6px 12px;
-            width: 100%;
-            text-align: center;
-            background: rgba(11, 19, 38, 0.9);
-            border-top: 1px solid var(--border);
-        }
-
-        .modal-close-btn {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            background: rgba(239, 68, 68, 0.85);
-            border: none;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 10;
-        }
-
-        .mobile-quick-dock {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: var(--bg-glass);
-            backdrop-filter: blur(12px);
-            border-top: 1px solid var(--border);
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            padding: 4px 0;
-            z-index: 9999;
-        }
-
+        .mobile-quick-dock { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--bg-glass); backdrop-filter: blur(12px); border-top: 1px solid var(--border); display: grid; grid-template-columns: repeat(5, 1fr); padding: 4px 0; z-index: 9999; }
         @media (min-width: 992px) { .mobile-quick-dock { display: none; } }
-
-        .dock-btn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: var(--text-muted);
-            font-size: 8.5px;
-            font-weight: 700;
-            gap: 1px;
-        }
-
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 12px 0;
-            text-align: center;
-            font-size: 11px;
-            color: var(--text-dim);
-            background: var(--surface-card);
-        }
+        .dock-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); font-size: 8.5px; font-weight: 700; text-decoration: none; }
+        footer { border-top: 1px solid var(--border); padding: 12px 0; text-align: center; font-size: 11px; color: var(--text-dim); background: var(--surface-card); }
     </style>
 </head>
 <body>
@@ -632,7 +165,7 @@
     <div class="ambient-aurora"></div>
     <canvas id="bgCanvas"></canvas>
 
-    <!-- 1. COMPACT BANNER -->
+    <!-- HEADER BANNER -->
     <header class="header-top-banner">
         <div class="header-top-title">
             <i data-lucide="sparkles" style="width: 13px; height: 13px; color: #38bdf8;"></i>
@@ -642,61 +175,43 @@
         <span class="header-top-sub">COMPUTER INSTRUCTOR • AI & IT SOLUTIONS • RUPANDEHI, NEPAL</span>
     </header>
 
-    <!-- 2. NAVBAR (TECHNICAL ICON & DIRECT CONTACT LINK) -->
+    <!-- NAVBAR -->
     <nav class="navbar" id="mainNavbar">
         <div class="container">
             <div class="nav-inner">
                 <a href="#home" class="nav-brand-box">
-                    <div class="tech-brand-icon">
-                        <i data-lucide="code-2" style="width: 15px; height: 15px;"></i>
-                    </div>
-                    <div>
-                        <span class="brand-name">Prabin Chaudhary</span>
-                        <span class="brand-sub">Kanchan-05, Rupandehi</span>
-                    </div>
+                    <div class="tech-brand-icon"><i data-lucide="code-2" style="width: 15px; height: 15px;"></i></div>
+                    <div><span class="brand-name">Prabin Chaudhary</span><span class="brand-sub">Kanchan-05, Rupandehi</span></div>
                 </a>
 
-                <!-- Desktop Nav Menu (Contact लिङ्क समावेश) -->
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#home" class="nav-item active">Home</a></li>
-                    <li><a href="#pdfnotes" class="nav-item">Notes & Vault</a></li>
+                    <li><a href="#education" class="nav-item">Education</a></li>
+                    <li><a href="#pdfnotes" class="nav-item">Notes Vault</a></li>
                     <li><a href="#curriculum" class="nav-item">Curriculum</a></li>
-                    <li><a href="#skills" class="nav-item">Skills</a></li>
                     <li><a href="#services" class="nav-item">Services</a></li>
                     <li><a href="#experience" class="nav-item">Experience</a></li>
                     <li><a href="#contact" class="nav-item">Contact</a></li>
                 </ul>
 
                 <div class="nav-actions">
-                    <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme">
-                        <i data-lucide="sun" id="themeIcon" style="width: 13px; height: 13px;"></i>
-                    </button>
-                    
-                    <a href="cv.pdf" class="btn-nav-cta" target="_blank">
-                        <i data-lucide="file-down" style="width: 11px; height: 11px;"></i> CV
-                    </a>
-
-                    <a href="pay.html" class="btn-nav-pay">
-                        💳 Pay Info
-                    </a>
-
-                    <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Menu">
-                        <i data-lucide="menu" id="mobileMenuIcon" style="width: 15px; height: 15px;"></i>
-                    </button>
+                    <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme"><i data-lucide="sun" id="themeIcon" style="width: 13px; height: 13px;"></i></button>
+                    <a href="cv.pdf" class="btn-nav-cta" target="_blank"><i data-lucide="file-down" style="width: 11px; height: 11px;"></i> CV</a>
+                    <a href="pay.html" class="btn-nav-pay">💳 Pay Info</a>
+                    <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Menu"><i data-lucide="menu" style="width: 15px; height: 15px;"></i></button>
                 </div>
             </div>
         </div>
 
-        <!-- Mobile Drawer (Contact लिङ्क समावेश) -->
         <div class="mobile-drawer" id="mobileDrawer">
             <ul class="mobile-drawer-links">
                 <li><a href="#home" class="drawer-link"><i data-lucide="home" style="width: 14px; height: 14px;"></i> Home</a></li>
-                <li><a href="#pdfnotes" class="drawer-link"><i data-lucide="file-text" style="width: 14px; height: 14px; color: #ef4444;"></i> Notes & Vault</a></li>
-                <li><a href="#curriculum" class="drawer-link"><i data-lucide="book-open" style="width: 14px; height: 14px;"></i> Curriculum Modules</a></li>
-                <li><a href="#skills" class="drawer-link"><i data-lucide="bar-chart" style="width: 14px; height: 14px;"></i> Technical Skills</a></li>
-                <li><a href="#services" class="drawer-link"><i data-lucide="layers" style="width: 14px; height: 14px;"></i> Solutions & Services</a></li>
-                <li><a href="#experience" class="drawer-link"><i data-lucide="briefcase" style="width: 14px; height: 14px;"></i> Career Timeline</a></li>
-                <li><a href="#contact" class="drawer-link"><i data-lucide="phone-call" style="width: 14px; height: 14px; color: #38bdf8;"></i> Contact & Number</a></li>
+                <li><a href="#education" class="drawer-link"><i data-lucide="graduation-cap" style="width: 14px; height: 14px; color: #38bdf8;"></i> Education</a></li>
+                <li><a href="#pdfnotes" class="drawer-link"><i data-lucide="file-text" style="width: 14px; height: 14px; color: #ef4444;"></i> Notes Vault</a></li>
+                <li><a href="#curriculum" class="drawer-link"><i data-lucide="book-open" style="width: 14px; height: 14px;"></i> Curriculum</a></li>
+                <li><a href="#services" class="drawer-link"><i data-lucide="layers" style="width: 14px; height: 14px;"></i> Services</a></li>
+                <li><a href="#experience" class="drawer-link"><i data-lucide="briefcase" style="width: 14px; height: 14px;"></i> Experience</a></li>
+                <li><a href="#contact" class="drawer-link"><i data-lucide="phone-call" style="width: 14px; height: 14px; color: #38bdf8;"></i> Contact (+977-9716175657)</a></li>
                 <li><a href="pay.html" class="drawer-link" style="color: #34d399;"><i data-lucide="credit-card" style="width: 14px; height: 14px;"></i> 💳 Pay Info</a></li>
             </ul>
         </div>
@@ -711,33 +226,36 @@
                         <div class="avatar-core">
                             <img src="prabin.jpg" alt="Prabin Chaudhary" class="avatar-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500';">
                         </div>
-                        <div class="photo-hint">
-                            <i data-lucide="maximize-2" style="width: 11px; height: 11px;"></i>
-                        </div>
+                        <div class="photo-hint"><i data-lucide="maximize-2" style="width: 11px; height: 11px;"></i></div>
                     </div>
                     <h2 style="font-family: var(--font-display); font-size: 15px; font-weight: 800; margin-top: 1px;">Prabin Chaudhary</h2>
                     <p style="font-size: 10px; font-family: var(--font-mono); color: var(--primary);">Computer Instructor & IT Specialist</p>
                     <p style="font-size: 9.5px; color: var(--text-dim); margin-top: 1px;">📍 Kanchan-05, Rupandehi, Nepal</p>
+
+                    <div class="identity-badge-wrap">
+                        <div class="id-row">
+                            <span class="id-label legal"><i data-lucide="shield-check" style="width: 11px; height: 11px;"></i> Legal:</span>
+                            <span class="id-val-legal">Ratna Prasad Tharu</span>
+                        </div>
+                        <div class="id-row">
+                            <span class="id-label pref"><i data-lucide="sparkles" style="width: 11px; height: 11px;"></i> Preferred:</span>
+                            <span class="id-val-pref">Prabin Chaudhary</span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="spot-card" style="display: flex; flex-direction: column; justify-content: space-between;">
                     <div>
-                        <div style="font-family: var(--font-mono); font-size: 9.5px; color: var(--primary); text-transform: uppercase; margin-bottom: 2px; font-weight: 700;">
-                            ✨ COMPUTER INSTRUCTOR & IT SPECIALIST
-                        </div>
-                        <h1 class="brand-headline-name">
-                            PRABIN CHAUDHARY
-                        </h1>
-                        <div style="font-family: var(--font-mono); font-size: 11.5px; color: var(--cyan); margin-bottom: 4px; min-height: 18px;">
-                            <span id="roleTypewriter"></span>|
-                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 9.5px; color: var(--primary); text-transform: uppercase; margin-bottom: 2px; font-weight: 700;">✨ COMPUTER INSTRUCTOR & IT SPECIALIST</div>
+                        <h1 class="brand-headline-name">PRABIN CHAUDHARY</h1>
+                        <div style="font-family: var(--font-mono); font-size: 11.5px; color: var(--cyan); margin-bottom: 4px; min-height: 18px;"><span id="roleTypewriter"></span>|</div>
                         <p style="color: var(--text-muted); font-size: 12px; line-height: 1.45;">
-                            Computer Instructor & IT Specialist based in Kanchan-05, Rupandehi, Nepal. Delivering practical training in Workplace AI, Advanced Excel Architecture, Data Analytics, Nepali Typing (Preeti & Unicode), and Lab Systems Infrastructure.
+                            Computer Instructor & IT Specialist based in Kanchan-05, Rupandehi, Nepal. Delivering practical training in Workplace AI, Advanced Excel Architecture, Data Analytics, Nepali Typing, and Lab Systems.
                         </p>
                     </div>
 
                     <div style="display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px;">
-                        <a href="#pdfnotes" class="btn btn-primary" style="background: linear-gradient(135deg, #ef4444, #f97316); color: #fff;">PDF Notes</a>
+                        <a href="#pdfnotes" class="btn btn-primary" style="background: linear-gradient(135deg, #ef4444, #f97316); color: #fff;">Notes Vault</a>
                         <a href="https://wa.me/9779716175657" target="_blank" class="btn btn-secondary">WhatsApp</a>
                         <a href="cv.pdf" class="btn btn-secondary" target="_blank">Download CV</a>
                         <a href="#contact" class="btn btn-secondary">Contact</a>
@@ -753,54 +271,84 @@
             </div>
         </section>
 
-        <!-- 2. NOTES & VAULT -->
-        <section id="pdfnotes">
-            <div class="section-header">
-                <h2 class="section-title">Official Study Notes & PDF Vault</h2>
-            </div>
-            <div class="grid-2">
-                <div class="item-card">
-                    <h3 style="font-size: 13.5px; margin-bottom: 3px;">Workplace Generative AI & Prompt Engineering</h3>
-                    <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 6px;">Master prompt architecture (Role, Context, Task, Constraints, Examples) for automated drafting and formula fixes.</p>
-                    <a href="#contact" class="btn btn-secondary" style="font-size: 10px; padding: 3px 6px;">Request Note</a>
+        <!-- 2. EDUCATION SECTION -->
+        <section id="education">
+            <div class="section-header"><h2 class="section-title">Educational Background</h2></div>
+            <div class="edu-timeline">
+                <div class="edu-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h3 style="font-size: 13.5px; font-weight: 700;">Bachelor in Business Studies (BBS) - Ongoing</h3>
+                        <span style="font-size: 10px; font-family: var(--font-mono); color: var(--primary);">Running</span>
+                    </div>
+                    <p style="font-size: 11.5px; color: var(--text-muted); margin-top: 2px;">📍 Haraiya Multiple Campus, Rupandehi, Nepal</p>
                 </div>
-                <div class="item-card">
-                    <h3 style="font-size: 13.5px; margin-bottom: 3px;">Advanced Excel & Dynamic Formulas</h3>
-                    <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 6px;">High-yield reference covering XLOOKUP, INDEX/MATCH, Dynamic Arrays, and automated pivot reporting structures.</p>
-                    <a href="#contact" class="btn btn-secondary" style="font-size: 10px; padding: 3px 6px;">Request Note</a>
+                <div class="edu-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h3 style="font-size: 13.5px; font-weight: 700;">+2 Management Completed</h3>
+                        <span style="font-size: 10px; font-family: var(--font-mono); color: var(--emerald);">Completed</span>
+                    </div>
+                    <p style="font-size: 11.5px; color: var(--text-muted); margin-top: 2px;">📍 Lumbini Gyan Niketan Higher Secondary School</p>
                 </div>
             </div>
         </section>
 
-        <!-- 3. CURRICULUM -->
-        <section id="curriculum">
-            <div class="section-header">
-                <h2 class="section-title">Curriculum Modules</h2>
-            </div>
+        <!-- 3. STUDY NOTES & DYNAMIC VAULT -->
+        <section id="pdfnotes">
+            <div class="section-header"><h2 class="section-title">Official Study Notes & Comprehensive Vault</h2></div>
             <div class="grid-3">
                 <div class="item-card">
-                    <h3 style="font-size: 13px; margin-bottom: 3px;">Advanced MS Excel</h3>
-                    <p style="font-size: 11px; color: var(--text-muted);">XLOOKUP, Dynamic Arrays, Interactive KPI Dashboards, Slicers & Macros.</p>
-                    <span style="font-size: 10px; font-family: var(--font-mono); color: var(--primary); font-weight: bold; margin-top: 3px; display: inline-block;">45 Hours</span>
+                    <h3 style="font-size: 13.5px; margin-bottom: 4px;">Workplace AI & Prompt Engineering</h3>
+                    <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 8px;">Mastering prompt structure for administrative task automation and report generation.</p>
+                    <button class="btn btn-secondary" onclick="openReqModal('AI & Prompt Engineering Note')">Request Note</button>
                 </div>
                 <div class="item-card">
-                    <h3 style="font-size: 13px; margin-bottom: 3px;">Tally Prime & Accounting</h3>
-                    <p style="font-size: 11px; color: var(--text-muted);">Double-entry bookkeeping, VAT calculation, inventory reconciliation, balance sheets.</p>
-                    <span style="font-size: 10px; font-family: var(--font-mono); color: var(--primary); font-weight: bold; margin-top: 3px; display: inline-block;">40 Hours</span>
+                    <h3 style="font-size: 13.5px; margin-bottom: 4px;">Advanced Excel & Dynamic Formulas</h3>
+                    <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 8px;">XLOOKUP, INDEX/MATCH, Dynamic Arrays, and Automated KPI Dashboard guides.</p>
+                    <button class="btn btn-secondary" onclick="openReqModal('Advanced Excel Cheatsheet')">Request Note</button>
                 </div>
                 <div class="item-card">
-                    <h3 style="font-size: 13px; margin-bottom: 3px;">Hardware & Networking</h3>
-                    <p style="font-size: 11px; color: var(--text-muted);">Assembly, clean Windows 10/11 deployment, IP routing, lab maintenance.</p>
-                    <span style="font-size: 10px; font-family: var(--font-mono); color: var(--primary); font-weight: bold; margin-top: 3px; display: inline-block;">30 Hours</span>
+                    <h3 style="font-size: 13.5px; margin-bottom: 4px;">Preeti to Nepali Unicode Typing</h3>
+                    <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 8px;">Comprehensive keyboard layouts, complex ligatures (ज्ञ, त्र, क्ष), and speed tips.</p>
+                    <button class="btn btn-secondary" onclick="openReqModal('Nepali Typing Guide')">Request Note</button>
+                </div>
+                <div class="item-card">
+                    <h3 style="font-size: 13.5px; margin-bottom: 4px;">PC Hardware Diagnosis & OS Setup</h3>
+                    <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 8px;">POST beep codes, thermal repasting, RAM troubleshooting, and Windows deployment.</p>
+                    <button class="btn btn-secondary" onclick="openReqModal('Hardware Troubleshooting Handbook')">Request Note</button>
+                </div>
+                <div class="item-card">
+                    <h3 style="font-size: 13.5px; margin-bottom: 4px;">Tally Prime & Accounting Basics</h3>
+                    <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 8px;">Voucher classification (F4-F9), VAT calculations, and ledger reconciliation.</p>
+                    <button class="btn btn-secondary" onclick="openReqModal('Tally Prime Quick Guide')">Request Note</button>
+                </div>
+                <div class="item-card">
+                    <h3 style="font-size: 13.5px; margin-bottom: 4px;">Institutional Cyber Hygiene & Security</h3>
+                    <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 8px;">Preventing USB shortcut worms, network firewall policies, and data backup protocols.</p>
+                    <button class="btn btn-secondary" onclick="openReqModal('Cyber Security Protocols')">Request Note</button>
                 </div>
             </div>
         </section>
 
-        <!-- 4. SKILLS -->
-        <section id="skills">
-            <div class="section-header">
-                <h2 class="section-title">Technical Skills</h2>
+        <!-- 4. CURRICULUM -->
+        <section id="curriculum">
+            <div class="section-header"><h2 class="section-title">Curriculum Modules & Professional Training</h2></div>
+            <div class="grid-2">
+                <div class="item-card">
+                    <h3 style="font-size: 14px; margin-bottom: 4px;">Hub IT Institute Certifications</h3>
+                    <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 6px;">Diploma in Computer Hardware & Software, Future Computer Course.</p>
+                    <span style="font-size: 10px; font-family: var(--font-mono); color: var(--primary); font-weight: 700;">Intensive Practical Lab Training</span>
+                </div>
+                <div class="item-card">
+                    <h3 style="font-size: 14px; margin-bottom: 4px;">Mega Tech Institute Certifications</h3>
+                    <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 6px;">PDICA Course (Professional Diploma in Computer Applications).</p>
+                    <span style="font-size: 10px; font-family: var(--font-mono); color: var(--primary); font-weight: 700;">Office Automation & Advanced Excel</span>
+                </div>
             </div>
+        </section>
+
+        <!-- 5. SKILLS -->
+        <section id="skills">
+            <div class="section-header"><h2 class="section-title">Technical Skills</h2></div>
             <div class="grid-2">
                 <div class="item-card">
                     <h3 style="font-size: 13px; margin-bottom: 4px;">Practical Strengths</h3>
@@ -813,11 +361,9 @@
             </div>
         </section>
 
-        <!-- 5. EXPANDED SERVICES (EXTRA & PRACTICAL IT SOLUTIONS) -->
+        <!-- 6. SERVICES -->
         <section id="services">
-            <div class="section-header">
-                <h2 class="section-title">Professional Solutions & Services</h2>
-            </div>
+            <div class="section-header"><h2 class="section-title">Professional Solutions & Services</h2></div>
             <div class="grid-3">
                 <div class="item-card">
                     <div class="service-icon-wrap"><i data-lucide="monitor" style="width: 16px; height: 16px;"></i></div>
@@ -849,29 +395,12 @@
                     <h3 style="font-size: 13px; margin-bottom: 3px;">Accounting & Tally Prime</h3>
                     <p style="font-size: 11px; color: var(--text-muted);">Institutional day-book management, VAT invoice recording, inventory ledgers, and audit assistance.</p>
                 </div>
-                <div class="item-card">
-                    <div class="service-icon-wrap"><i data-lucide="shield-check" style="width: 16px; height: 16px;"></i></div>
-                    <h3 style="font-size: 13px; margin-bottom: 3px;">Antivirus & Virus Removal</h3>
-                    <p style="font-size: 11px; color: var(--text-muted);">Disinfecting pen-drive shortcut malware, spyware protection, firewall setup, and data backup safety.</p>
-                </div>
-                <div class="item-card">
-                    <div class="service-icon-wrap"><i data-lucide="type" style="width: 16px; height: 16px;"></i></div>
-                    <h3 style="font-size: 13px; margin-bottom: 3px;">Typing & Document Drafting</h3>
-                    <p style="font-size: 11px; color: var(--text-muted);">Rapid government Nepali typing (Preeti/Unicode), legal agreement drafting, and PDF conversions.</p>
-                </div>
-                <div class="item-card">
-                    <div class="service-icon-wrap"><i data-lucide="globe" style="width: 16px; height: 16px;"></i></div>
-                    <h3 style="font-size: 13px; margin-bottom: 3px;">Online Forms & Digital Help</h3>
-                    <p style="font-size: 11px; color: var(--text-muted);">Online government forms, smart card applications, official bio-data creation, and digital portal services.</p>
-                </div>
             </div>
         </section>
 
-        <!-- 6. EXPERIENCE -->
+        <!-- 7. EXPERIENCE -->
         <section id="experience">
-            <div class="section-header">
-                <h2 class="section-title">Career Timeline</h2>
-            </div>
+            <div class="section-header"><h2 class="section-title">Career Timeline</h2></div>
             <div style="display: flex; flex-direction: column; gap: 6px;">
                 <div class="item-card">
                     <div style="display: flex; justify-content: space-between;">
@@ -890,18 +419,13 @@
             </div>
         </section>
 
-        <!-- 7. CONTACT & INQUIRY (OFFICIAL NUMBER INCLUDED) -->
+        <!-- 8. CONTACT SECTION (+977-9716175657 INCLUDED) -->
         <section id="contact">
-            <div class="section-header">
-                <h2 class="section-title">Contact & Direct Connect</h2>
-            </div>
+            <div class="section-header"><h2 class="section-title">Contact & Direct Connect</h2></div>
             <div class="grid-2">
-                <!-- Direct Calling & Number Card -->
                 <div class="item-card">
                     <h3 style="font-size: 14px; margin-bottom: 6px;">Direct Phone & WhatsApp</h3>
-                    <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 10px;">
-                        तालिम, कम्प्युटर मर्मत वा कुनै पनि सोधपुछका लागि सिधै सम्पर्क गर्नुहोस्:
-                    </p>
+                    <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 10px;">तालिम, कम्प्युटर मर्मत वा कुनै पनि सोधपुछका लागि सिधै सम्पर्क गर्नुहोस्:</p>
                     
                     <div style="display: flex; flex-direction: column; gap: 8px;">
                         <a href="tel:+9779716175657" class="btn btn-secondary" style="justify-content: flex-start; padding: 8px 12px;">
@@ -916,13 +440,10 @@
                             <i data-lucide="mail" style="width: 15px; height: 15px; color: var(--primary);"></i>
                             <span style="font-size: 12px; font-weight: 600;">info.prabintech@gmail.com</span>
                         </a>
-                        <div style="font-size: 11px; color: var(--text-dim); margin-top: 4px;">
-                            📍 Kanchan-05, Rupandehi, Lumbini Province, Nepal
-                        </div>
+                        <div style="font-size: 11px; color: var(--text-dim); margin-top: 4px;">📍 Kanchan-05, Rupandehi, Lumbini Province, Nepal</div>
                     </div>
                 </div>
 
-                <!-- Instant Inquiry Form -->
                 <div class="item-card">
                     <h3 style="font-size: 14px; margin-bottom: 4px;">Send Message via WhatsApp</h3>
                     <form id="inquiryForm">
@@ -953,16 +474,35 @@
         </section>
     </div>
 
+    <!-- REQUEST NOTE POPUP MODAL (WHATSAPP & EMAIL WITH CANCEL BUTTON) -->
+    <div id="requestNoteModal">
+        <div class="req-modal-box">
+            <button class="req-close-btn" onclick="closeReqModal()"><i data-lucide="x" style="width: 16px; height: 16px;"></i></button>
+            <h3 style="font-size: 15px; font-weight: 800; margin-bottom: 4px;">Request Study Note</h3>
+            <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 12px;" id="reqNoteTitleText">Get direct access to this material:</p>
+            
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <button class="btn btn-primary" style="background: #22c55e; color: #fff; width: 100%; justify-content: center;" onclick="sendReqWhatsApp()">
+                    <i data-lucide="message-circle" style="width: 14px; height: 14px;"></i> Request via WhatsApp
+                </button>
+                <button class="btn btn-secondary" style="width: 100%; justify-content: center;" onclick="sendReqEmail()">
+                    <i data-lucide="mail" style="width: 14px; height: 14px; color: var(--primary);"></i> Request via Email
+                </button>
+                <button class="btn btn-secondary" style="width: 100%; justify-content: center; color: #ef4444; border-color: rgba(239,68,68,0.3);" onclick="closeReqModal()">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- FULL PHOTO LIGHTBOX MODAL -->
     <div id="photoModal">
         <div class="modal-photo-container">
-            <button class="modal-close-btn" id="closePhotoModal" aria-label="Close photo">
-                <i data-lucide="x" style="width: 16px; height: 16px;"></i>
-            </button>
+            <button class="modal-close-btn" id="closePhotoModal" aria-label="Close photo"><i data-lucide="x" style="width: 16px; height: 16px;"></i></button>
             <img src="prabin.jpg" alt="Prabin Chaudhary" class="modal-img-full" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800';">
             <div class="modal-photo-caption">
                 <h4 style="font-size: 13px; font-weight: 800; color: var(--text-main);">Prabin Chaudhary</h4>
-                <p style="font-size: 10px; color: var(--primary);">Computer Instructor & IT Specialist • Rupandehi, Nepal</p>
+                <p style="font-size: 10.5px; color: var(--primary);">Computer Instructor & IT Specialist • Rupandehi, Nepal</p>
             </div>
         </div>
     </div>
@@ -978,15 +518,13 @@
 
     <!-- FOOTER -->
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Prabin Chaudhary. All rights reserved. Kanchan-05, Rupandehi, Nepal.</p>
-        </div>
+        <div class="container"><p>&copy; 2026 Prabin Chaudhary. All rights reserved. Kanchan-05, Rupandehi, Nepal.</p></div>
     </footer>
 
     <script>
         lucide.createIcons();
 
-        // 1. Nav Keys: Click Active Switch
+        // 1. Nav Active Switching
         const navItems = document.querySelectorAll(".nav-menu .nav-item");
         navItems.forEach(item => {
             item.addEventListener("click", function () {
@@ -1015,66 +553,59 @@
         });
 
         // 4. Role Typewriter
-        const roles = [
-            "Computer Instructor & Lab Mentor",
-            "Generative AI & Prompt Trainer",
-            "Advanced Excel Architect",
-            "Hardware & Lab Support Specialist"
-        ];
+        const roles = ["Computer Instructor & Lab Mentor", "Generative AI & Prompt Trainer", "Advanced Excel Architect", "Hardware & Lab Support Specialist"];
         let rIndex = 0, charIndex = 0, isDeleting = false;
         const twSpan = document.getElementById("roleTypewriter");
-
         function typeLoop() {
             const currentRole = roles[rIndex];
-            if (isDeleting) {
-                twSpan.textContent = currentRole.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                twSpan.textContent = currentRole.substring(0, charIndex + 1);
-                charIndex++;
-            }
+            if (isDeleting) { twSpan.textContent = currentRole.substring(0, charIndex - 1); charIndex--; }
+            else { twSpan.textContent = currentRole.substring(0, charIndex + 1); charIndex++; }
             let speed = isDeleting ? 25 : 50;
-            if (!isDeleting && charIndex === currentRole.length) {
-                speed = 2200;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                rIndex = (rIndex + 1) % roles.length;
-                speed = 300;
-            }
+            if (!isDeleting && charIndex === currentRole.length) { speed = 2200; isDeleting = true; }
+            else if (isDeleting && charIndex === 0) { isDeleting = false; rIndex = (rIndex + 1) % roles.length; speed = 300; }
             setTimeout(typeLoop, speed);
         }
         typeLoop();
 
-        // 5. WhatsApp Form Direct Action
+        // 5. Request Note Modal Logic
+        let activeNoteName = "";
+        function openReqModal(noteTitle) {
+            activeNoteName = noteTitle;
+            document.getElementById("reqNoteTitleText").textContent = `Requesting: ${noteTitle}`;
+            document.getElementById("requestNoteModal").classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+        function closeReqModal() {
+            document.getElementById("requestNoteModal").classList.remove("active");
+            document.body.style.overflow = "";
+        }
+        function sendReqWhatsApp() {
+            const text = `Hello Prabin Chaudhary, I would like to request the study note / material: *${activeNoteName}*. Please provide access.`;
+            window.open(`https://wa.me/9779716175657?text=${encodeURIComponent(text)}`, "_blank");
+            closeReqModal();
+        }
+        function sendReqEmail() {
+            const subject = `Request for Study Note: ${activeNoteName}`;
+            const body = `Dear Prabin Chaudhary,\n\nI am interested in obtaining the study material: ${activeNoteName}.\n\nThank you!`;
+            window.location.href = `mailto:info.prabintech@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            closeReqModal();
+        }
+
+        // 6. WhatsApp Inquiry Form
         document.getElementById("inquiryForm")?.addEventListener("submit", (e) => {
             e.preventDefault();
             const name = document.getElementById("inqName").value.trim();
             const subject = document.getElementById("inqSubject").value;
             const message = document.getElementById("inqMsg").value.trim();
-
-            const text = `*New Inquiry for Prabin Chaudhary*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Service:* ${encodeURIComponent(subject)}%0A*Details:* ${encodeURIComponent(message || "Interested in services.")}`;
+            const text = `*New Inquiry for Prabin Chaudhary*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Service:* ${encodeURIComponent(subject)}%0A*Details:* ${encodeURIComponent(message || "Interested.")}`;
             window.open(`https://wa.me/9779716175657?text=${text}`, "_blank");
         });
 
-        // 6. Photo Lightbox Modal
+        // 7. Lightbox Modal
         const photoModal = document.getElementById("photoModal");
-        document.getElementById("openPhotoModal")?.addEventListener("click", () => {
-            photoModal.classList.add("active");
-            document.body.style.overflow = "hidden";
-        });
-
-        document.getElementById("closePhotoModal")?.addEventListener("click", () => {
-            photoModal.classList.remove("active");
-            document.body.style.overflow = "";
-        });
-
-        photoModal?.addEventListener("click", (e) => {
-            if (e.target === photoModal) {
-                photoModal.classList.remove("active");
-                document.body.style.overflow = "";
-            }
-        });
+        document.getElementById("openPhotoModal")?.addEventListener("click", () => { photoModal.classList.add("active"); document.body.style.overflow = "hidden"; });
+        document.getElementById("closePhotoModal")?.addEventListener("click", () => { photoModal.classList.remove("active"); document.body.style.overflow = ""; });
+        photoModal?.addEventListener("click", (e) => { if (e.target === photoModal) { photoModal.classList.remove("active"); document.body.style.overflow = ""; } });
     </script>
 </body>
 </html>
