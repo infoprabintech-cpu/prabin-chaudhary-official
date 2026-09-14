@@ -41,6 +41,26 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
+       @media (max-width: 768px) {
+  body {
+    padding: 8px !important;
+    font-size: 14px;
+  }
+
+  /* मुख्य बाकसहरूलाई मोबाइलको पूरै चौडाइ दिने */
+  .container, .card, div[class*="container"], div[class*="card"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ४ वटा काउन्टर बक्स (499+, 5+, 1800+, 100+) २x२ मा देखाउने */
+  .stats-grid, div[style*="display: flex"] {
+    flex-wrap: wrap !important;
+  }
+}
        /* PC मा CV को छेउमा देखिने बटन स्टाइल */
 .nav-pay-btn {
   background-color: #0284c7;
