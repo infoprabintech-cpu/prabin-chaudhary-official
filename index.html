@@ -61,8 +61,6 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        /* मोबाइलमा डक (Dock) ले छेक्न नदिन बडीमा तलतिर स्पेस दिइएको छ */
         body { padding-bottom: 75px; }
         @media (min-width: 992px) { body { padding-bottom: 0; } }
 
@@ -181,7 +179,11 @@
         .edu-timeline { display: flex; flex-direction: column; gap: 8px; }
         .edu-card { background: var(--surface-card); border: 1px solid var(--border); border-left: 3px solid var(--primary); border-radius: 8px; padding: 10px 12px; }
 
-        /* MODALS & BUTTONS */
+        /* SOCIAL & CONTACT BUTTON STYLES */
+        .social-link-btn { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border-radius: 8px; background: rgba(125, 125, 125, 0.05); border: 1px solid var(--border); color: var(--text-main); text-decoration: none; font-size: 12px; font-weight: 600; transition: 0.2s; }
+        .social-link-btn:hover { background: rgba(56, 189, 248, 0.1); border-color: var(--primary); transform: translateY(-1px); }
+
+        /* MODALS */
         #requestNoteModal, #photoModal { position: fixed; inset: 0; background: rgba(3, 7, 18, 0.85); backdrop-filter: blur(10px); z-index: 100002; display: none; align-items: center; justify-content: center; padding: 16px; }
         #requestNoteModal.active, #photoModal.active { display: flex; }
         .req-modal-box { background: var(--surface-card); border: 1px solid var(--border-glow); border-radius: 12px; width: 100%; max-width: 380px; padding: 20px; position: relative; box-shadow: 0 15px 35px rgba(0,0,0,0.6); }
@@ -198,7 +200,6 @@
         @media (min-width: 992px) { .mobile-quick-dock { display: none; } }
         .dock-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); font-size: 8.5px; font-weight: 700; text-decoration: none; }
         
-        /* फुटरलाई मोबाइल डकले नछोप्ने गरी सुरक्षित गरिएको छ */
         footer { border-top: 1px solid var(--border); padding: 16px 0 24px 0; text-align: center; font-size: 11px; color: var(--text-dim); background: var(--surface-card); }
     </style>
 </head>
@@ -465,26 +466,38 @@
             </div>
         </section>
 
-        <!-- 8. CONTACT SECTION (+977-9716175657 INCLUDED) -->
+        <!-- 8. CONTACT SECTION (+977-9716175657 & SOCIAL LINKS INCLUDED) -->
         <section id="contact">
             <div class="section-header"><h2 class="section-title">Contact & Direct Connect</h2></div>
             <div class="grid-2">
                 <div class="item-card">
-                    <h3 style="font-size: 14px; margin-bottom: 6px;">Direct Phone & WhatsApp</h3>
-                    <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 10px;">तालिम, कम्प्युटर मर्मत वा कुनै पनि सोधपुछका लागि सिधै सम्पर्क गर्नुहोस्:</p>
+                    <h3 style="font-size: 14px; margin-bottom: 6px;">Direct Phone & Social Links</h3>
+                    <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 10px;">तालिम, कम्प्युटर मर्मत वा सामाजिक सञ्जालमार्फत जोिनुहोस्:</p>
                     
                     <div style="display: flex; flex-direction: column; gap: 8px;">
-                        <a href="tel:+9779716175657" class="btn btn-secondary" style="justify-content: flex-start; padding: 8px 12px;">
-                            <i data-lucide="phone-call" style="width: 15px; height: 15px; color: var(--primary);"></i>
-                            <span style="font-family: var(--font-mono); font-size: 13px; font-weight: 700;">+977-9716175657</span>
+                        <a href="tel:+9779716175657" class="social-link-btn">
+                            <i data-lucide="phone-call" style="width: 16px; height: 16px; color: var(--primary);"></i>
+                            <span style="font-family: var(--font-mono); font-size: 12.5px; font-weight: 700;">+977-9716175657</span>
                         </a>
-                        <a href="https://wa.me/9779716175657" target="_blank" class="btn btn-primary" style="justify-content: flex-start; padding: 8px 12px; background: #22c55e; color: #fff;">
-                            <i data-lucide="message-circle" style="width: 15px; height: 15px;"></i>
-                            <span style="font-size: 12px; font-weight: 700;">Chat on WhatsApp (+977-9716175657)</span>
+                        <a href="https://wa.me/9779716175657" target="_blank" class="social-link-btn" style="border-color: rgba(34, 197, 94, 0.4);">
+                            <i data-lucide="message-circle" style="width: 16px; height: 16px; color: #22c55e;"></i>
+                            <span style="font-weight: 700;">WhatsApp Chat</span>
                         </a>
-                        <a href="mailto:info.prabintech@gmail.com" class="btn btn-secondary" style="justify-content: flex-start; padding: 8px 12px;">
-                            <i data-lucide="mail" style="width: 15px; height: 15px; color: var(--primary);"></i>
-                            <span style="font-size: 12px; font-weight: 600;">info.prabintech@gmail.com</span>
+                        <a href="https://www.facebook.com/prabinchaudhary.official/" target="_blank" class="social-link-btn" style="border-color: rgba(59, 130, 246, 0.4);">
+                            <i data-lucide="facebook" style="width: 16px; height: 16px; color: #3b82f6;"></i>
+                            <span style="font-weight: 700;">Facebook Official</span>
+                        </a>
+                        <a href="https://www.instagram.com/p4_prbn/" target="_blank" class="social-link-btn" style="border-color: rgba(236, 72, 153, 0.4);">
+                            <i data-lucide="instagram" style="width: 16px; height: 16px; color: #ec4899;"></i>
+                            <span style="font-weight: 700;">Instagram (@p4_prbn)</span>
+                        </a>
+                        <a href="https://www.tiktok.com/@prabin_360" target="_blank" class="social-link-btn" style="border-color: rgba(6, 182, 212, 0.4);">
+                            <i data-lucide="video" style="width: 16px; height: 16px; color: #06b6d4;"></i>
+                            <span style="font-weight: 700;">TikTok (@prabin_360)</span>
+                        </a>
+                        <a href="mailto:info.prabintech@gmail.com" class="social-link-btn">
+                            <i data-lucide="mail" style="width: 16px; height: 16px; color: var(--primary);"></i>
+                            <span style="font-weight: 600;">info.prabintech@gmail.com</span>
                         </a>
                     </div>
                 </div>
@@ -564,7 +577,7 @@
         <a href="cv.pdf" class="dock-btn" target="_blank"><i data-lucide="file-down" style="width: 14px; height: 14px; color: var(--purple);"></i><span>CV</span></a>
     </div>
 
-    <!-- FOOTER (LOCATION REMOVED, SAFELY PLACED AT THE VERY END) -->
+    <!-- FOOTER -->
     <footer>
         <div class="container"><p>&copy; 2026 Prabin Chaudhary. All rights reserved.</p></div>
     </footer>
