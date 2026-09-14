@@ -1,725 +1,3577 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prabin Chaudhary | Official Portfolio & IT Specialist</title>
-    <meta name="title" content="Prabin Chaudhary | Official Portfolio">
-    <meta name="description" content="Official portfolio of Prabin Chaudhary - IT Instructor, Web Developer, and Computer Specialist, Rupandehi, Nepal.">
-    <meta name="author" content="Prabin Chaudhary">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Primary Search Meta Tags -->
+<title>Prabin Chaudhary (Ratna Prasad Tharu) | Official Portfolio & Prince Digital Zone</title>
+<meta name="title" content="Prabin Chaudhary (Ratna Prasad Tharu) | Official Portfolio">
+<meta name="description" content="Official portfolio of Prabin Chaudhary (Legal Name: Ratna Prasad Tharu) - IT Instructor, Web Developer, and Founder of Prince Digital Zone, Rupandehi, Nepal.">
+<meta name="keywords" content="Prabin Chaudhary, Ratna Prasad Tharu, Prince Digital Zone, infoprabintech, Web Developer Nepal, IT Instructor Rupandehi">
+<meta name="author" content="Prabin Chaudhary">
+<meta name="robots" content="index, follow">
 
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+<!-- Open Graph / Social Media Preview -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Prabin Chaudhary (Ratna Prasad Tharu) | Official">
+<meta property="og:description" content="IT Instructor, Web Developer & Founder of Prince Digital Zone in Rupandehi.">
+<meta property="og:url" content="https://infoprabintech-cpu.github.io/prabin-chaudhary-official/">
 
-    <style>
-        :root {
-            --bg: #030712;
-            --bg-glass: rgba(11, 19, 38, 0.92);
-            --surface-card: rgba(13, 22, 44, 0.85);
-            --border: rgba(56, 189, 248, 0.18);
-            --border-glow: rgba(56, 189, 248, 0.55);
-            --primary: #38bdf8;
-            --cyan: #06b6d4;
-            --purple: #a855f7;
-            --emerald: #10b981;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --text-dim: #64748b;
-            --primary-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
-            --name-gradient: linear-gradient(110deg, #ffffff 0%, #38bdf8 30%, #c084fc 65%, #38bdf8 100%);
-            --radius-lg: 16px;
-            --radius-md: 10px;
-        }
+<!-- Google Knowledge Graph (Person Schema) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Prabin Chaudhary",
+  "legalName": "Ratna Prasad Tharu",
+  "alternateName": ["Ratna Prasad Tharu", "Prabin Tech"],
+  "url": "https://infoprabintech-cpu.github.io/prabin-chaudhary-official/",
+  "jobTitle": "IT Instructor & Entrepreneur",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Prince Digital Zone"
+  },
+  "sameAs": [
+    "https://www.facebook.com/prabinchaudhary.official/",
+    "https://github.com/infoprabintech-cpu"
+  ]
+}
+</script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-        [data-theme="light"] {
-            --bg: #f8fafc;
-            --bg-glass: rgba(255, 255, 255, 0.95);
-            --surface-card: #ffffff;
-            --border: rgba(14, 165, 233, 0.22);
-            --border-glow: rgba(2, 132, 199, 0.6);
-            --primary: #0284c7;
-            --text-main: #0f172a;
-            --text-muted: #475569;
-            --text-dim: #64748b;
-        }
+    <style>
+       @media (max-width: 768px) {
+  body {
+    padding: 8px !important;
+    font-size: 14px;
+  }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
+  /* मुख्य बाकसहरूलाई मोबाइलको पूरै चौडाइ दिने */
+  .container, .card, div[class*="container"], div[class*="card"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
 
-        html { scroll-behavior: smooth; }
+  /* ४ वटा काउन्टर बक्स (499+, 5+, 1800+, 100+) २x२ मा देखाउने */
+  .stats-grid, div[style*="display: flex"] {
+    flex-wrap: wrap !important;
+  }
+}
+       /* PC मा CV को छेउमा देखिने बटन स्टाइल */
+.nav-pay-btn {
+  background-color: #0284c7;
+  color: #ffffff !important;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+}
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
-            line-height: 1.5;
-            padding-bottom: 70px;
-        }
+.nav-pay-btn:hover {
+  background-color: #0369a1;
+}
 
-        @media (min-width: 992px) {
-            body { padding-bottom: 0; }
-        }
+/* मोबाइल (३ वटा धर्का) भित्र अटो-फिट हुने स्टाइल */
+@media (max-width: 768px) {
+  .nav-pay-btn {
+    display: block;
+    margin: 8px 0;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+  }
+}
+        :root {
+            --bg: #030712;
+            --bg-glass: rgba(11, 19, 38, 0.88);
+            --surface-card: rgba(13, 22, 44, 0.82);
+            --surface-card-hover: rgba(19, 32, 62, 0.95);
+            --border: rgba(56, 189, 248, 0.18);
+            --border-glow: rgba(56, 189, 248, 0.55);
+            --border-purple: rgba(168, 85, 247, 0.3);
+            --primary: #38bdf8;
+            --primary-rgb: 56, 189, 248;
+            --cyan: #06b6d4;
+            --indigo: #6366f1;
+            --purple: #a855f7;
+            --emerald: #10b981;
+            --amber: #f59e0b;
+            --rose: #f43f5e;
+            --pdf-red: #ef4444;
+            --primary-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+            --name-gradient: linear-gradient(110deg, #ffffff 0%, #38bdf8 30%, #c084fc 65%, #38bdf8 100%);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-dim: #64748b;
+            --code-bg: #020617;
+            --radius-lg: 20px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+            --aurora-opacity: 0.12;
+        }
 
-        .container {
-            width: 100%;
-            max-width: 1120px;
-            margin: 0 auto;
-            padding: 0 16px;
-        }
+        /* Light Mode High-Contrast Ultra-Clean Theme */
+        [data-theme="light"] {
+            --bg: #f8fafc;
+            --bg-glass: rgba(255, 255, 255, 0.94);
+            --surface-card: rgba(255, 255, 255, 0.92);
+            --surface-card-hover: #ffffff;
+            --border: rgba(14, 165, 233, 0.22);
+            --border-glow: rgba(2, 132, 199, 0.6);
+            --border-purple: rgba(147, 51, 234, 0.25);
+            --primary: #0284c7;
+            --primary-rgb: 2, 132, 199;
+            --cyan: #0891b2;
+            --indigo: #4f46e5;
+            --purple: #7c3aed;
+            --emerald: #059669;
+            --amber: #d97706;
+            --rose: #e11d48;
+            --pdf-red: #dc2626;
+            --primary-gradient: linear-gradient(135deg, #0284c7 0%, #6366f1 50%, #9333ea 100%);
+            --name-gradient: linear-gradient(110deg, #0f172a 0%, #0284c7 35%, #7c3aed 70%, #0f172a 100%);
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --text-dim: #64748b;
+            --code-bg: #0f172a;
+            --aurora-opacity: 0.06;
+        }
 
-        section {
-            padding: 40px 0;
-            scroll-margin-top: 70px; /* मेनु थिच्दा हेडरले अक्षर नछेकोस् */
-        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-        /* NAVBAR */
-        .navbar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: var(--bg-glass);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-        }
+        html {
+            scroll-behavior: smooth;
+        }
 
-        .nav-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 62px;
-        }
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.5;
+            overflow-x: hidden;
+            font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+            padding-bottom: 68px;
+            -webkit-overflow-scrolling: touch;
+        }
 
-        .nav-brand-box {
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 4px 8px;
-        }
+        @media (min-width: 992px) {
+            body { padding-bottom: 0; }
+        }
 
-        .brand-name {
-            font-size: 13.5px;
-            font-weight: 800;
-            background: var(--name-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            white-space: nowrap;
-        }
+        /* Ambient Background Canvas - Optimized for 60-120fps */
+        #bgCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            pointer-events: none;
+            display: none; /* Disabled on mobile for buttery smooth scrolling */
+        }
 
-        .brand-sub {
-            font-size: 9.5px;
-            color: var(--primary);
-            display: block;
-        }
+        @media (min-width: 768px) {
+            #bgCanvas { display: block; }
+        }
 
-        .nav-menu {
-            display: none;
-            list-style: none;
-            gap: 4px;
-            align-items: center;
-        }
+        .ambient-aurora {
+            position: fixed;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%) translateZ(0);
+            width: 600px;
+            max-width: 90vw;
+            height: 380px;
+            background: radial-gradient(circle, rgba(56, 189, 248, var(--aurora-opacity)) 0%, rgba(168, 85, 247, 0.05) 50%, transparent 75%);
+            filter: blur(40px);
+            z-index: -1;
+            pointer-events: none;
+        }
 
-        @media (min-width: 992px) {
-            .nav-menu { display: flex; }
-        }
+        .container {
+            width: 100%;
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
 
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--text-muted);
-            font-size: 13px;
-            font-weight: 600;
-            padding: 6px 12px;
-            border-radius: 20px;
-            transition: 0.2s;
-        }
+        @media (min-width: 768px) {
+            .container { padding: 0 24px; }
+        }
 
-        .nav-menu a:hover {
-            color: var(--text-main);
-            background: rgba(56, 189, 248, 0.12);
-        }
+        section {
+            padding: 30px 0;
+            position: relative;
+        }
 
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
+        @media (min-width: 768px) {
+            section { padding: 44px 0; }
+        }
 
-        .theme-toggle-btn {
-            background: var(--surface-card);
-            border: 1px solid var(--border);
-            color: var(--primary);
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--bg-glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            transform: translateZ(0);
+            will-change: transform;
+        }
 
-        /* CV र Pay Info Buttons (Inline, No Wrap) */
-        .btn-nav-cta {
-            padding: 6px 12px;
-            height: 32px;
-            font-size: 11.5px;
-            font-weight: 700;
-            border-radius: 20px;
-            background: var(--primary-gradient);
-            color: #030712 !important;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            white-space: nowrap;
-        }
+        .navbar.scrolled {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+            border-bottom-color: var(--border-glow);
+        }
 
-        .btn-nav-pay {
-            padding: 6px 12px;
-            height: 32px;
-            font-size: 11.5px;
-            font-weight: 700;
-            border-radius: 20px;
-            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
-            color: #ffffff !important;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            white-space: nowrap;
-        }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
 
-        .mobile-menu-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 34px;
-            height: 34px;
-            border-radius: 8px;
-            background: var(--surface-card);
-            border: 1px solid var(--border);
-            color: var(--text-main);
-            cursor: pointer;
-        }
+        @media (min-width: 768px) {
+            .nav-inner { height: 66px; }
+        }
 
-        @media (min-width: 992px) {
-            .mobile-menu-btn { display: none; }
-        }
+        /* Aurora Animated Holographic Brand Box */
+        .nav-brand-box {
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 11px;
+            border-radius: 12px;
+            background: var(--surface-card);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 14px rgba(56, 189, 248, 0.12);
+            border: 1px solid var(--border);
+            max-width: 72vw;
+            transform: translateZ(0);
+        }
 
-        /* Mobile Drawer */
-        .mobile-drawer {
-            display: none;
-            position: fixed;
-            top: 62px;
-            left: 0;
-            width: 100%;
-            background: var(--bg-glass);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border);
-            padding: 15px;
-            z-index: 999;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        }
+        @media (min-width: 768px) {
+            .nav-brand-box {
+                gap: 10px;
+                padding: 6px 14px;
+                max-width: none;
+            }
+        }
 
-        .mobile-drawer.active { display: block; }
+        .nav-brand-box::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 13px;
+            padding: 1.2px;
+            background: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc, #38bdf8);
+            background-size: 300% 300%;
+            animation: auroraBorder 5s linear infinite;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
 
-        .mobile-drawer-links {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
+        @keyframes auroraBorder {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-        .mobile-drawer-links a {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 12px;
-            border-radius: var(--radius-md);
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            background: rgba(125, 125, 125, 0.08);
-        }
+        .brand-icon-box {
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.35), rgba(168, 85, 247, 0.35));
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.35);
+            flex-shrink: 0;
+            position: relative;
+        }
 
-        /* Hero Bento */
-        .hero-bento {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 16px;
-        }
+        @media (min-width: 768px) {
+            .brand-icon-box { width: 32px; height: 32px; }
+        }
 
-        @media (min-width: 992px) {
-            .hero-bento { grid-template-columns: 300px 1fr; }
-        }
+        .brand-pulse-dot {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--emerald);
+            box-shadow: 0 0 6px var(--emerald);
+            animation: pulseFade 1.6s infinite ease-in-out;
+        }
 
-        .spot-card {
-            background: var(--surface-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 20px;
-        }
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15;
+            overflow: hidden;
+        }
 
-        .hero-avatar-card {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+        /* Calibrated Brand Name: Never oversized on Mobile */
+        .brand-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.3px;
+            background: var(--name-gradient);
+            background-size: 250% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
-        .avatar-core {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            padding: 3px;
-            background: var(--primary-gradient);
-            margin: 10px 0;
-        }
+        @media (min-width: 768px) {
+            .brand-name {
+                font-size: 14.5px;
+                letter-spacing: 0.6px;
+            }
+        }
 
-        .avatar-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: 50% 18%;
-            border-radius: 50%;
-            display: block;
-        }
+        .brand-sub {
+            font-size: 9.5px;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--primary);
+            letter-spacing: 0.3px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            padding: 8px 14px;
-            border-radius: var(--radius-md);
-            font-size: 12px;
-            font-weight: 700;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-        }
+        @media (min-width: 768px) {
+            .brand-sub { font-size: 10px; letter-spacing: 0.4px; }
+        }
 
-        .btn-primary { background: var(--primary-gradient); color: #030712; }
-        .btn-secondary { background: rgba(125, 125, 125, 0.1); border: 1px solid var(--border); color: var(--text-main); }
+        .nav-menu {
+            display: none;
+            list-style: none;
+            gap: 4px;
+            align-items: center;
+        }
 
-        .bento-metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-top: 14px;
-        }
+        @media (min-width: 992px) {
+            .nav-menu { display: flex; }
+        }
 
-        @media (min-width: 768px) {
-            .bento-metrics-grid { grid-template-columns: repeat(4, 1fr); }
-        }
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 7px 11px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+        }
 
-        .metric-cell {
-            background: var(--surface-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-md);
-            padding: 14px 10px;
-            text-align: center;
-        }
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--text-main);
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid var(--border-glow);
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+        }
 
-        .metric-value { font-size: 22px; font-weight: 800; color: var(--primary); }
-        .metric-label { font-size: 11px; color: var(--text-muted); }
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
 
-        .section-header { text-align: center; margin-bottom: 24px; }
-        .section-title { font-size: 22px; font-weight: 800; }
+        /* Dark / Light Theme Toggle Button */
+        .theme-toggle-btn {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            color: var(--primary);
+            width: 34px;
+            height: 34px;
+            border-radius: 9px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
 
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-        }
+        @media (min-width: 768px) {
+            .theme-toggle-btn { width: 36px; height: 36px; }
+        }
 
-        @media (min-width: 768px) {
-            .grid-2 { grid-template-columns: 1fr 1fr; }
-        }
+        .theme-toggle-btn:hover {
+            border-color: var(--primary);
+            transform: rotate(15deg) scale(1.05);
+            background: rgba(56, 189, 248, 0.15);
+        }
 
-        .grid-3 {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-        }
+        .btn-nav-cta {
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: 8px;
+            background: var(--primary-gradient);
+            color: #030712;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: 0 2px 12px rgba(56, 189, 248, 0.35);
+            transition: all 0.2s ease;
+        }
 
-        @media (min-width: 768px) {
-            .grid-3 { grid-template-columns: repeat(3, 1fr); }
-        }
+        @media (min-width: 768px) {
+            .btn-nav-cta { padding: 7px 14px; font-size: 12.5px; border-radius: 9px; }
+        }
 
-        .item-card {
-            background: var(--surface-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-md);
-            padding: 16px;
-        }
+        .btn-nav-cta:hover {
+            transform: translateY(-1.5px);
+            box-shadow: 0 4px 18px rgba(56, 189, 248, 0.55);
+        }
 
-        /* Mobile Bottom Dock */
-        .mobile-quick-dock {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: var(--bg-glass);
-            backdrop-filter: blur(14px);
-            border-top: 1px solid var(--border);
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            padding: 6px 0;
-            z-index: 9999;
-        }
+        .mobile-menu-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 9px;
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
 
-        @media (min-width: 992px) {
-            .mobile-quick-dock { display: none; }
-        }
+        .mobile-menu-btn.is-active {
+            background: rgba(239, 68, 68, 0.15);
+            border-color: #ef4444;
+            color: #ef4444;
+            box-shadow: 0 0 12px rgba(239, 68, 68, 0.3);
+        }
 
-        .dock-btn {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: var(--text-muted);
-            font-size: 9.5px;
-            font-weight: 700;
-            gap: 2px;
-        }
+        @media (min-width: 992px) {
+            .mobile-menu-btn { display: none; }
+        }
 
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 22px 0;
-            text-align: center;
-            font-size: 12px;
-            color: var(--text-dim);
-            background: var(--surface-card);
-        }
-    </style>
+        .mobile-drawer {
+            display: none;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            background: var(--bg-glass);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 16px 18px;
+            z-index: 999;
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.5);
+            animation: slideDown 0.2s ease-out;
+        }
+
+        .mobile-drawer.active { display: block; }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .mobile-drawer-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 10px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mobile-drawer-close-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 5px 10px;
+            border-radius: 8px;
+            background: rgba(239, 68, 68, 0.12);
+            border: 1px solid rgba(239, 68, 68, 0.35);
+            color: #ef4444;
+            cursor: pointer;
+        }
+
+        .mobile-drawer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .mobile-drawer-links a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 12px;
+            border-radius: var(--radius-md);
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13.5px;
+            font-weight: 600;
+            background: rgba(125, 125, 125, 0.05);
+            border: 1px solid transparent;
+            transition: all 0.15s ease;
+        }
+
+        .mobile-drawer-links a:hover,
+        .mobile-drawer-links a.active {
+            background: rgba(56, 189, 248, 0.14);
+            border-color: var(--border-glow);
+            color: var(--text-main);
+        }
+
+        .hero {
+            padding-top: 14px;
+            padding-bottom: 14px;
+        }
+
+        .hero-bento {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        @media (min-width: 992px) {
+            .hero-bento {
+                grid-template-columns: 320px 1fr;
+                align-items: stretch;
+            }
+        }
+
+        .spot-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 18px 16px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+            transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+        }
+
+        @media (min-width: 768px) {
+            .spot-card { padding: 22px 24px; }
+        }
+
+        .spot-card:hover {
+            border-color: var(--border-glow);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35), 0 0 18px rgba(56, 189, 248, 0.15);
+        }
+
+        .hero-avatar-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px 14px 18px;
+            justify-content: center;
+            position: relative;
+        }
+
+        .avatar-stage {
+            position: relative;
+            width: 155px;
+            height: 155px;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .orbit-outer {
+            position: absolute;
+            inset: -10px;
+            border-radius: 50%;
+            border: 2px dashed rgba(56, 189, 248, 0.45);
+            animation: spinRing 22s linear infinite;
+            pointer-events: none;
+        }
+
+        .orbit-outer::after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--primary);
+            transform: translateX(-50%);
+        }
+
+        .orbit-inner {
+            position: absolute;
+            inset: -3px;
+            border-radius: 50%;
+            border: 1.5px dotted rgba(168, 85, 247, 0.55);
+            animation: spinRingRev 16s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes spinRing {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes spinRingRev {
+            from { transform: rotate(360deg); }
+            to { transform: rotate(0deg); }
+        }
+
+        /* Avatar Core Frame with Proper Image Ratio */
+        .avatar-core {
+            position: relative;
+            width: 136px;
+            height: 136px;
+            border-radius: 50%;
+            padding: 3.5px;
+            background: linear-gradient(145deg, #38bdf8, #818cf8, #a855f7);
+            box-shadow: 0 0 28px rgba(56, 189, 248, 0.35);
+            cursor: pointer;
+            transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .avatar-core:hover {
+            transform: scale(1.04);
+            box-shadow: 0 0 35px rgba(56, 189, 248, 0.55);
+        }
+
+        /* STRICT PHOTO CALIBRATION: Clear Vision, Face & Hair Centered, Scaled */
+        .avatar-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 50% 18% !important;
+            border-radius: 50%;
+            background: #0b1221;
+            display: block;
+            transform: scale(1.12);
+            transition: transform 0.35s ease;
+        }
+
+        .avatar-core:hover .avatar-img {
+            transform: scale(1.18);
+        }
+
+        .photo-expand-hint {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: rgba(3, 7, 18, 0.65);
+            backdrop-filter: blur(2px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: 10.5px;
+            font-weight: 700;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+            gap: 3px;
+        }
+
+        .avatar-core:hover .photo-expand-hint {
+            opacity: 1;
+        }
+
+        .verified-badge {
+            position: absolute;
+            bottom: 3px;
+            right: 8px;
+            background: var(--emerald);
+            color: #030712;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2.5px solid var(--bg);
+            box-shadow: 0 0 10px var(--emerald);
+            z-index: 3;
+        }
+
+        .live-status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 11px;
+            border-radius: 100px;
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--emerald);
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .pulse-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--emerald);
+            border-radius: 50%;
+            box-shadow: 0 0 6px var(--emerald);
+            animation: pulseFade 1.6s infinite ease-in-out;
+        }
+
+        @keyframes pulseFade {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.35); opacity: 0.5; }
+        }
+
+        .location-badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 100px;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid var(--border);
+            color: var(--primary);
+            font-size: 11px;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            margin-top: 6px;
+            transition: all 0.25s ease;
+        }
+
+        .location-badge-pill:hover {
+            border-color: var(--primary);
+            transform: translateY(-1px);
+        }
+
+        .hero-info-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
+        }
+
+        .super-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10.5px;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.9px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid var(--border);
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+
+        /* Proportioned Headline: Fluid, Elegant, and Clean on Mobile */
+        .brand-headline-name {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(20px, 4.2vw, 30px);
+            font-weight: 800;
+            letter-spacing: -0.4px;
+            line-height: 1.2;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .name-highlight {
+            background: var(--name-gradient);
+            background-size: 260% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textShine 7s linear infinite alternate;
+        }
+
+        @keyframes textShine {
+            0% { background-position: 0% center; }
+            100% { background-position: 100% center; }
+        }
+
+        .location-hero-bar {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .loc-tag-cyber {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10.5px;
+            font-weight: 700;
+            color: var(--primary);
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid var(--border);
+            padding: 3px 9px;
+            border-radius: 100px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .verified-heading-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            color: var(--emerald);
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            padding: 2.5px 8px;
+            border-radius: 100px;
+        }
+
+        /* Dual Identity Showcase Box */
+        .identity-showcase-box {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            padding: 9px 12px;
+            border-radius: var(--radius-md);
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            margin-bottom: 10px;
+        }
+
+        @media (min-width: 600px) {
+            .identity-showcase-box {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                padding: 10px 14px;
+            }
+        }
+
+        .id-badge-col {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .id-badge-header {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 9.5px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+
+        .id-badge-header.legal { color: var(--purple); }
+        .id-badge-header.preferred { color: var(--primary); }
+
+        .id-badge-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .id-badge-note {
+            font-size: 10.5px;
+            color: var(--text-dim);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .role-typewriter-wrapper {
+            display: flex;
+            align-items: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(12px, 2.8vw, 14px);
+            color: var(--primary);
+            font-weight: 600;
+            min-height: 22px;
+            margin-bottom: 8px;
+        }
+
+        .typewriter-cursor {
+            color: var(--purple);
+            font-weight: 700;
+            margin-left: 2px;
+            animation: blinkCursor 0.8s infinite;
+        }
+
+        @keyframes blinkCursor {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .hero-bio {
+            color: var(--text-muted);
+            font-size: 12.5px;
+            line-height: 1.55;
+            margin-bottom: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .hero-bio { font-size: 13.5px; }
+        }
+
+        .hero-actions-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: var(--radius-md);
+            font-size: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: #030712;
+            box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1.5px);
+            box-shadow: 0 6px 18px rgba(56, 189, 248, 0.45);
+        }
+
+        .btn-secondary {
+            background: rgba(125, 125, 125, 0.06);
+            border-color: var(--border);
+            color: var(--text-main);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(56, 189, 248, 0.12);
+            border-color: var(--border-glow);
+            transform: translateY(-1.5px);
+        }
+
+        .bento-metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        @media (min-width: 768px) {
+            .bento-metrics-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 12px;
+            }
+        }
+
+        .metric-cell {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 12px 10px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.22s ease;
+        }
+
+        .metric-cell:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(56, 189, 248, 0.15);
+        }
+
+        .metric-cell::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--primary-gradient);
+        }
+
+        .metric-value {
+            font-size: clamp(20px, 3.5vw, 26px);
+            font-weight: 800;
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-main);
+            margin-bottom: 2px;
+        }
+
+        .metric-label {
+            font-size: 10.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.1px;
+            color: var(--primary);
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid var(--border);
+            padding: 2.5px 10px;
+            border-radius: 30px;
+            margin-bottom: 5px;
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(20px, 3.6vw, 26px);
+            font-weight: 800;
+            letter-spacing: -0.4px;
+            color: var(--text-main);
+        }
+
+        .section-subline {
+            width: 40px;
+            height: 3px;
+            background: var(--primary-gradient);
+            margin: 6px auto 0;
+            border-radius: 10px;
+        }
+
+        .pdf-vault-wrapper {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 16px;
+            backdrop-filter: blur(18px);
+            box-shadow: 0 14px 36px rgba(0, 0, 0, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pdf-vault-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ef4444, #f59e0b, #38bdf8);
+        }
+
+        .pdf-search-bar-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 14px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pdf-search-input-box {
+            position: relative;
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .pdf-search-input-box i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-dim);
+            pointer-events: none;
+        }
+
+        .pdf-search-input {
+            width: 100%;
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 7px 10px 7px 32px;
+            color: var(--text-main);
+            font-size: 12px;
+            outline: none;
+        }
+
+        .pdf-search-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
+        }
+
+        .pdf-filter-pills {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+
+        .pdf-tab-btn {
+            background: rgba(125, 125, 125, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 5px 10px;
+            border-radius: 7px;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .pdf-tab-btn.active {
+            background: rgba(239, 68, 68, 0.16);
+            border-color: var(--pdf-red);
+            color: var(--text-main);
+        }
+
+        .pdf-cards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        @media (min-width: 640px) {
+            .pdf-cards-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (min-width: 1024px) {
+            .pdf-cards-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .pdf-item-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.22s ease;
+        }
+
+        .pdf-item-card:hover {
+            border-color: var(--pdf-red);
+            transform: translateY(-2px);
+        }
+
+        .pdf-card-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .pdf-icon-badge {
+            width: 32px;
+            height: 32px;
+            border-radius: 7px;
+            background: rgba(239, 68, 68, 0.12);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: var(--pdf-red);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .pdf-meta-tag {
+            font-size: 9.5px;
+            font-family: 'JetBrains Mono', monospace;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: rgba(125, 125, 125, 0.08);
+            color: var(--text-dim);
+            font-weight: 600;
+        }
+
+        .pdf-item-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 4px;
+            line-height: 1.35;
+        }
+
+        .pdf-item-desc {
+            font-size: 11.5px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 10px;
+            flex-grow: 1;
+        }
+
+        .pdf-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 8px;
+            border-top: 1px solid var(--border);
+            gap: 6px;
+        }
+
+        .btn-view-textnote {
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid var(--border);
+            color: var(--primary);
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 10.5px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .btn-download-pdf {
+            background: rgba(239, 68, 68, 0.14);
+            border: 1px solid rgba(239, 68, 68, 0.35);
+            color: var(--pdf-red);
+            padding: 4px 9px;
+            border-radius: 6px;
+            font-size: 10.5px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .btn-download-pdf:hover {
+            background: var(--pdf-red);
+            color: #ffffff;
+        }
+
+        .knowledge-box-wrap {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 14px 36px rgba(0, 0, 0, 0.25);
+            position: relative;
+        }
+
+        .knowledge-box-wrap::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #38bdf8, #a855f7, #10b981);
+        }
+
+        .knowledge-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 14px;
+            background: var(--surface-card);
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .terminal-dots {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .tdot { width: 9px; height: 9px; border-radius: 50%; }
+        .tdot-red { background: #ef4444; }
+        .tdot-yellow { background: #f59e0b; }
+        .tdot-green { background: #10b981; }
+
+        .vault-brand-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10.5px;
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-left: 6px;
+        }
+
+        .vault-category-tabs {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+
+        .vtab-btn {
+            background: rgba(125, 125, 125, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 4px 9px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .vtab-btn.active {
+            background: rgba(56, 189, 248, 0.16);
+            border-color: var(--primary);
+            color: var(--text-main);
+        }
+
+        .vault-body { padding: 14px; }
+        @media (min-width: 768px) { .vault-body { padding: 20px; } }
+
+        .insight-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 14px;
+        }
+
+        .insight-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 10px;
+            padding: 2.5px 7px;
+            border-radius: 5px;
+        }
+
+        .badge-ai { background: rgba(168, 85, 247, 0.15); color: var(--purple); }
+        .badge-coding { background: rgba(56, 189, 248, 0.15); color: var(--primary); }
+        .badge-shortcuts { background: rgba(245, 158, 11, 0.15); color: var(--amber); }
+        .badge-cyber { background: rgba(16, 185, 129, 0.15); color: var(--emerald); }
+
+        .insight-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 14.5px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin: 6px 0;
+        }
+
+        .insight-codeblock {
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            padding: 8px 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11.5px;
+            color: #38bdf8;
+            overflow-x: auto;
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .insight-explanation {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        .vault-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .table-filter-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+
+        .filter-btn {
+            background: rgba(125, 125, 125, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 4px 11px;
+            border-radius: 100px;
+            font-size: 11.5px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .filter-btn.active {
+            background: rgba(56, 189, 248, 0.15);
+            border-color: var(--primary);
+            color: var(--text-main);
+        }
+
+        .matrix-table-wrap {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .curriculum-grid-mobile {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            padding: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .curriculum-grid-mobile { display: none; }
+        }
+
+        .curr-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 12px;
+        }
+
+        .curr-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 4px;
+        }
+
+        .curr-card-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .curr-card-desc {
+            font-size: 11.5px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            line-height: 1.45;
+        }
+
+        .curr-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 11px;
+            border-top: 1px solid var(--border);
+            padding-top: 6px;
+        }
+
+        .curriculum-table-desktop {
+            display: none;
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 12.5px;
+        }
+
+        @media (min-width: 768px) {
+            .curriculum-table-desktop { display: table; }
+        }
+
+        .curriculum-table-desktop th {
+            background: var(--surface-card);
+            padding: 10px 14px;
+            font-weight: 700;
+            color: var(--text-main);
+            text-transform: uppercase;
+            font-size: 10px;
+            letter-spacing: 0.7px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .curriculum-table-desktop td {
+            padding: 11px 14px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-muted);
+            vertical-align: middle;
+        }
+
+        .status-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 2px 8px;
+            border-radius: 30px;
+            font-size: 10.5px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .chip-cyan { background: rgba(56, 189, 248, 0.15); color: var(--primary); border: 1px solid var(--border); }
+        .chip-green { background: rgba(16, 185, 129, 0.15); color: var(--emerald); border: 1px solid rgba(16, 185, 129, 0.35); }
+        .chip-purple { background: rgba(168, 85, 247, 0.15); color: var(--purple); border: 1px solid var(--border-purple); }
+
+        .hour-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--text-muted);
+            background: rgba(125, 125, 125, 0.08);
+            padding: 2px 6px;
+            border-radius: var(--radius-sm);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        @media (min-width: 900px) {
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+        }
+
+        .skill-group-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 16px;
+        }
+
+        .skill-group-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 14.5px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .progress-block { margin-bottom: 12px; }
+        .progress-block:last-child { margin-bottom: 0; }
+
+        .progress-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .progress-track {
+            width: 100%;
+            height: 6px;
+            background: rgba(125, 125, 125, 0.1);
+            border-radius: 100px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 100px;
+            background: var(--primary-gradient);
+            width: 0%;
+            transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .chip-tags-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tech-pill {
+            padding: 4px 9px;
+            border-radius: 7px;
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            font-size: 11.5px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .cards-grid-3 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        @media (min-width: 640px) {
+            .cards-grid-3 { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (min-width: 992px) {
+            .cards-grid-3 { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .service-card, .project-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.25s ease;
+        }
+
+        .service-card:hover, .project-card:hover {
+            border-color: var(--border-glow);
+            transform: translateY(-2.5px);
+        }
+
+        .service-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 9px;
+            background: rgba(56, 189, 248, 0.12);
+            border: 1px solid var(--border);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .service-card h3, .project-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+
+        .service-card p, .project-card p {
+            color: var(--text-muted);
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .timeline-track {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .timeline-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
+            border-radius: var(--radius-md);
+            padding: 14px 16px;
+        }
+
+        .timeline-role {
+            font-family: 'Outfit', sans-serif;
+            font-size: 14.5px;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .timeline-inst {
+            color: var(--purple);
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .timeline-body {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .inquiry-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .inquiry-grid {
+                grid-template-columns: 1.1fr 0.9fr;
+                gap: 18px;
+            }
+        }
+
+        .inquiry-form-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 18px;
+        }
+
+        .inquiry-form-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .inquiry-form-card p {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+        }
+
+        .form-group { margin-bottom: 10px; }
+
+        .form-label {
+            display: block;
+            font-size: 10.5px;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-control {
+            width: 100%;
+            background: var(--code-bg);
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            padding: 8px 10px;
+            color: var(--text-main);
+            font-size: 12px;
+            outline: none;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 8px rgba(56, 189, 248, 0.25);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 70px;
+        }
+
+        .channel-pills-column {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            justify-content: space-between;
+        }
+
+        .channel-pill-row {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 12px 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        #textNoteModal, #photoModal {
+            position: fixed;
+            inset: 0;
+            background: rgba(3, 7, 18, 0.92);
+            backdrop-filter: blur(14px);
+            z-index: 100001;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+        }
+
+        #textNoteModal.active, #photoModal.active { display: flex; }
+
+        .textnote-modal-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border-glow);
+            border-radius: var(--radius-lg);
+            width: 100%;
+            max-width: 620px;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+            overflow: hidden;
+        }
+
+        .textnote-modal-head {
+            padding: 12px 16px;
+            background: var(--surface-card);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .textnote-modal-body {
+            padding: 16px;
+            overflow-y: auto;
+            font-size: 12.5px;
+            line-height: 1.55;
+            color: var(--text-main);
+        }
+
+        .modal-content-wrap {
+            max-width: 440px;
+            width: 100%;
+            background: var(--surface-card);
+            border: 1px solid var(--border-glow);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .modal-img {
+            width: 100%;
+            max-height: 65vh;
+            object-fit: cover;
+            display: block;
+        }
+
+        .modal-caption {
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--surface-card);
+            border-top: 1px solid var(--border);
+        }
+
+        .modal-close-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(3, 7, 18, 0.85);
+            border: 1px solid var(--border);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .mobile-quick-dock {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--bg-glass);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-top: 1px solid var(--border);
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            padding: 5px 4px;
+            z-index: 9999;
+            box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.3);
+            transform: translateZ(0);
+        }
+
+        @media (min-width: 992px) {
+            .mobile-quick-dock { display: none; }
+        }
+
+        .dock-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 9px;
+            font-weight: 700;
+            padding: 4px 0;
+        }
+
+        .dock-btn i {
+            width: 16px;
+            height: 16px;
+            color: var(--primary);
+        }
+
+        #toTop {
+            position: fixed;
+            bottom: 74px;
+            right: 14px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--surface-card);
+            border: 1px solid var(--border-glow);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s ease;
+            z-index: 999;
+        }
+
+        @media (min-width: 992px) {
+            #toTop { bottom: 24px; right: 24px; }
+        }
+
+        #toTop.show { opacity: 1; visibility: visible; }
+
+        #toastBox {
+            position: fixed;
+            bottom: 74px;
+            left: 50%;
+            transform: translateX(-50%) translateY(80px);
+            background: var(--surface-card);
+            border: 1px solid var(--primary);
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 9px;
+            font-size: 12px;
+            font-weight: 600;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            z-index: 100000;
+            opacity: 0;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        #toastBox.active {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        [data-reveal].revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 20px 0;
+            text-align: center;
+            font-size: 11.5px;
+            color: var(--text-dim);
+            background: var(--surface-card);
+        }
+    </style>
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar" id="mainNavbar">
-        <div class="container">
-            <div class="nav-inner">
-                <a href="#home" class="nav-brand-box">
-                    <div>
-                        <span class="brand-name">PRABIN CHAUDHARY</span>
-                        <span class="brand-sub">Kanchan-05, Rupandehi</span>
-                    </div>
-                </a>
+    <!-- Ambient Glow & Performance Background -->
+    <div class="ambient-aurora"></div>
+    <canvas id="bgCanvas"></canvas>
 
-                <!-- PC Menus (Clickable with valid section IDs) -->
-                <ul class="nav-menu" id="navMenu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#pdfnotes">Notes & Vault</a></li>
-                    <li><a href="#curriculum">Curriculum</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#inquiry">Inquiry</a></li>
-                </ul>
+    <nav class="navbar" id="mainNavbar">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="#home" class="nav-brand-box">
+                    <div class="brand-icon-box">
+                        <i data-lucide="terminal" style="width: 15px; height: 15px;"></i>
+                        <span class="brand-pulse-dot"></span>
+                    </div>
+                    <div class="brand-text">
+                        <span class="brand-name">PRABIN CHAUDHARY</span>
+                        <span class="brand-sub">Kanchan-05, Rupandehi</span>
+                    </div>
+                </a>
 
-                <!-- Action Buttons -->
-                <div class="nav-actions">
-                    <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme">
-                        <i data-lucide="sun" id="themeIcon" style="width: 16px; height: 16px;"></i>
-                    </button>
-                    
-                    <a href="cv.pdf" class="btn-nav-cta" target="_blank">
-                        <i data-lucide="file-down" style="width: 13px; height: 13px;"></i> CV
-                    </a>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#pdfnotes" class="nav-link">Notes & Vault</a></li>
+                    <li><a href="#vault" class="nav-link">AI & Tech Tips</a></li>
+                    <li><a href="#curriculum" class="nav-link">Curriculum</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#inquiry" class="nav-link">Inquiry</a></li>
+                </ul>
 
-                    <a href="pay.html" class="btn-nav-pay">
-                        💳 Pay Info
-                    </a>
+                <div class="nav-actions">
+                    <!-- Dark / Light Theme Toggle -->
+                    <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Dark / Light Mode" title="Toggle Theme">
+                        <i data-lucide="sun" id="themeIcon" style="width: 17px; height: 17px;"></i>
+                    </button>
+                    <a href="Ratna-Prasad-Tharu-CV.pdf" id="navCVBtn" class="btn-nav-cta">
+                        <i data-lucide="file-down" style="width: 13px; height: 13px;"></i> CV
+                    </a>
+                   <!-- CV लिङ्कको ठीक छेउमा यो राख्नुहोस् -->
+<!-- १. CV बटन (यसलाई केही नगर्नुहोस्) -->
+<a href="cv.pdf" class="btn-nav-cv" target="_blank">📄 CV</a>
 
-                    <!-- Hamburger Button -->
-                    <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Menu">
-                        <i data-lucide="menu" id="mobileMenuIcon" style="width: 18px; height: 18px;"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
+<!-- २. Pay Info बटन (ठ्याक्कै CV कै क्लास वा नयाँ क्लास दिनुहोस्) -->
+<a href="pay.html" class="btn-nav-pay">💳 Pay Info</a>
+            </div>
+        </div>
 
-        <!-- Mobile Drawer -->
-        <div class="mobile-drawer" id="mobileDrawer">
-            <ul class="mobile-drawer-links">
-                <li><a href="#home" class="drawer-link"><i data-lucide="home" style="width: 16px; height: 16px;"></i> Home</a></li>
-                <li><a href="#pdfnotes" class="drawer-link"><i data-lucide="file-text" style="width: 16px; height: 16px; color: #ef4444;"></i> Study Notes & Vault</a></li>
-                <li><a href="#curriculum" class="drawer-link"><i data-lucide="book-open" style="width: 16px; height: 16px;"></i> Curriculum Modules</a></li>
-                <li><a href="#skills" class="drawer-link"><i data-lucide="bar-chart" style="width: 16px; height: 16px;"></i> Technical Skills</a></li>
-                <li><a href="#services" class="drawer-link"><i data-lucide="layers" style="width: 16px; height: 16px;"></i> Solutions & Services</a></li>
-                <li><a href="#experience" class="drawer-link"><i data-lucide="briefcase" style="width: 16px; height: 16px;"></i> Career Timeline</a></li>
-                <li><a href="pay.html" class="drawer-link" style="color: #34d399;"><i data-lucide="credit-card" style="width: 16px; height: 16px;"></i> 💳 Pay Info (QR Lock)</a></li>
-                <li><a href="#inquiry" class="drawer-link"><i data-lucide="send" style="width: 16px; height: 16px;"></i> Contact & Inquiry</a></li>
-            </ul>
-        </div>
-    </nav>
+        <div class="mobile-drawer" id="mobileDrawer">
+            <div class="mobile-drawer-header">
+                <span style="font-size: 11.5px; font-weight: 700; font-family: 'JetBrains Mono', monospace; color: var(--primary);">NAVIGATION MENU</span>
+                <button class="mobile-drawer-close-btn" id="mobileDrawerCloseBtn">
+                    <i data-lucide="x" style="width: 13px; height: 13px;"></i> Cancel
+                </button>
+            </div>
+            <ul class="mobile-drawer-links">
+                <li><a href="#home" class="drawer-link"><i data-lucide="home" style="width: 15px; height: 15px;"></i> Home</a></li>
+                <li><a href="#pdfnotes" class="drawer-link"><i data-lucide="file-text" style="width: 15px; height: 15px; color: #ef4444;"></i> PDF Notes & Handbooks</a></li>
+                <li><a href="#vault" class="drawer-link"><i data-lucide="cpu" style="width: 15px; height: 15px; color: var(--primary);"></i> PRABIN TECH Vault</a></li>
+                <li><a href="#curriculum" class="drawer-link"><i data-lucide="book-open" style="width: 15px; height: 15px;"></i> Curriculum Modules</a></li>
+                <li><a href="#skills" class="drawer-link"><i data-lucide="bar-chart" style="width: 15px; height: 15px;"></i> Technical Skills</a></li>
+                <li><a href="#services" class="drawer-link"><i data-lucide="layers" style="width: 15px; height: 15px;"></i> Solutions</a></li>
+                <li><a href="#experience" class="drawer-link"><i data-lucide="briefcase" style="width: 15px; height: 15px;"></i> Career Timeline</a></li>
+                <li><a href="#inquiry" class="drawer-link"><i data-lucide="send" style="width: 15px; height: 15px;"></i> Direct Inquiry</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <div class="container">
-        <!-- 1. HOME SECTION -->
-        <section class="hero" id="home">
-            <div class="hero-bento">
-                <div class="spot-card hero-avatar-card">
-                    <div class="avatar-core">
-                        <img src="prabin.jpg" alt="Prabin Chaudhary" class="avatar-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500';">
-                    </div>
-                    <h2 style="font-size: 16px; font-weight: 800; margin-top: 6px;">PRABIN CHAUDHARY</h2>
-                    <p style="font-size: 12px; color: var(--primary);">Computer Instructor & IT Specialist</p>
-                    <p style="font-size: 11px; color: var(--text-dim); margin-top: 4px;">📍 Kanchan-05, Rupandehi, Nepal</p>
-                </div>
+    <div class="container">
+        <section class="hero" id="home">
+            <div class="hero-bento" data-reveal>
+                
+                <!-- Avatar Spotlight Card with Precision-Framed Photo -->
+                <div class="spot-card hero-avatar-card">
+                    <div class="live-status-pill">
+                        <span class="pulse-dot"></span> Available for Training & IT
+                    </div>
 
-                <div class="spot-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-                    <div>
-                        <h1 style="font-size: clamp(22px, 4vw, 30px); font-weight: 800; margin-bottom: 8px;">
-                            नमस्ते, म <span style="color: var(--primary);">प्रबिन चौधरी</span>
-                        </h1>
-                        <p style="color: var(--text-muted); font-size: 13.5px; line-height: 1.6;">
-                            कम्प्युटर प्रशिक्षक तथा आइटी स्पेशलिस्ट। Workplace AI, Advanced Excel Architecture, Data Analytics, Nepali Typing (Preeti & Unicode) तथा Computer Hardware & Lab Infrastructure व्यवस्थापनमा ५ वर्षभन्दा बढीको व्यावहारिक अनुभव।
-                        </p>
-                    </div>
+                    <div class="avatar-stage">
+                        <div class="orbit-outer"></div>
+                        <div class="orbit-inner"></div>
+                        <div class="avatar-core" id="openPhotoModal" title="Click to view full workstation photo">
+                            <!-- PERFECT OBJECT POSITION: Face & Eyes Clear in 1:1 Circle -->
+                            <img src="prabin.jpg" alt="Prabin Chaudhary at IT Workstation" class="avatar-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500';">
+                            <div class="photo-expand-hint">
+                                <i data-lucide="maximize-2" style="width: 15px; height: 15px;"></i>
+                                <span>Full View</span>
+                            </div>
+                        </div>
+                        <div class="verified-badge" title="Verified Professional Instructor">
+                            <i data-lucide="check" style="width: 13px; height: 13px;"></i>
+                        </div>
+                    </div>
 
-                    <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px;">
-                        <a href="#pdfnotes" class="btn btn-primary">
-                            <i data-lucide="file-text" style="width: 14px; height: 14px;"></i> PDF Notes
-                        </a>
-                        <a href="https://wa.me/9779716175657" target="_blank" class="btn btn-secondary">
-                            <i data-lucide="message-circle" style="width: 14px; height: 14px; color: #22c55e;"></i> WhatsApp
-                        </a>
-                        <a href="cv.pdf" class="btn btn-secondary" target="_blank">
-                            <i data-lucide="download" style="width: 14px; height: 14px;"></i> Download CV
-                        </a>
-                        <a href="#inquiry" class="btn btn-secondary">
-                            <i data-lucide="send" style="width: 14px; height: 14px;"></i> Inquiry
-                        </a>
-                    </div>
-                </div>
-            </div>
+                    <h2 style="font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 2px; text-transform: uppercase;">PRABIN CHAUDHARY</h2>
+                    <p style="font-size: 11px; color: var(--primary); font-family: 'JetBrains Mono', monospace; margin-bottom: 4px;">Computer Instructor & IT Specialist</p>
+                    
+                    <div class="location-badge-pill">
+                        <i data-lucide="map-pin" style="width: 11px; height: 11px; color: var(--primary);"></i>
+                        Kanchan-05, Rupandehi, Nepal
+                    </div>
+                </div>
 
-            <div class="bento-metrics-grid">
-                <div class="metric-cell">
-                    <div class="metric-value">499+</div>
-                    <div class="metric-label">Learners Mentored</div>
-                </div>
-                <div class="metric-cell">
-                    <div class="metric-value">5+</div>
-                    <div class="metric-label">Years IT Experience</div>
-                </div>
-                <div class="metric-cell">
-                    <div class="metric-value">1800+</div>
-                    <div class="metric-label">Lab Instruction Hours</div>
-                </div>
-                <div class="metric-cell">
-                    <div class="metric-value">100%</div>
-                    <div class="metric-label">Practical Delivery</div>
-                </div>
-            </div>
-        </section>
+                <!-- Main Hero Info Spot Card with Fluid Typography -->
+                <div class="spot-card hero-info-card">
+                    <div>
+                        <div class="super-tag">
+                            <i data-lucide="sparkles" style="width: 12px; height: 12px;"></i> Computer Instructor & IT Specialist
+                        </div>
 
-        <!-- 2. NOTES & VAULT SECTION -->
-        <section id="pdfnotes">
-            <div class="section-header">
-                <h2 class="section-title">Official Study Notes & PDF Vault</h2>
-                <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">सिकाइ सामग्री तथा प्रयोगात्मक गाइडहरू</p>
-            </div>
-            <div class="grid-2">
-                <div class="item-card">
-                    <h3 style="font-size: 15px; margin-bottom: 6px;">Workplace Generative AI & Prompt Engineering</h3>
-                    <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">दैनिक कार्यालयको काम तथा रिसर्चलाई छिटो बनाउने AI प्रम्प्टिङ गाइड।</p>
-                    <a href="#inquiry" class="btn btn-secondary" style="font-size: 11px; padding: 5px 10px;">Request Note</a>
-                </div>
-                <div class="item-card">
-                    <h3 style="font-size: 15px; margin-bottom: 6px;">Advanced Excel & Dynamic Formulas</h3>
-                    <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">XLOOKUP, INDEX/MATCH र Automated Dashboard निर्माणका फर्मुलाहरू।</p>
-                    <a href="#inquiry" class="btn btn-secondary" style="font-size: 11px; padding: 5px 10px;">Request Note</a>
-                </div>
-            </div>
-        </section>
+                        <h1 class="brand-headline-name">
+                            <span class="name-highlight">PRABIN CHAUDHARY</span>
+                        </h1>
 
-        <!-- 3. CURRICULUM SECTION -->
-        <section id="curriculum">
-            <div class="section-header">
-                <h2 class="section-title">Curriculum Modules</h2>
-                <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">हामीले प्रदान गर्ने मुख्य तालिम कोर्सहरू</p>
-            </div>
-            <div class="grid-3">
-                <div class="item-card">
-                    <h3 style="font-size: 14.5px; margin-bottom: 6px;">Advanced MS Excel</h3>
-                    <p style="font-size: 12px; color: var(--text-muted);">फर्मुला, पिभोट टेबल, डाटा एनालिसिस तथा रिपोर्टिङ।</p>
-                    <span style="font-size: 11px; color: var(--primary); font-weight: bold; margin-top: 8px; display: inline-block;">४५ घण्टा</span>
-                </div>
-                <div class="item-card">
-                    <h3 style="font-size: 14.5px; margin-bottom: 6px;">Tally Prime & Accounting</h3>
-                    <p style="font-size: 12px; color: var(--text-muted);">भौचर एन्ट्री, भ्याट हिसाब, इन्भेन्टरी तथा लेजर।</p>
-                    <span style="font-size: 11px; color: var(--primary); font-weight: bold; margin-top: 8px; display: inline-block;">४० घण्टा</span>
-                </div>
-                <div class="item-card">
-                    <h3 style="font-size: 14.5px; margin-bottom: 6px;">Hardware & Networking</h3>
-                    <p style="font-size: 12px; color: var(--text-muted);">कम्प्युटर एसेम्ब्लिङ, विन्डोज इन्स्टलेसन तथा ट्रबलसुटिङ।</p>
-                    <span style="font-size: 11px; color: var(--primary); font-weight: bold; margin-top: 8px; display: inline-block;">३० घण्टा</span>
-                </div>
-            </div>
-        </section>
+                        <div class="location-hero-bar">
+                            <span class="loc-tag-cyber">
+                                <i data-lucide="map-pin" style="width: 11px; height: 11px; color: var(--primary);"></i>
+                                Kanchan-05, Rupandehi, Nepal
+                            </span>
+                            <span class="verified-heading-tag">
+                                <i data-lucide="check-circle" style="width: 11px; height: 11px;"></i> Verified Instructor
+                            </span>
+                        </div>
 
-        <!-- 4. SKILLS SECTION -->
-        <section id="skills">
-            <div class="section-header">
-                <h2 class="section-title">Technical Skills</h2>
-                <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">हाम्रा मुख्य प्राविधिक दक्षताहरू</p>
-            </div>
-            <div class="grid-2">
-                <div class="item-card">
-                    <h3 style="font-size: 14px; margin-bottom: 8px;">Practical Capabilities</h3>
-                    <p style="font-size: 12.5px; color: var(--text-muted); line-height: 1.8;">
-                        ✔ Advanced Excel Modeling & Dashboards<br>
-                        ✔ Generative AI Prompt Frameworks<br>
-                        ✔ Preeti & Nepali Unicode Fast Typing<br>
-                        ✔ Tally Prime / ERP Accounting
-                    </p>
-                </div>
-                <div class="item-card">
-                    <h3 style="font-size: 14px; margin-bottom: 8px;">Hardware & IT Systems</h3>
-                    <p style="font-size: 12.5px; color: var(--text-muted); line-height: 1.8;">
-                        ✔ Workstation Diagnosis & Repair<br>
-                        ✔ Operating System Clean Deployment<br>
-                        ✔ LAN Networking & Static IP Config<br>
-                        ✔ Lab Security & Malware Protection
-                    </p>
-                </div>
-            </div>
-        </section>
+                        <div class="role-typewriter-wrapper">
+                            <span id="roleTypewriter"></span><span class="typewriter-cursor">|</span>
+                        </div>
 
-        <!-- 5. SERVICES SECTION -->
-        <section id="services">
-            <div class="section-header">
-                <h2 class="section-title">Solutions & Services</h2>
-                <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">हामीबाट उपलब्ध सेवाहरू</p>
-            </div>
-            <div class="grid-3">
-                <div class="item-card">
-                    <h3 style="font-size: 14.5px; margin-bottom: 6px;">Computer Training</h3>
-                    <p style="font-size: 12px; color: var(--text-muted);">विद्यार्थी तथा कर्मचारीका लागि प्रयोगात्मक कम्प्युटर क्लास।</p>
-                </div>
-                <div class="item-card">
-                    <h3 style="font-size: 14.5px; margin-bottom: 6px;">IT Maintenance</h3>
-                    <p style="font-size: 12px; color: var(--text-muted);">कम्प्युटर मर्मत, फर्म्याटिङ तथा नेटवर्क सेटअप।</p>
-                </div>
-                <div class="item-card">
-                    <h3 style="font-size: 14.5px; margin-bottom: 6px;">Data Solutions</h3>
-                    <p style="font-size: 12px; color: var(--text-muted);">एक्सल अटोमेसन, डाटा क्लिनिङ तथा डिजिटल डकुमेन्टेसन।</p>
-                </div>
-            </div>
-        </section>
+                        <p class="hero-bio">
+                            Computer Instructor & IT Specialist based in Kanchan-05, Rupandehi, Nepal. Delivering practical training in Workplace AI, Prompt Engineering, Advanced Excel Architecture, Data Analytics, Nepali Typing (Preeti & Unicode), and Lab Systems Infrastructure.
+                        </p>
 
-        <!-- 6. EXPERIENCE SECTION -->
-        <section id="experience">
-            <div class="section-header">
-                <h2 class="section-title">Career Timeline</h2>
-                <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">कार्य अनुभव विवरण</p>
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 10px;">
-                <div class="item-card">
-                    <div style="display: flex; justify-content: space-between;">
-                        <h3 style="font-size: 14px;">Computer Teacher & IT Admin</h3>
-                        <span style="font-size: 11px; color: var(--primary);">2025 – 2026</span>
-                    </div>
-                    <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Janachahana English Boarding School, Rupandehi</p>
-                </div>
-                <div class="item-card">
-                    <div style="display: flex; justify-content: space-between;">
-                        <h3 style="font-size: 14px;">EDP Clerk cum Accountant</h3>
-                        <span style="font-size: 11px; color: var(--primary);">2022 – 2024</span>
-                    </div>
-                    <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">NBK Company, Qatar</p>
-                </div>
-            </div>
-        </section>
+                        <!-- High-End Dual Identity Card -->
+                        <div class="identity-showcase-box">
+                            <div class="id-badge-col">
+                                <div class="id-badge-header legal">
+                                    <i data-lucide="shield" style="width: 11px; height: 11px;"></i>
+                                    Official Legal Identity
+                                </div>
+                                <div class="id-badge-title">
+                                    Ratna Prasad Tharu
+                                </div>
+                                <div class="id-badge-note">
+                                    Academic & Government Records
+                                </div>
+                            </div>
 
-        <!-- 7. INQUIRY SECTION -->
-        <section id="inquiry">
-            <div class="section-header">
-                <h2 class="section-title">Inquiry & Contact</h2>
-                <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">कुनै पनि जिज्ञासा वा भर्नाका लागि सम्पर्क गर्नुहोस्</p>
-            </div>
-            <div class="item-card" style="max-width: 500px; margin: 0 auto; text-align: center;">
-                <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
-                    कम्प्युटर तालिम, आइटी सपोर्ट वा भुक्तानी जानकारीका लागि सिधै कुरा गर्न सक्नुहुन्छ:
-                </p>
-                <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
-                    <a href="https://wa.me/9779716175657" target="_blank" class="btn btn-primary" style="background: #22c55e; color: #fff;">
-                        <i data-lucide="message-circle" style="width: 14px; height: 14px;"></i> WhatsApp
-                    </a>
-                    <a href="pay.html" class="btn btn-primary" style="background: #0284c7; color: #fff;">
-                        💳 Pay Info (QR Codes)
-                    </a>
-                </div>
-            </div>
-        </section>
-    </div>
+                            <div class="id-badge-col">
+                                <div class="id-badge-header preferred">
+                                    <i data-lucide="badge-check" style="width: 11px; height: 11px;"></i>
+                                    Preferred / Professional Brand
+                                </div>
+                                <div class="id-badge-title">
+                                    Prabin Chaudhary
+                                </div>
+                                <div class="id-badge-note">
+                                    Instruction & IT Industry
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-    <!-- Mobile Sticky Dock -->
-    <div class="mobile-quick-dock">
-        <a href="tel:+9779716175657" class="dock-btn">
-            <i data-lucide="phone-call" style="width: 16px; height: 16px;"></i>
-            <span>Call</span>
-        </a>
-        <a href="https://wa.me/9779716175657" target="_blank" class="dock-btn">
-            <i data-lucide="message-circle" style="width: 16px; height: 16px; color: #22c55e;"></i>
-            <span>WhatsApp</span>
-        </a>
-        <a href="#pdfnotes" class="dock-btn">
-            <i data-lucide="file-text" style="width: 16px; height: 16px; color: #ef4444;"></i>
-            <span>Notes</span>
-        </a>
-        <a href="pay.html" class="dock-btn">
-            <i data-lucide="credit-card" style="width: 16px; height: 16px; color: #38bdf8;"></i>
-            <span>Pay QR</span>
-        </a>
-        <a href="cv.pdf" class="dock-btn" target="_blank">
-            <i data-lucide="file-down" style="width: 16px; height: 16px; color: var(--purple);"></i>
-            <span>CV</span>
-        </a>
-    </div>
+                    <div class="hero-actions-row">
+                        <a href="#pdfnotes" class="btn btn-primary" style="background: linear-gradient(135deg, #ef4444, #f97316); color: #fff;">
+                            <i data-lucide="file-text" style="width: 14px; height: 14px;"></i> PDF Notes
+                        </a>
+                        <a href="https://wa.me/9779716175657" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                            <i data-lucide="message-circle" style="width: 14px; height: 14px; color: #22c55e;"></i> WhatsApp
+                        </a>
+                        <a href="Ratna-Prasad-Tharu-CV.pdf" id="heroDownloadCV" class="btn btn-secondary">
+                            <i data-lucide="download" style="width: 14px; height: 14px;"></i> CV
+                        </a>
+                        <a href="#inquiry" class="btn btn-secondary">
+                            <i data-lucide="send" style="width: 14px; height: 14px;"></i> Inquiry
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-    <!-- FOOTER (Ratna Prasad Tharu हटाइयो) -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 PRABIN CHAUDHARY. All rights reserved. Kanchan-05, Rupandehi, Nepal.</p>
-        </div>
-    </footer>
+            <!-- Bento Stats Metrics Grid (5 Years Experience, 499+ Students) -->
+            <div class="bento-metrics-grid" data-reveal>
+                <div class="metric-cell">
+                    <div class="metric-value" data-target="499">0</div>
+                    <div class="metric-label">Learners Mentored</div>
+                </div>
+                <div class="metric-cell">
+                    <div class="metric-value" data-target="5">0</div>
+                    <div class="metric-label">Years IT Experience</div>
+                </div>
+                <div class="metric-cell">
+                    <div class="metric-value" data-target="1800">0</div>
+                    <div class="metric-label">Lab Instruction Hours</div>
+                </div>
+                <div class="metric-cell">
+                    <div class="metric-value" data-target="100">0</div>
+                    <div class="metric-label">Practical Delivery %</div>
+                </div>
+            </div>
+        </section>
 
-    <script>
-        // Icons Render
-        lucide.createIcons();
+        <section id="pdfnotes">
+            <div class="section-header" data-reveal>
+                <span class="section-tag" style="color: #ef4444;">
+                    <i data-lucide="file-text" style="width: 11px; height: 11px;"></i> Study Resources
+                </span>
+                <h2 class="section-title">Official PDF & Instant Text Notes Vault</h2>
+                <div class="section-subline" style="background: linear-gradient(90deg, #ef4444, #f59e0b);"></div>
+            </div>
 
-        // Theme Toggle
-        const themeBtn = document.getElementById("themeToggleBtn");
-        const themeIcon = document.getElementById("themeIcon");
-        themeBtn?.addEventListener("click", () => {
-            const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-            const next = isDark ? "light" : "dark";
-            document.documentElement.setAttribute("data-theme", next);
-            themeIcon.setAttribute("data-lucide", isDark ? "moon" : "sun");
-            lucide.createIcons();
-        });
+            <div class="pdf-vault-wrapper" data-reveal>
+                <div class="pdf-search-bar-wrap">
+                    <div class="pdf-search-input-box">
+                        <i data-lucide="search" style="width: 15px; height: 15px;"></i>
+                        <input type="text" id="pdfSearchInput" class="pdf-search-input" placeholder="Search notes (e.g. AI Prompt, Excel, Preeti, Hardware, Data)...">
+                    </div>
 
-        // Mobile Menu Drawer Toggle
-        const menuBtn = document.getElementById("mobileMenuToggle");
-        const drawer = document.getElementById("mobileDrawer");
+                    <div class="pdf-filter-pills" id="pdfFilterTabs">
+                        <button class="pdf-tab-btn active" data-cat="all">All</button>
+                        <button class="pdf-tab-btn" data-cat="ai">AI & Prompts</button>
+                        <button class="pdf-tab-btn" data-cat="excel">Excel & Data</button>
+                        <button class="pdf-tab-btn" data-cat="nepali">Nepali Typing</button>
+                        <button class="pdf-tab-btn" data-cat="hardware">Hardware & IT</button>
+                    </div>
+                </div>
 
-        menuBtn?.addEventListener("click", () => {
-            drawer.classList.toggle("active");
-        });
+                <div class="pdf-cards-grid" id="pdfCardsGrid">
+                    <!-- Note 1: AI Prompt Engineering -->
+                    <div class="pdf-item-card" data-cat="ai" data-title="generative ai prompt engineering workplace productivity handbook">
+                        <div>
+                            <div class="pdf-card-top">
+                                <div class="pdf-icon-badge" style="background: rgba(168, 85, 247, 0.12); color: #c084fc;">
+                                    <i data-lucide="sparkles" style="width: 18px; height: 18px;"></i>
+                                </div>
+                                <span class="pdf-meta-tag">AI HANDBOOK</span>
+                            </div>
+                            <h3 class="pdf-item-title">Workplace Generative AI & Prompt Engineering Framework</h3>
+                            <p class="pdf-item-desc">Master prompt architecture (Role, Context, Task, Constraints, Examples) for automated drafting, formula fixes, and market research.</p>
+                        </div>
+                        <div class="pdf-card-footer">
+                            <button class="btn-view-textnote" data-note="ai">
+                                <i data-lucide="book-open" style="width: 11px; height: 11px;"></i> Instant Note
+                            </button>
+                            <button class="btn-download-pdf" data-file="AI-Prompt-Engineering-Guide-Prabin.pdf" data-name="AI Prompt Engineering Guide">
+                                <i data-lucide="download" style="width: 11px; height: 11px;"></i> PDF
+                            </button>
+                        </div>
+                    </div>
 
-        // Close drawer when any link is clicked
-        document.querySelectorAll(".drawer-link").forEach(link => {
-            link.addEventListener("click", () => {
-                drawer.classList.remove("active");
-            });
-        });
-    </script>
+                    <!-- Note 2: Advanced Excel -->
+                    <div class="pdf-item-card" data-cat="excel" data-title="advanced excel formula architecture cheatsheet data analytics">
+                        <div>
+                            <div class="pdf-card-top">
+                                <div class="pdf-icon-badge">
+                                    <i data-lucide="file-spreadsheet" style="width: 18px; height: 18px;"></i>
+                                </div>
+                                <span class="pdf-meta-tag">EXCEL & DATA</span>
+                            </div>
+                            <h3 class="pdf-item-title">Advanced Excel & Dynamic Formulas Cheatsheet</h3>
+                            <p class="pdf-item-desc">High-yield reference covering XLOOKUP, INDEX/MATCH, Dynamic Arrays, nested IF/AND/OR logic, and automated pivot reporting structures.</p>
+                        </div>
+                        <div class="pdf-card-footer">
+                            <button class="btn-view-textnote" data-note="excel">
+                                <i data-lucide="book-open" style="width: 11px; height: 11px;"></i> Instant Note
+                            </button>
+                            <button class="btn-download-pdf" data-file="Advanced-Excel-Formula-Handbook-Prabin.pdf" data-name="Advanced Excel Cheatsheet">
+                                <i data-lucide="download" style="width: 11px; height: 11px;"></i> PDF
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Note 3: Preeti & Unicode -->
+                    <div class="pdf-item-card" data-cat="nepali" data-title="preeti font to nepali unicode keyboard map guide typing speed">
+                        <div>
+                            <div class="pdf-card-top">
+                                <div class="pdf-icon-badge" style="background: rgba(168, 85, 247, 0.12); color: #c084fc;">
+                                    <i data-lucide="languages" style="width: 18px; height: 18px;"></i>
+                                </div>
+                                <span class="pdf-meta-tag">TYPING GUIDE</span>
+                            </div>
+                            <h3 class="pdf-item-title">Preeti to Nepali Unicode Typing Map & Special Ligatures</h3>
+                            <p class="pdf-item-desc">Reference chart of complex ligatures (ज्ञ, त्र, क्ष, द्ध, द्व), half-letters (आधा अक्षर), Alt numeric codes, and rapid government typing techniques.</p>
+                        </div>
+                        <div class="pdf-card-footer">
+                            <button class="btn-view-textnote" data-note="nepali">
+                                <i data-lucide="book-open" style="width: 11px; height: 11px;"></i> Instant Note
+                            </button>
+                            <button class="btn-download-pdf" data-file="Preeti-Unicode-Keyboard-Map-Prabin.pdf" data-name="Preeti Typing Map">
+                                <i data-lucide="download" style="width: 11px; height: 11px;"></i> PDF
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Note 4: Hardware & IT Diagnosis -->
+                    <div class="pdf-item-card" data-cat="hardware" data-title="pc hardware diagnostic troubleshooting manual windows setup">
+                        <div>
+                            <div class="pdf-card-top">
+                                <div class="pdf-icon-badge" style="background: rgba(16, 185, 129, 0.12); color: #34d399;">
+                                    <i data-lucide="cpu" style="width: 18px; height: 18px;"></i>
+                                </div>
+                                <span class="pdf-meta-tag">TECH LAB</span>
+                            </div>
+                            <h3 class="pdf-item-title">Hardware Diagnosis & OS Installation Handbook</h3>
+                            <p class="pdf-item-desc">Technician manual on POST beep codes, thermal issues, RAM seating, Windows 10/11 clean boot setups, and IP routing.</p>
+                        </div>
+                        <div class="pdf-card-footer">
+                            <button class="btn-view-textnote" data-note="hardware">
+                                <i data-lucide="book-open" style="width: 11px; height: 11px;"></i> Instant Note
+                            </button>
+                            <button class="btn-download-pdf" data-file="Hardware-Troubleshooting-Guide-Prabin.pdf" data-name="Hardware Handbook">
+                                <i data-lucide="download" style="width: 11px; height: 11px;"></i> PDF
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Note 5: Tally Prime -->
+                    <div class="pdf-item-card" data-cat="excel" data-title="tally prime basic double entry accounting vat ledger guide">
+                        <div>
+                            <div class="pdf-card-top">
+                                <div class="pdf-icon-badge" style="background: rgba(245, 158, 11, 0.12); color: #fbbf24;">
+                                    <i data-lucide="calculator" style="width: 18px; height: 18px;"></i>
+                                </div>
+                                <span class="pdf-meta-tag">ACCOUNTING</span>
+                            </div>
+                            <h3 class="pdf-item-title">Tally Prime Ledger & VAT Entry Quick-Start</h3>
+                            <p class="pdf-item-desc">Voucher classification (F4-F9), Nepal VAT regulations, and Trial Balance reconciliation.</p>
+                        </div>
+                        <div class="pdf-card-footer">
+                            <button class="btn-view-textnote" data-note="tally">
+                                <i data-lucide="book-open" style="width: 11px; height: 11px;"></i> Instant Note
+                            </button>
+                            <button class="btn-download-pdf" data-file="Tally-Prime-Quick-Guide-Prabin.pdf" data-name="Tally Prime Notes">
+                                <i data-lucide="download" style="width: 11px; height: 11px;"></i> PDF
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Note 6: Cyber Defense -->
+                    <div class="pdf-item-card" data-cat="hardware" data-title="cyber security essentials computer lab protection usb worm shortcuts">
+                        <div>
+                            <div class="pdf-card-top">
+                                <div class="pdf-icon-badge" style="background: rgba(16, 185, 129, 0.12); color: #34d399;">
+                                    <i data-lucide="shield-alert" style="width: 18px; height: 18px;"></i>
+                                </div>
+                                <span class="pdf-meta-tag">CYBER SEC</span>
+                            </div>
+                            <h3 class="pdf-item-title">Institutional Cyber Hygiene & USB Worm Defense</h3>
+                            <p class="pdf-item-desc">Field protocol for defending schools and office networks from pen-drive shortcut malware, phishing links, and data extraction.</p>
+                        </div>
+                        <div class="pdf-card-footer">
+                            <button class="btn-view-textnote" data-note="cyber">
+                                <i data-lucide="book-open" style="width: 11px; height: 11px;"></i> Instant Note
+                            </button>
+                            <button class="btn-download-pdf" data-file="Cyber-Security-Hygiene-Prabin.pdf" data-name="Cyber Security Notes">
+                                <i data-lucide="download" style="width: 11px; height: 11px;"></i> PDF
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="vault">
+            <div class="section-header" data-reveal>
+                <span class="section-tag"><i data-lucide="sparkles" style="width: 11px; height: 11px;"></i> Pro Knowledge</span>
+                <h2 class="section-title">Daily AI & High-Performance Tech Tips</h2>
+                <div class="section-subline"></div>
+            </div>
+
+            <div class="knowledge-box-wrap" data-reveal>
+                <div class="knowledge-topbar">
+                    <div class="terminal-dots">
+                        <span class="tdot tdot-red"></span>
+                        <span class="tdot tdot-yellow"></span>
+                        <span class="tdot tdot-green"></span>
+                        <!-- BRANDED TERMINAL NAME: PRABIN TECH -->
+                        <span class="vault-brand-tag">PRABIN TECH [terminal]</span>
+                    </div>
+
+                    <div class="vault-category-tabs" id="vaultTabs">
+                        <button class="vtab-btn active" data-tab="all">All</button>
+                        <button class="vtab-btn" data-tab="ai">AI</button>
+                        <button class="vtab-btn" data-tab="excel">Data</button>
+                        <button class="vtab-btn" data-tab="coding">Code</button>
+                        <button class="vtab-btn" data-tab="cyber">Cyber</button>
+                    </div>
+                </div>
+
+                <div class="vault-body">
+                    <div class="insight-card" id="vaultCard">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                            <span class="insight-badge badge-ai" id="insightCategory">AI PROMPT ENGINEERING</span>
+                            <span style="font-size: 10.5px; font-family: 'JetBrains Mono'; color: var(--text-dim);" id="insightIndex">TIP #01</span>
+                        </div>
+                        <h3 class="insight-title" id="insightTitle">The 'Chain-of-Thought' Framework for Complex Business Tasks</h3>
+                        <div class="insight-codeblock" id="insightSnippet">"Act as a Senior Data Strategist. Analyze this balance sheet step-by-step. First, identify liquidity ratios. Second, highlight anomalous expenses exceeding 15%. Third, write a bulleted executive briefing with recommendations."</div>
+                        <p class="insight-explanation" id="insightExplanation">
+                            By demanding sequential steps (first, second, third), large language models produce dramatically fewer hallucinations and generate robust corporate summaries.
+                        </p>
+                    </div>
+
+                    <div class="vault-controls">
+                        <button class="btn btn-secondary" id="copyInsightBtn" style="padding: 5px 10px; font-size: 11px;">
+                            <i data-lucide="copy" style="width: 13px; height: 13px;"></i> Copy Snippet
+                        </button>
+                        <button class="btn btn-primary" id="randomizeBtn" style="padding: 6px 13px; font-size: 11.5px;">
+                            <i data-lucide="refresh-cw" style="width: 13px; height: 13px;"></i> Next Tech Tip
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="curriculum">
+            <div class="section-header" data-reveal>
+                <span class="section-tag"><i data-lucide="book-marked" style="width: 11px; height: 11px;"></i> Syllabus</span>
+                <h2 class="section-title">Curriculum & Training Modules</h2>
+                <div class="section-subline"></div>
+            </div>
+
+            <div class="table-filter-bar" data-reveal>
+                <button class="filter-btn active" data-filter="all">All Modules</button>
+                <button class="filter-btn" data-filter="excel">Excel & Data</button>
+                <button class="filter-btn" data-filter="systems">Systems & Hardware</button>
+                <button class="filter-btn" data-filter="business">Accounting & Digital</button>
+            </div>
+
+            <div class="matrix-table-wrap" data-reveal>
+                <!-- Compact Mobile Cards Layout -->
+                <div class="curriculum-grid-mobile" id="mobileCurriculumList">
+                    <div class="curr-card" data-cat="excel">
+                        <div class="curr-card-top">
+                            <div class="curr-card-title">
+                                <i data-lucide="sheet" style="color: var(--primary); width: 15px; height: 15px;"></i>
+                                Advanced MS Excel
+                            </div>
+                            <span class="status-chip chip-cyan">High Demand</span>
+                        </div>
+                        <p class="curr-card-desc">XLOOKUP, Nested Logic, Dynamic Pivot Tables, Data Validation & Automated Dashboards.</p>
+                        <div class="curr-card-footer">
+                            <span class="hour-badge">45 Hours</span>
+                            <span style="color: var(--text-muted);">Accountants & Clerks</span>
+                        </div>
+                    </div>
+
+                    <div class="curr-card" data-cat="business">
+                        <div class="curr-card-top">
+                            <div class="curr-card-title">
+                                <i data-lucide="calculator" style="color: var(--amber); width: 15px; height: 15px;"></i>
+                                Tally Prime & Digital Ledgers
+                            </div>
+                            <span class="status-chip chip-green">Active Class</span>
+                        </div>
+                        <p class="curr-card-desc">Voucher Entry, VAT Compliance, Day Books, Inventory Auditing, and Financial Reporting.</p>
+                        <div class="curr-card-footer">
+                            <span class="hour-badge">40 Hours</span>
+                            <span style="color: var(--text-muted);">Commerce Students</span>
+                        </div>
+                    </div>
+
+                    <div class="curr-card" data-cat="systems">
+                        <div class="curr-card-top">
+                            <div class="curr-card-title">
+                                <i data-lucide="cpu" style="color: var(--purple); width: 15px; height: 15px;"></i>
+                                Hardware & OS Maintenance
+                            </div>
+                            <span class="status-chip chip-purple">Technical</span>
+                        </div>
+                        <p class="curr-card-desc">Desktop Assembly, Windows Deployment, Driver Optimization, IP Config & Troubleshooting.</p>
+                        <div class="curr-card-footer">
+                            <span class="hour-badge">30 Hours</span>
+                            <span style="color: var(--text-muted);">Lab Technicians</span>
+                        </div>
+                    </div>
+
+                    <div class="curr-card" data-cat="excel">
+                        <div class="curr-card-top">
+                            <div class="curr-card-title">
+                                <i data-lucide="sparkles" style="color: #c084fc; width: 15px; height: 15px;"></i>
+                                Workplace AI & Automation Tools
+                            </div>
+                            <span class="status-chip chip-cyan">Trending</span>
+                        </div>
+                        <p class="curr-card-desc">Prompt Engineering, ChatGPT for Data Cleaning, Rapid Research & Office Documentation.</p>
+                        <div class="curr-card-footer">
+                            <span class="hour-badge">20 Hours</span>
+                            <span style="color: var(--text-muted);">Teachers & Execs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desktop Table View -->
+                <table class="curriculum-table-desktop">
+                    <thead>
+                        <tr>
+                            <th>Curriculum Module</th>
+                            <th>Key Learning Outcomes</th>
+                            <th>Target Audience</th>
+                            <th>Duration</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="desktopCurriculumBody">
+                        <tr data-cat="excel">
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 6px; font-weight: 700; color: var(--text-main);">
+                                    <i data-lucide="sheet" style="color: var(--primary); width: 15px; height: 15px;"></i>
+                                    Advanced MS Excel Architecture
+                                </div>
+                            </td>
+                            <td>XLOOKUP, Dynamic Arrays, Interactive KPI Dashboards, Slicers & Macros</td>
+                            <td>Accountants, Managers, Students</td>
+                            <td><span class="hour-badge">45 Hours</span></td>
+                            <td><span class="status-chip chip-cyan"><i data-lucide="star" style="width: 10px; height: 10px;"></i> High Demand</span></td>
+                        </tr>
+                        <tr data-cat="business">
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 6px; font-weight: 700; color: var(--text-main);">
+                                    <i data-lucide="calculator" style="color: var(--amber); width: 15px; height: 15px;"></i>
+                                    Tally Prime & Business Ledgers
+                                </div>
+                            </td>
+                            <td>Double-entry bookkeeping, VAT calculation, inventory reconciliation, balance sheets</td>
+                            <td>Commerce Clerks & Cashiers</td>
+                            <td><span class="hour-badge">40 Hours</span></td>
+                            <td><span class="status-chip chip-green"><i data-lucide="check" style="width: 10px; height: 10px;"></i> Active</span></td>
+                        </tr>
+                        <tr data-cat="systems">
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 6px; font-weight: 700; color: var(--text-main);">
+                                    <i data-lucide="cpu" style="color: var(--purple); width: 15px; height: 15px;"></i>
+                                    Hardware, OS & Lab Networking
+                                </div>
+                            </td>
+                            <td>Workstation assembly, clean Windows installation, static IP, virus disinfection</td>
+                            <td>IT Technicians & Lab Admins</td>
+                            <td><span class="hour-badge">30 Hours</span></td>
+                            <td><span class="status-chip chip-purple"><i data-lucide="shield" style="width: 10px; height: 10px;"></i> Technical</span></td>
+                        </tr>
+                        <tr data-cat="excel">
+                            <td>
+                                <div style="display: flex; align-items: center; gap: 6px; font-weight: 700; color: var(--text-main);">
+                                    <i data-lucide="sparkles" style="color: #c084fc; width: 15px; height: 15px;"></i>
+                                    Workplace AI & Automation Tools
+                                </div>
+                            </td>
+                            <td>Prompt writing, formula drafting with ChatGPT, automatic document structuring</td>
+                            <td>Teachers, Officers, Freelancers</td>
+                            <td><span class="hour-badge">20 Hours</span></td>
+                            <td><span class="status-chip chip-cyan"><i data-lucide="zap" style="width: 10px; height: 10px;"></i> Trending</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="section-header" data-reveal>
+                <span class="section-tag"><i data-lucide="cpu" style="width: 11px; height: 11px;"></i> Proficiency</span>
+                <h2 class="section-title">Technical Expertise</h2>
+                <div class="section-subline"></div>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-group-card" data-reveal>
+                    <div class="skill-group-title">
+                        <i data-lucide="bar-chart-3" style="color: var(--primary);"></i> Core Practical Strengths
+                    </div>
+
+                    <div class="progress-block">
+                        <div class="progress-meta">
+                            <span>Advanced Excel & Dynamic Formulas</span>
+                            <span style="color: var(--primary); font-family: 'JetBrains Mono';">95%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" data-progress="95%"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-block">
+                        <div class="progress-meta">
+                            <span>Student Instruction & Lab Mentoring</span>
+                            <span style="color: var(--primary); font-family: 'JetBrains Mono';">92%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" data-progress="92%"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-block">
+                        <div class="progress-meta">
+                            <span>Data Cleaning, Audit & Reporting</span>
+                            <span style="color: var(--primary); font-family: 'JetBrains Mono';">89%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" data-progress="89%"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-block">
+                        <div class="progress-meta">
+                            <span>Hardware Diagnosis & OS Deployment</span>
+                            <span style="color: var(--primary); font-family: 'JetBrains Mono';">85%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" data-progress="85%"></div>
+                        </div>
+                    </div>
+
+                    <div class="progress-block">
+                        <div class="progress-meta">
+                            <span>Tally Prime & Accounting Procedures</span>
+                            <span style="color: var(--primary); font-family: 'JetBrains Mono';">82%</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" data-progress="82%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-group-card" data-reveal>
+                    <div class="skill-group-title">
+                        <i data-lucide="layers" style="color: var(--primary);"></i> Toolsets & Digital Capabilities
+                    </div>
+                    <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
+                        Practical capability bridging institutional classroom training with rigorous real-world data management and hardware reliability.
+                    </p>
+                    <div class="chip-tags-cloud">
+                        <span class="tech-pill"><i data-lucide="check" style="width: 11px; height: 11px; color: var(--primary);"></i> XLOOKUP & INDEX/MATCH</span>
+                        <span class="tech-pill"><i data-lucide="check" style="width: 11px; height: 11px; color: var(--primary);"></i> Dynamic Pivot Charts</span>
+                        <span class="tech-pill"><i data-lucide="check" style="width: 11px; height: 11px; color: var(--primary);"></i> Preeti to Unicode Converter</span>
+                        <span class="tech-pill"><i data-lucide="check" style="width: 11px; height: 11px; color: var(--primary);"></i> Conditional Formatting</span>
+                        <span class="tech-pill"><i data-lucide="check" style="width: 11px; height: 11px; color: var(--primary);"></i> Tally ERP 9 / Prime</span>
+                        <span class="tech-pill"><i data-lucide="check" style="width: 11px; height: 11px; color: var(--primary);"></i> Windows 10/11 Deployment</span>
+                        <span class="tech-pill"><i data-lucide="check" style="width: 11px; height: 11px; color: var(--primary);"></i> Driver & BIOS Config</span>
+                        <span class="tech-pill"><i data-lucide="check" style="width: 11px; height: 11px; color: var(--primary);"></i> LAN Networking</span>
+                        <span class="tech-pill"><i data-lucide="check" style="width: 11px; height: 11px; color: var(--primary);"></i> AI Prompt Engineering</span>
+                        <span class="tech-pill"><i data-lucide="check" style="width: 11px; height: 11px; color: var(--primary);"></i> Cyber Security Hygiene</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="section-header" data-reveal>
+                <span class="section-tag"><i data-lucide="sparkles" style="width: 11px; height: 11px;"></i> Solutions</span>
+                <h2 class="section-title">What I Deliver</h2>
+                <div class="section-subline"></div>
+            </div>
+
+            <div class="cards-grid-3">
+                <div class="service-card" data-reveal>
+                    <div>
+                        <div class="service-icon"><i data-lucide="monitor" style="width: 18px; height: 18px;"></i></div>
+                        <h3>Hands-On Computer Training</h3>
+                        <p>Structured, student-centric computing courses tailored for schools, professional institutes, and workforce skills upgrade.</p>
+                    </div>
+                </div>
+
+                <div class="service-card" data-reveal>
+                    <div>
+                        <div class="service-icon"><i data-lucide="sheet" style="width: 18px; height: 18px;"></i></div>
+                        <h3>Advanced Excel Systems</h3>
+                        <p>Bespoke automated spreadsheets, data validation workflows, financial reconciliation sheets, and dynamic KPI dashboards.</p>
+                    </div>
+                </div>
+
+                <div class="service-card" data-reveal>
+                    <div>
+                        <div class="service-icon"><i data-lucide="wrench" style="width: 18px; height: 18px;"></i></div>
+                        <h3>IT Support & Maintenance</h3>
+                        <p>Diagnostic hardware troubleshooting, thermal repasting, OS installations, networking setups, and lab administration.</p>
+                    </div>
+                </div>
+
+                <div class="service-card" data-reveal>
+                    <div>
+                        <div class="service-icon"><i data-lucide="file-spreadsheet" style="width: 18px; height: 18px;"></i></div>
+                        <h3>Data Auditing & Cleaning</h3>
+                        <p>Standardizing messy datasets, deduplication, error tracking, and preparing accurate summaries for executive decisions.</p>
+                    </div>
+                </div>
+
+                <div class="service-card" data-reveal>
+                    <div>
+                        <div class="service-icon"><i data-lucide="globe" style="width: 18px; height: 18px;"></i></div>
+                        <h3>Digital Portal Services</h3>
+                        <p>Filing government documentation, national smart card submissions, digital application processing, and verified cyber services.</p>
+                    </div>
+                </div>
+
+                <div class="service-card" data-reveal>
+                    <div>
+                        <div class="service-icon"><i data-lucide="calculator" style="width: 18px; height: 18px;"></i></div>
+                        <h3>Accounting & Bookkeeping</h3>
+                        <p>Digital ledger entries with Tally Prime, day-book record keeping, VAT summaries, and institutional payroll ledger management.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="section-header" data-reveal>
+                <span class="section-tag"><i data-lucide="briefcase" style="width: 11px; height: 11px;"></i> Track Record</span>
+                <h2 class="section-title">Career Timeline</h2>
+                <div class="section-subline"></div>
+            </div>
+
+            <div class="timeline-track">
+                <div class="timeline-card" data-reveal>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
+                        <h3 class="timeline-role">Computer Teacher & IT Administrator</h3>
+                        <span class="hour-badge">2025 – 2026</span>
+                    </div>
+                    <div class="timeline-inst">
+                        <i data-lucide="map-pin" style="width: 12px; height: 12px;"></i> Jhargaira Janachahana English Boarding School, Rupandehi
+                    </div>
+                    <p class="timeline-body">
+                        Directing the institutional computer science syllabus, managing hardware infrastructure across campus labs, maintaining school administrative databases, and mentoring students.
+                    </p>
+                </div>
+
+                <div class="timeline-card" data-reveal>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
+                        <h3 class="timeline-role">EDP Clerk cum Accountant</h3>
+                        <span class="hour-badge">2022 – 2024</span>
+                    </div>
+                    <div class="timeline-inst">
+                        <i data-lucide="map-pin" style="width: 12px; height: 12px;"></i> NBK Company, Qatar
+                    </div>
+                    <p class="timeline-body">
+                        Processed electronic data operations, inventory balance audits, and billing reconciliations with high accuracy using ERP accounting systems and advanced Excel models.
+                    </p>
+                </div>
+
+                <div class="timeline-card" data-reveal>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
+                        <h3 class="timeline-role">Institutional Accountant</h3>
+                        <span class="hour-badge">2020 – 2022</span>
+                    </div>
+                    <div class="timeline-inst">
+                        <i data-lucide="map-pin" style="width: 12px; height: 12px;"></i> Jhargaira Janachahana English Boarding School, Rupandehi
+                    </div>
+                    <p class="timeline-body">
+                        Managed institutional financial records, student tuition invoicing, fee collections, teacher payroll schedules, and annual audit preparation sheets.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="inquiry">
+            <div class="section-header" data-reveal>
+                <span class="section-tag"><i data-lucide="send" style="width: 11px; height: 11px;"></i> Direct Connect</span>
+                <h2 class="section-title">Inquiry & Course Admission</h2>
+                <div class="section-subline"></div>
+            </div>
+
+            <div class="inquiry-grid" data-reveal>
+                <div class="inquiry-form-card">
+                    <h3><i data-lucide="message-square" style="color: var(--primary); width: 17px; height: 17px;"></i> Connect with Prabin</h3>
+                    <p>Select your area of interest or type a custom requirement below:</p>
+                    
+                    <form id="inquiryForm">
+                        <div class="form-group">
+                            <label class="form-label" for="inqName">Your Name</label>
+                            <input type="text" id="inqName" class="form-control" placeholder="e.g. Ramesh Sharma" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="inqContact">Phone or WhatsApp</label>
+                            <input type="text" id="inqContact" class="form-control" placeholder="e.g. +977 98XXXXXXXX" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="inqSubject">Area of Interest / Course</label>
+                            <select id="inqSubject" class="form-control">
+                                <option value="AI Training & Prompt Engineering">AI Training & Prompt Engineering</option>
+                                <option value="Advanced Excel Architecture">Advanced Excel Architecture</option>
+                                <option value="Data Analytics & Reporting">Data Analytics & Reporting</option>
+                                <option value="Nepali Typing (Preeti & Unicode)">Nepali Typing (Preeti & Unicode)</option>
+                                <option value="Tally Prime / Accounting Automation">Tally Prime / Bookkeeping</option>
+                                <option value="Hardware, OS & Lab Maintenance">Hardware, OS & Lab Maintenance</option>
+                                <option value="School / College Teacher Consultation">School Computer Teacher Consultation</option>
+                                <option value="CUSTOM">Custom / Other Inquiry (Type below)</option>
+                            </select>
+                        </div>
+
+                        <!-- Dynamic Custom Requirement Field -->
+                        <div class="form-group" id="customSubjectGroup" style="display: none;">
+                            <label class="form-label" for="inqCustomSubject" style="color: var(--primary);">Custom Requirement Title</label>
+                            <input type="text" id="inqCustomSubject" class="form-control" placeholder="e.g. Custom Corporate Data Workshop">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="inqMsg">Message / Specific Requirements</label>
+                            <textarea id="inqMsg" class="form-control" placeholder="Describe your goal, timetable or inquiry..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i data-lucide="send" style="width: 14px; height: 14px;"></i> Send via WhatsApp Instant
+                        </button>
+                    </form>
+                </div>
+
+                <div class="channel-pills-column">
+                    <a href="https://wa.me/9779716175657" target="_blank" rel="noopener noreferrer" class="channel-pill-row">
+                        <i data-lucide="message-circle" style="width: 20px; height: 20px; color: #25D366;"></i>
+                        <div>
+                            <div style="font-size: 10.5px; text-transform: uppercase; color: var(--text-dim); font-weight: 700;">Instant WhatsApp</div>
+                            <div style="font-size: 13px; font-weight: 700; color: var(--text-main);">+977 9716175657</div>
+                        </div>
+                    </a>
+
+                    <a href="mailto:info.prabintech@gmail.com" class="channel-pill-row">
+                        <i data-lucide="mail" style="width: 20px; height: 20px; color: var(--primary);"></i>
+                        <div>
+                            <div style="font-size: 10.5px; text-transform: uppercase; color: var(--text-dim); font-weight: 700;">Official Direct Email</div>
+                            <div style="font-size: 13px; font-weight: 700; color: var(--text-main);">info.prabintech@gmail.com</div>
+                        </div>
+                    </a>
+
+                    <a href="tel:+9779716175657" class="channel-pill-row">
+                        <i data-lucide="phone-call" style="width: 20px; height: 20px; color: #34d399;"></i>
+                        <div>
+                            <div style="font-size: 10.5px; text-transform: uppercase; color: var(--text-dim); font-weight: 700;">Direct Phone Calling</div>
+                            <div style="font-size: 13px; font-weight: 700; color: var(--text-main);">+977 9716175657</div>
+                        </div>
+                    </a>
+
+                    <div class="channel-pill-row">
+                        <i data-lucide="map-pin" style="width: 20px; height: 20px; color: var(--primary);"></i>
+                        <div>
+                            <div style="font-size: 10.5px; text-transform: uppercase; color: var(--text-dim); font-weight: 700;">Workstation Location</div>
+                            <div style="font-size: 13px; font-weight: 700; color: var(--text-main);">Kanchan-05, Rupandehi, Lumbini, Nepal</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="textNoteModal">
+        <div class="textnote-modal-card">
+            <div class="textnote-modal-head">
+                <div>
+                    <h4 style="font-size: 14px; font-weight: 800; color: var(--text-main);" id="textNoteModalTitle">Instant Cheatsheet</h4>
+                    <span style="font-size: 10.5px; color: var(--primary); font-family: 'JetBrains Mono';" id="textNoteModalCategory">STUDY MODULE</span>
+                </div>
+                <button class="modal-close-btn" id="closeTextNoteModal" aria-label="Close cheatsheet modal">
+                    <i data-lucide="x" style="width: 15px; height: 15px;"></i>
+                </button>
+            </div>
+            <div class="textnote-modal-body" id="textNoteModalBody"></div>
+            <div style="padding: 10px 16px; background: var(--surface-card); border-top: 1px solid var(--border); display: flex; justify-content: flex-end;">
+                <button class="btn btn-secondary" id="copyTextNoteBtn" style="font-size: 11px; padding: 5px 10px;">
+                    <i data-lucide="copy" style="width: 12px; height: 12px;"></i> Copy Entire Cheatsheet
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="photoModal">
+        <div class="modal-content-wrap">
+            <button class="modal-close-btn" id="closePhotoModal" aria-label="Close photo preview" style="position: absolute; top: 10px; right: 10px; z-index: 10;">
+                <i data-lucide="x" style="width: 15px; height: 15px;"></i>
+            </button>
+            <img src="prabin.jpg" alt="Prabin Chaudhary at Workstation" class="modal-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800';">
+            <div class="modal-caption">
+                <div>
+                    <h4 style="font-size: 13.5px; font-weight: 800; color: var(--text-main);">PRABIN CHAUDHARY</h4>
+                    <p style="font-size: 11px; color: var(--primary);">Computer Instructor & IT Specialist • Kanchan-05, Rupandehi</p>
+                </div>
+                <span class="status-chip chip-green" style="font-size: 10px;">Active Lab</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Sticky Bottom Quick Action Dock -->
+    <div class="mobile-quick-dock">
+        <a href="tel:+9779716175657" class="dock-btn">
+            <i data-lucide="phone-call"></i>
+            <span>Call</span>
+        </a>
+        <a href="https://wa.me/9779716175657" target="_blank" rel="noopener noreferrer" class="dock-btn">
+            <i data-lucide="message-circle" style="color: #34d399;"></i>
+            <span>WhatsApp</span>
+        </a>
+        <a href="#pdfnotes" class="dock-btn">
+            <i data-lucide="file-text" style="color: #ef4444;"></i>
+            <span>PDF Notes</span>
+        </a>
+        <!-- Updated Tech Vault distinct icon: Microchip / CPU terminal badge -->
+        <a href="#vault" class="dock-btn">
+            <i data-lucide="cpu" style="color: #38bdf8;"></i>
+            <span>Tech Vault</span>
+        </a>
+        <a href="Ratna-Prasad-Tharu-CV.pdf" id="dockCVBtn" class="dock-btn">
+            <i data-lucide="file-down" style="color: var(--purple);"></i>
+            <span>CV</span>
+        </a>
+    </div>
+
+    <button id="toTop" aria-label="Scroll back to top"><i data-lucide="arrow-up" style="width: 17px; height: 17px;"></i></button>
+
+    <div id="toastBox">
+        <i data-lucide="check-circle" style="color: #34d399; width: 14px; height: 14px;"></i>
+        <span id="toastMsg">Action completed successfully.</span>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 PRABIN CHAUDHARY. All rights reserved. Kanchan-05, Rupandehi, Lumbini Province, Nepal.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Automatic Home Reset on Refresh
+        if (history.scrollRestoration) {
+            history.scrollRestoration = 'manual';
+        }
+        window.addEventListener('beforeunload', () => {
+            window.scrollTo(0, 0);
+        });
+        window.addEventListener('load', () => {
+            if (window.location.hash && window.location.hash !== '#home') {
+                history.replaceState(null, null, ' ');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // 2. Initialize Lucide Icons
+        lucide.createIcons();
+
+        // 3. Dark Mode and Light Mode Controller
+        const themeToggleBtn = document.getElementById("themeToggleBtn");
+        const themeIcon = document.getElementById("themeIcon");
+        const htmlElement = document.documentElement;
+
+        function applyTheme(theme) {
+            htmlElement.setAttribute("data-theme", theme);
+            localStorage.setItem("prabin_portfolio_theme", theme);
+            if (theme === "light") {
+                themeIcon.setAttribute("data-lucide", "moon");
+                document.querySelector('meta[name="theme-color"]')?.setAttribute("content", "#f8fafc");
+            } else {
+                themeIcon.setAttribute("data-lucide", "sun");
+                document.querySelector('meta[name="theme-color"]')?.setAttribute("content", "#030712");
+            }
+            lucide.createIcons();
+        }
+
+        const savedTheme = localStorage.getItem("prabin_portfolio_theme") || "dark";
+        applyTheme(savedTheme);
+
+        themeToggleBtn?.addEventListener("click", () => {
+            const currentTheme = htmlElement.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            applyTheme(newTheme);
+            triggerToast(`Switched to ${newTheme.toUpperCase()} Mode`);
+        });
+
+        // 4. Toast Notification
+        function triggerToast(text) {
+            const toast = document.getElementById("toastBox");
+            const msg = document.getElementById("toastMsg");
+            if (!toast || !msg) return;
+            msg.textContent = text;
+            toast.classList.add("active");
+            setTimeout(() => {
+                toast.classList.remove("active");
+            }, 3000);
+        }
+
+        // CV Notification Hooks
+        ["navCVBtn", "heroDownloadCV", "dockCVBtn"].forEach(id => {
+            document.getElementById(id)?.addEventListener("click", () => {
+                triggerToast("Opening official verified CV: Ratna Prasad Tharu (Prabin Chaudhary)...");
+            });
+        });
+
+        // 5. Instant Text Notes Database
+        const textNotesDB = {
+            ai: {
+                title: "Workplace AI & Prompt Engineering Framework",
+                category: "AI PRODUCTIVITY",
+                content: `### 1. The C-T-C-O Prompt Framework:
+- **Context:** Set persona (e.g., "Act as an Expert IT Systems Auditor in Nepal").
+- **Task:** Explicit action (e.g., "Review this computer lab deployment schedule").
+- **Constraints:** Limits (e.g., "Max 5 bullet points, no fluff, cite exact Windows terminal commands").
+- **Output:** Structure (e.g., "Provide in a markdown table with columns: Issue, Fix, Priority").
+
+### 2. High-Yield Data Analytics Formula Prompt:
+\`\`\`text
+Given an Excel sheet with columns A (TransactionDate), B (Branch), C (Amount), write a modern dynamic formula that calculates the 90th percentile sales for Butwal branch only.
+\`\`\`
+
+### 3. Document Summarization Formula:
+"Summarize the attached government circular into 3 actionable obligations for educational institutions, highlighting deadlines in B.S. and financial penalties."`
+            },
+            excel: {
+                title: "Advanced Excel Architecture & Dynamic Arrays",
+                category: "DATA ANALYTICS",
+                content: `### 1. Modern Lookup (XLOOKUP):
+\`\`\`excel
+=XLOOKUP(lookup_val, lookup_array, return_array, "Not Found", 0)
+\`\`\`
+*Advantage over VLOOKUP:* Searches both left and right, doesn't break when columns shift, handles defaults cleanly.
+
+### 2. Dynamic Array Filter:
+\`\`\`excel
+=FILTER(A2:D100, (B2:B100="Kanchan") * (C2:C100>5000), "No Records")
+\`\`\`
+
+### 3. Index & Match for Matrix Reports:
+\`\`\`excel
+=INDEX(C2:G20, MATCH(TargetStudent, A2:A20, 0), MATCH(TargetSubject, C1:G1, 0))
+\`\`\`
+
+### 4. High-Speed Shortcuts:
+- **Ctrl + Shift + L:** Toggle AutoFilter
+- **Alt + H + O + I:** Autofit column widths
+- **Ctrl + T:** Convert range to official dynamic Excel Table`
+            },
+            nepali: {
+                title: "Preeti Font to Nepali Unicode Keyboard Mapping",
+                category: "NEPALI TYPING",
+                content: `### 1. Complex Characters & Ligatures:
+- **त्र (Tra):** Shift + 4
+- **ज्ञ (Gya):** Shift + 5
+- **क्ष (Kshya):** 'c' + Shift + 'o' (द् + य)
+- **द्ध (Dhdha):** Shift + Alt combinations
+- **श्र (Shra):** Shift + 8
+
+### 2. Frequently Used Preeti Keys:
+- **क:** s  |  **ख:** v  |  **ग:** u  |  **घ:** U
+- **च:** r  |  **छ:** R  |  **ज:** h  |  **झ:** H
+- **त:** l  |  **थ:** L  |  **द:** b  |  **ध:** B
+- **न:** g  |  **प:** k  |  **फ:** m  |  **ब:** a  |  **भ:** e
+- **म:** d  |  **य:** o  |  **र:** /  |  **ल:** n  |  **व:** w
+- **स:** k  |  **ह:** p`
+            },
+            hardware: {
+                title: "Hardware Diagnosis & Lab Maintenance Protocol",
+                category: "SYSTEMS SUPPORT",
+                content: `### 1. BIOS POST Beep Code Identification:
+- **1 Short Beep:** Normal startup, memory refresh successful.
+- **Continuous Long Beeps:** RAM module not seated properly or faulty memory socket.
+- **1 Long + 2 Short Beeps:** Display adapter / GPU communication failure.
+
+### 2. High-Yield Command Line Diagnostics:
+\`\`\`bash
+# Test router connectivity
+ping 192.168.1.1 -t
+
+# Flush DNS cache
+ipconfig /flushdns
+
+# Check Windows component store integrity and repair
+sfc /scannow
+DISM /Online /Cleanup-Image /RestoreHealth
+\`\`\``
+            },
+            tally: {
+                title: "Tally Prime Ledger & Voucher Fast Guide",
+                category: "ACCOUNTING & VAT",
+                content: `### 1. Standard Voucher Functions:
+- **F4 (Contra):** Cash deposit or bank withdrawal.
+- **F5 (Payment):** Any cash/bank outflow (Salaries, Vendor clearing).
+- **F6 (Receipt):** Any cash/bank inflow (Student fees, Client invoice clearance).
+- **F7 (Journal):** Non-cash adjustments, depreciation, opening balances.
+- **F8 (Sales):** Revenue invoices.
+- **F9 (Purchase):** Official inventory / vendor supplier invoices.`
+            },
+            cyber: {
+                title: "Computer Lab Malware Disinfection & USB Protocol",
+                category: "CYBER SECURITY",
+                content: `### 1. Unhiding Documents Hidden by USB Shortcut Worms:
+Open CMD as Administrator and type (replace 'E' with your actual USB drive letter):
+\`\`\`bash
+attrib -h -r -s /s /d E:\\*.*
+\`\`\`
+
+### 2. Lab Disinfection:
+Disable AutoPlay via \`gpedit.msc\` to prevent malicious scripts from executing automatically when thumb drives are plugged in.`
+            }
+        };
+
+        const textNoteModal = document.getElementById("textNoteModal");
+        const closeTextNoteModal = document.getElementById("closeTextNoteModal");
+        const textNoteTitle = document.getElementById("textNoteModalTitle");
+        const textNoteCat = document.getElementById("textNoteModalCategory");
+        const textNoteBody = document.getElementById("textNoteModalBody");
+        let activeNoteKey = "ai";
+
+        document.querySelectorAll(".btn-view-textnote").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const noteKey = btn.getAttribute("data-note");
+                const data = textNotesDB[noteKey];
+                if (!data) return;
+                activeNoteKey = noteKey;
+                textNoteTitle.textContent = data.title;
+                textNoteCat.textContent = data.category;
+                textNoteBody.innerHTML = `
+                    <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid var(--border); padding: 10px; border-radius: 6px; margin-bottom: 12px;">
+                        <span style="font-size: 10.5px; font-weight: 700; color: var(--primary); text-transform: uppercase;">Curated by: Prabin Chaudhary (PRABIN TECH)</span>
+                    </div>
+                    <div style="white-space: pre-line;">${data.content}</div>
+                `;
+                textNoteModal.classList.add("active");
+                document.body.style.overflow = "hidden";
+            });
+        });
+
+        closeTextNoteModal?.addEventListener("click", () => {
+            textNoteModal.classList.remove("active");
+            document.body.style.overflow = "";
+        });
+
+        textNoteModal?.addEventListener("click", (e) => {
+            if (e.target === textNoteModal) {
+                textNoteModal.classList.remove("active");
+                document.body.style.overflow = "";
+            }
+        });
+
+        document.getElementById("copyTextNoteBtn")?.addEventListener("click", () => {
+            const data = textNotesDB[activeNoteKey];
+            if (!data) return;
+            const fullText = `${data.title}\nCategory: ${data.category}\n\n${data.content}`;
+            const temp = document.createElement("textarea");
+            temp.value = fullText;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+            triggerToast("Cheatsheet copied to clipboard!");
+        });
+
+        // 6. Dynamic Custom Subject in Inquiry Form
+        const inqSubjectSelect = document.getElementById("inqSubject");
+        const customSubjectGroup = document.getElementById("customSubjectGroup");
+
+        inqSubjectSelect?.addEventListener("change", () => {
+            if (inqSubjectSelect.value === "CUSTOM") {
+                customSubjectGroup.style.display = "block";
+                document.getElementById("inqCustomSubject")?.focus();
+            } else {
+                customSubjectGroup.style.display = "none";
+            }
+        });
+
+        // 7. Direct WhatsApp Form Dispatch
+        document.getElementById("inquiryForm")?.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.getElementById("inqName").value.trim();
+            const contact = document.getElementById("inqContact").value.trim();
+            let subject = document.getElementById("inqSubject").value;
+            if (subject === "CUSTOM") {
+                const customTitle = document.getElementById("inqCustomSubject").value.trim();
+                subject = customTitle ? `Custom: ${customTitle}` : "Custom In-Depth Inquiry";
+            }
+            const message = document.getElementById("inqMsg").value.trim();
+
+            const text = `*New Inquiry for Prabin Chaudhary (Ratna Prasad Tharu)*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Contact:* ${encodeURIComponent(contact)}%0A*Interest Area:* ${encodeURIComponent(subject)}%0A*Requirements:* ${encodeURIComponent(message || "Interested in learning more.")}`;
+            const waUrl = `https://wa.me/9779716175657?text=${text}`;
+            
+            triggerToast("Opening WhatsApp with your formatted inquiry...");
+            setTimeout(() => {
+                window.open(waUrl, "_blank");
+            }, 500);
+        });
+
+        // 8. PDF Search & Tab Filtering
+        const pdfSearchInput = document.getElementById("pdfSearchInput");
+        const pdfFilterTabs = document.querySelectorAll(".pdf-tab-btn");
+        const pdfCards = document.querySelectorAll(".pdf-item-card");
+        let activePdfCat = "all";
+
+        function filterPdfList() {
+            const query = (pdfSearchInput ? pdfSearchInput.value.toLowerCase().trim() : "");
+            pdfCards.forEach(card => {
+                const cardCat = card.getAttribute("data-cat");
+                const cardTitle = card.getAttribute("data-title") || "";
+                const cardText = card.textContent.toLowerCase();
+                const matchesCat = (activePdfCat === "all" || cardCat === activePdfCat);
+                const matchesQuery = query === "" || cardTitle.includes(query) || cardText.includes(query);
+                card.style.display = (matchesCat && matchesQuery) ? "flex" : "none";
+            });
+        }
+
+        pdfSearchInput?.addEventListener("input", filterPdfList);
+        pdfFilterTabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                pdfFilterTabs.forEach(t => t.classList.remove("active"));
+                tab.classList.add("active");
+                activePdfCat = tab.getAttribute("data-cat");
+                filterPdfList();
+            });
+        });
+
+        document.querySelectorAll(".btn-download-pdf").forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                e.preventDefault();
+                const docName = btn.getAttribute("data-name") || "Study Note";
+                const fileName = btn.getAttribute("data-file") || "document.pdf";
+                triggerToast(`Downloading PDF: ${docName}...`);
+                setTimeout(() => {
+                    const tempLink = document.createElement("a");
+                    tempLink.href = fileName;
+                    tempLink.download = fileName;
+                    tempLink.target = "_blank";
+                    document.body.appendChild(tempLink);
+                    tempLink.click();
+                    document.body.removeChild(tempLink);
+                }, 400);
+            });
+        });
+
+        // 9. Photo Lightbox Modal
+        const photoModal = document.getElementById("photoModal");
+        document.getElementById("openPhotoModal")?.addEventListener("click", () => {
+            photoModal.classList.add("active");
+            document.body.style.overflow = "hidden";
+        });
+
+        document.getElementById("closePhotoModal")?.addEventListener("click", () => {
+            photoModal.classList.remove("active");
+            document.body.style.overflow = "";
+        });
+
+        photoModal?.addEventListener("click", (e) => {
+            if (e.target === photoModal) {
+                photoModal.classList.remove("active");
+                document.body.style.overflow = "";
+            }
+        });
+
+        // 10. Tech Knowledge & AI Tips Vault Dataset (PRABIN TECH)
+        const techVault = [
+            {
+                category: "AI PROMPT ENGINEERING",
+                catKey: "ai",
+                badgeClass: "badge-ai",
+                title: "The 'Chain-of-Thought' Framework for Complex Business Tasks",
+                snippet: "Act as a Senior Data Strategist. Analyze this balance sheet step-by-step. First, identify liquidity ratios. Second, highlight anomalous expenses exceeding 15%. Third, write an executive briefing with bulleted recommendations.",
+                explanation: "Demanding sequential steps forces AI models to allocate attention tokens to internal verification, eliminating inaccurate calculations."
+            },
+            {
+                category: "AI AUTOMATION",
+                catKey: "ai",
+                badgeClass: "badge-ai",
+                title: "Automated Excel Formula Generation with Strict Guardrails",
+                snippet: "Act as an Excel Architect. Columns A:Employee, B:JoinDate, C:Salary. Write a single dynamic formula for Excel 365 calculating top 3 earners joined after 2022. Output ONLY formula and 1 sentence explanation.",
+                explanation: "Using negative constraints ('Output ONLY formula') saves API tokens and prevents repetitive chit-chat."
+            },
+            {
+                category: "DATA ANALYTICS",
+                catKey: "excel",
+                badgeClass: "badge-coding",
+                title: "Dynamic Deduplication with UNIQUE & FILTER",
+                snippet: "=SORT(UNIQUE(FILTER(A2:A500, B2:B500=\"Approved\")))",
+                explanation: "Extracts a clean, alphabetical list of distinct approved clients from a 500-row master transaction log."
+            },
+            {
+                category: "CODING LOGIC",
+                catKey: "coding",
+                badgeClass: "badge-coding",
+                title: "Python Dictionary Comprehension for Clean Datasets",
+                snippet: "clean_data = {k.strip(): v for k, v in raw_data.items() if v is not None}",
+                explanation: "Removes whitespace and strips out null records before ingestion into database pipelines."
+            },
+            {
+                category: "CYBER DEFENSE",
+                catKey: "cyber",
+                badgeClass: "badge-cyber",
+                title: "Neutralizing Pen-Drive Shortcut Viruses in Computer Labs",
+                snippet: "attrib -h -r -s /s /d G:\\*.*",
+                explanation: "Run in Windows Command Prompt (replace G with your drive letter) to unhide documents hidden by malicious VBS shortcut worms."
+            },
+            {
+                category: "DATA SHORTCUTS",
+                catKey: "excel",
+                badgeClass: "badge-shortcuts",
+                title: "Instant Multi-Filter & Table Conversion in Excel",
+                snippet: "Ctrl + T (Convert to Dynamic Table) -> Alt + A + C (Clear All Filters)",
+                explanation: "Structured tables auto-expand formula ranges down new rows, eliminating manual formula drag-downs and lookup formula errors."
+            }
+        ];
+
+        let currentVaultFilter = "all";
+        let currentVaultIdx = 0;
+
+        function renderVaultTip(idx) {
+            const item = techVault[idx];
+            if (!item) return;
+            document.getElementById("insightCategory").textContent = item.category;
+            document.getElementById("insightCategory").className = `insight-badge ${item.badgeClass}`;
+            document.getElementById("insightIndex").textContent = `TIP #${(idx + 1).toString().padStart(2, '0')}`;
+            document.getElementById("insightTitle").textContent = item.title;
+            document.getElementById("insightSnippet").textContent = item.snippet;
+            document.getElementById("insightExplanation").textContent = item.explanation;
+        }
+
+        function pickNextVaultTip() {
+            let pool = techVault.map((item, idx) => ({ ...item, originalIdx: idx }));
+            if (currentVaultFilter !== "all") {
+                pool = pool.filter(i => i.catKey === currentVaultFilter);
+            }
+            if (pool.length === 0) return;
+            let randomItem = pool[Math.floor(Math.random() * pool.length)];
+            if (pool.length > 1 && randomItem.originalIdx === currentVaultIdx) {
+                randomItem = pool.find(i => i.originalIdx !== currentVaultIdx) || randomItem;
+            }
+            currentVaultIdx = randomItem.originalIdx;
+            renderVaultTip(currentVaultIdx);
+            triggerToast("Loaded tip from PRABIN TECH vault!");
+        }
+
+        document.getElementById("randomizeBtn")?.addEventListener("click", pickNextVaultTip);
+        document.querySelectorAll(".vtab-btn").forEach(tab => {
+            tab.addEventListener("click", () => {
+                document.querySelectorAll(".vtab-btn").forEach(t => t.classList.remove("active"));
+                tab.classList.add("active");
+                currentVaultFilter = tab.getAttribute("data-tab");
+                pickNextVaultTip();
+            });
+        });
+
+        document.getElementById("copyInsightBtn")?.addEventListener("click", () => {
+            const text = document.getElementById("insightSnippet").textContent;
+            const temp = document.createElement("textarea");
+            temp.value = text;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+            triggerToast("Snippet copied to clipboard!");
+        });
+
+        // 11. Lightweight Canvas Animation (Runs only on Desktop for 60+ FPS performance)
+        const canvas = document.getElementById("bgCanvas");
+        if (canvas && window.innerWidth >= 768) {
+            const ctx = canvas.getContext("2d");
+            let particles = [];
+            let pointer = { x: null, y: null, rad: 90 };
+
+            function setDims() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            setDims();
+            window.addEventListener("resize", setDims, { passive: true });
+            window.addEventListener("mousemove", (e) => { pointer.x = e.clientX; pointer.y = e.clientY; }, { passive: true });
+            window.addEventListener("mouseleave", () => { pointer.x = null; pointer.y = null; }, { passive: true });
+
+            class StarNode {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 1.4 + 0.6;
+                    this.vx = (Math.random() - 0.5) * 0.35;
+                    this.vy = (Math.random() - 0.5) * 0.35;
+                }
+                step() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                }
+                render() {
+                    ctx.fillStyle = "rgba(56, 189, 248, 0.35)";
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            const nodeLimit = Math.min(Math.floor(window.innerWidth / 40), 25);
+            for (let i = 0; i < nodeLimit; i++) particles.push(new StarNode());
+
+            function loopCanvas() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].step();
+                    particles[i].render();
+                }
+                requestAnimationFrame(loopCanvas);
+            }
+            loopCanvas();
+        }
+
+        // 12. Role Typewriter
+        const roles = [
+            "Computer Instructor & Lab Mentor",
+            "Generative AI & Prompt Engineering Trainer",
+            "Advanced Excel Architect (XLOOKUP & Arrays)",
+            "Data Analytics & Nepali Typing (Preeti/Unicode) Expert",
+            "IT Systems & Hardware Diagnosis Specialist"
+        ];
+        let rIndex = 0, charIndex = 0, isDeleting = false;
+        const twSpan = document.getElementById("roleTypewriter");
+
+        function typeLoop() {
+            const currentRole = roles[rIndex];
+            if (isDeleting) {
+                twSpan.textContent = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                twSpan.textContent = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            let speed = isDeleting ? 25 : 50;
+            if (!isDeleting && charIndex === currentRole.length) {
+                speed = 2200;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                rIndex = (rIndex + 1) % roles.length;
+                speed = 300;
+            }
+            setTimeout(typeLoop, speed);
+        }
+        typeLoop();
+
+        // 13. Curriculum Filters
+        document.querySelectorAll(".filter-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+                const cat = btn.getAttribute("data-filter");
+                document.querySelectorAll("#desktopCurriculumBody tr").forEach(row => {
+                    row.style.display = (cat === "all" || row.getAttribute("data-cat") === cat) ? "" : "none";
+                });
+                document.querySelectorAll("#mobileCurriculumList .curr-card").forEach(card => {
+                    card.style.display = (cat === "all" || card.getAttribute("data-cat") === cat) ? "" : "none";
+                });
+            });
+        });
+
+        // 14. Metrics & Intersection Observer
+        let metricsDone = false;
+        function runCounters() {
+            if (metricsDone) return;
+            metricsDone = true;
+            document.querySelectorAll(".metric-value").forEach(c => {
+                const target = +c.getAttribute("data-target");
+                const duration = 1200;
+                const step = target / (duration / 25);
+                let cur = 0;
+                const timer = setInterval(() => {
+                    cur += step;
+                    if (cur >= target) {
+                        c.textContent = target + (target > 50 ? "+" : (target === 100 ? "%" : "+"));
+                        clearInterval(timer);
+                    } else {
+                        c.textContent = Math.floor(cur) + "+";
+                    }
+                }, 25);
+            });
+        }
+
+        const reveals = document.querySelectorAll("[data-reveal]");
+        const progBars = document.querySelectorAll(".progress-fill");
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add("revealed");
+                    if (e.target.querySelector(".metric-value") || e.target.classList.contains("metric-cell") || e.target.classList.contains("bento-metrics-grid")) {
+                        runCounters();
+                    }
+                    if (e.target.querySelector(".progress-fill") || e.target.classList.contains("skill-group-card")) {
+                        progBars.forEach(bar => { bar.style.width = bar.getAttribute("data-progress"); });
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+        reveals.forEach(el => observer.observe(el));
+
+        // 15. Smooth Throttled Scroll Tracking
+        const navEl = document.getElementById("mainNavbar");
+        const toTopBtn = document.getElementById("toTop");
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+        let ticking = false;
+
+        window.addEventListener("scroll", () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const currentScroll = window.scrollY;
+                    if (currentScroll > 40) navEl.classList.add("scrolled");
+                    else navEl.classList.remove("scrolled");
+
+                    if (currentScroll > 300) toTopBtn.classList.add("show");
+                    else toTopBtn.classList.remove("show");
+
+                    let activeId = "home";
+                    sections.forEach(s => {
+                        if (currentScroll >= s.offsetTop - 140) activeId = s.getAttribute("id");
+                    });
+                    navLinks.forEach(link => {
+                        link.classList.remove("active");
+                        if (link.getAttribute("href") === `#${activeId}`) link.classList.add("active");
+                    });
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+
+        toTopBtn?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+        // 16. Mobile Menu Toggle with Clean Close/Cancel Button
+        const menuBtn = document.getElementById("mobileMenuToggle");
+        const menuIcon = document.getElementById("mobileMenuIcon");
+        const drawer = document.getElementById("mobileDrawer");
+        const drawerCloseBtn = document.getElementById("mobileDrawerCloseBtn");
+
+        function openDrawer() {
+            drawer.classList.add("active");
+            menuBtn.classList.add("is-active");
+            menuIcon.setAttribute("data-lucide", "x");
+            lucide.createIcons();
+        }
+
+        function closeDrawer() {
+            drawer.classList.remove("active");
+            menuBtn.classList.remove("is-active");
+            menuIcon.setAttribute("data-lucide", "menu");
+            lucide.createIcons();
+        }
+
+        menuBtn?.addEventListener("click", () => {
+            if (drawer.classList.contains("active")) {
+                closeDrawer();
+            } else {
+                openDrawer();
+            }
+        });
+
+        drawerCloseBtn?.addEventListener("click", closeDrawer);
+        document.querySelectorAll(".drawer-link").forEach(l => l.addEventListener("click", closeDrawer));
+    </script>
 </body>
 </html>
