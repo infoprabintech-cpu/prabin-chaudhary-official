@@ -65,8 +65,8 @@
         .container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 12px; }
         @media (min-width: 768px) { .container { padding: 0 18px; } }
 
-        /* FIXED TOP HEADER BANNER (NO EXTRA SPACE ON SCROLL UP) */
-        .header-top-banner { background: linear-gradient(90deg, rgba(3, 7, 18, 0.98), rgba(15, 23, 42, 0.98), rgba(3, 7, 18, 0.98)); border-bottom: 1px solid var(--border); padding: 4px 10px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; width: 100%; margin: 0; }
+        /* ZERO-SPACE TOP HEADER BANNER */
+        .header-top-banner { background: linear-gradient(90deg, rgba(3, 7, 18, 0.98), rgba(15, 23, 42, 0.98), rgba(3, 7, 18, 0.98)); border-bottom: 1px solid var(--border); padding: 5px 10px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; width: 100%; margin: 0; position: relative; z-index: 1001; }
         .header-top-title { font-family: var(--font-display); font-size: clamp(12px, 2vw, 15px); font-weight: 900; letter-spacing: 1.2px; text-transform: uppercase; background: var(--name-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: textShine 6s linear infinite; display: inline-flex; align-items: center; gap: 6px; }
         @keyframes textShine { 0% { background-position: 0% center; } 100% { background-position: 250% center; } }
         .header-top-sub { font-size: 9.5px; font-family: var(--font-mono); color: var(--primary); letter-spacing: 0.5px; }
