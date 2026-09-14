@@ -2,184 +2,244 @@
 <html lang="ne">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>भुक्तानी विवरण | QR Codes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>भुक्तानी विवरण | QR Payment</title>
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 
     body {
-      background: #f1f5f9;
-      color: #0f172a;
-      padding: 15px;
+      background: #0f172a;
+      color: #334155;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      padding: 16px;
     }
 
-    .box {
-      background: white;
+    .card {
+      background: #ffffff;
       width: 100%;
-      max-width: 460px;
-      border-radius: 14px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      padding: 20px;
+      max-width: 420px;
+      border-radius: 18px;
+      padding: 24px 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
       text-align: center;
+    }
+
+    .icon-circle {
+      width: 60px;
+      height: 60px;
+      background: #e0f2fe;
+      color: #0284c7;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin: 0 auto 12px auto;
     }
 
     h2 {
-      margin-bottom: 8px;
-      color: #1e293b;
+      font-size: 1.25rem;
+      color: #0f172a;
+      margin-bottom: 6px;
     }
 
-    p.sub {
+    p.subtext {
+      font-size: 0.88rem;
       color: #64748b;
-      font-size: 14px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
-    input[type="password"], input[type="text"] {
-      width: 85%;
-      padding: 12px;
-      border: 1.5px solid #cbd5e1;
-      border-radius: 8px;
+    /* इनपुट बक्स */
+    .input-box {
+      width: 100%;
+      padding: 12px 14px;
       font-size: 16px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 10px;
       text-align: center;
       outline: none;
       margin-bottom: 12px;
+      transition: border-color 0.2s;
     }
 
-    button.btn-unlock {
-      width: 85%;
-      padding: 12px;
-      background: #16a34a;
-      color: white;
-      border: none;
-      border-radius: 8px;
+    .input-box:focus {
+      border-color: #2563eb;
+    }
+
+    /* अनलक बटन */
+    .btn-main {
+      width: 100%;
+      padding: 13px;
+      background: #2563eb;
+      color: #ffffff;
       font-size: 16px;
-      font-weight: bold;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
       cursor: pointer;
+      box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
     }
 
-    button.btn-unlock:active {
-      background: #15803d;
+    .btn-main:active {
+      transform: scale(0.98);
     }
 
-    .err {
-      color: #dc2626;
-      font-size: 14px;
+    .err-text {
+      color: #ef4444;
+      font-size: 13px;
       margin-top: 10px;
-      font-weight: 500;
+      min-height: 18px;
     }
 
-    /* QR Grid */
-    .qr-grid {
+    /* ट्याब बटनहरू (मोबाइल २x२ ग्रिड) */
+    .tabs {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 15px;
+      gap: 8px;
+      margin-bottom: 16px;
     }
 
-    @media (max-width: 480px) {
-      .qr-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .qr-card {
+    .tab-item {
+      padding: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 8px;
-      padding: 10px;
+      cursor: pointer;
+      color: #475569;
+    }
+
+    .tab-item.active {
+      background: #0284c7;
+      color: #ffffff;
+      border-color: #0284c7;
+    }
+
+    /* QR डिस्प्ले एरिया */
+    .qr-frame {
       background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .qr-card h4 {
-      font-size: 14px;
-      margin-bottom: 8px;
-      color: #334155;
+    .qr-title {
+      font-size: 15px;
+      font-weight: bold;
+      color: #1e293b;
+      margin-bottom: 12px;
     }
 
-    .qr-card img {
+    .qr-img {
       width: 100%;
-      height: auto;
-      border-radius: 6px;
+      max-width: 260px;
+      aspect-ratio: 1/1;
+      object-fit: contain;
+      background: #ffffff;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
       display: block;
+    }
+
+    .hidden {
+      display: none;
     }
   </style>
 </head>
 <body>
 
-<div class="box">
-  <!-- लक स्क्रिन -->
-  <div id="lockScreen">
-    <h2>🔒 QR भुक्तानी लक</h2>
-    <p class="sub">QR कोडहरू हेर्न कृपया पासवर्ड राख्नुहोस्:</p>
-    
-    <input type="text" id="pwdInput" placeholder="पासवर्ड यहाँ लेख्नुहोस्..." autocomplete="off" />
-    <br>
-    <button class="btn-unlock" onclick="checkPass()">अनलक गर्नुहोस्</button>
-    <div id="errorText" class="err"></div>
-  </div>
+  <div class="card">
+    <!-- लक स्क्रिन -->
+    <div id="screen-lock">
+      <div class="icon-circle">🔒</div>
+      <h2>QR भुक्तानी सुरक्षा</h2>
+      <p class="subtext">QR कोड हेर्न पासवर्ड राख्नुहोस्:</p>
+      
+      <input type="text" id="pass-input" class="input-box" placeholder="यहाँ पासवर्ड टाइप गर्नुहोस्" autocomplete="off" />
+      <button type="button" class="btn-main" onclick="handleUnlock()">अनलक गर्नुहोस्</button>
+      <div id="err-message" class="err-text"></div>
+    </div>
 
-  <!-- पासवर्ड मिलेपछि देखिने भाग -->
-  <div id="qrScreen" style="display: none;">
-    <h2>✅ भुक्तानी QR कोडहरू</h2>
-    <p class="sub">स्क्यान गरी भुक्तानी गर्नुहोस्</p>
+    <!-- अनलक भएपछिको स्क्रिन -->
+    <div id="screen-content" class="hidden">
+      <h2>भुक्तानी QR कोड</h2>
+      <p class="subtext">माध्यम छान्नुहोस् र स्क्यान गर्नुहोस्</p>
 
-    <div class="qr-grid">
-      <div class="qr-card">
-        <h4>eSewa</h4>
-        <img id="img1" alt="eSewa QR">
+      <div class="tabs">
+        <button type="button" class="tab-item active" id="tab-esewa" onclick="setQR('esewa')">eSewa</button>
+        <button type="button" class="tab-item" id="tab-fonepay" onclick="setQR('fonepay')">Fonepay</button>
+        <button type="button" class="tab-item" id="tab-khalti" onclick="setQR('khalti')">Khalti</button>
+        <button type="button" class="tab-item" id="tab-bank" onclick="setQR('bank')">Bank</button>
       </div>
-      <div class="qr-card">
-        <h4>Fonepay</h4>
-        <img id="img2" alt="Fonepay QR">
-      </div>
-      <div class="qr-card">
-        <h4>Khalti</h4>
-        <img id="img3" alt="Khalti QR">
-      </div>
-      <div class="qr-card">
-        <h4>Bank Transfer</h4>
-        <img id="img4" alt="Bank QR">
+
+      <div class="qr-frame">
+        <div class="qr-title" id="display-title">eSewa QR</div>
+        <img id="display-img" class="qr-img" src="" alt="QR Loading..." />
       </div>
     </div>
   </div>
-</div>
 
-<script>
-  function checkPass() {
-    var userText = document.getElementById("pwdInput").value;
-    var cleanText = userText.trim().toLowerCase(); // स्पेस हटाउने र सानो अक्षर बनाउने
-    var err = document.getElementById("errorText");
+  <script>
+    function handleUnlock() {
+      var val = document.getElementById("pass-input").value;
+      var clean = val.replace(/\s+/g, '').toLowerCase();
+      var err = document.getElementById("err-message");
 
-    if (cleanText === "saru") {
-      // फोटोहरू लोड गर्ने
-      document.getElementById("img1").src = "esewa.jpg";
-      document.getElementById("img2").src = "fonepay.jpg";
-      document.getElementById("img3").src = "khalti.jpg";
-      document.getElementById("img4").src = "bank.jpg";
-
-      // स्क्रिन फेर्ने
-      document.getElementById("lockScreen").style.display = "none";
-      document.getElementById("qrScreen").style.display = "block";
-    } else {
-      err.innerText = "गलत पासवर्ड! कृपया फेरि प्रयास गर्नुहोस्।";
+      if (clean === "saru") {
+        document.getElementById("screen-lock").classList.add("hidden");
+        document.getElementById("screen-content").classList.remove("hidden");
+        setQR('esewa');
+      } else {
+        err.innerText = "गलत पासवर्ड! कृपया पुन: प्रयास गर्नुहोस्।";
+      }
     }
-  }
 
-  // किबोर्डको Enter थिच्दा सिधै खुल्ने
-  document.getElementById("pwdInput").addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-      checkPass();
+    function setQR(service) {
+      var allTabs = document.querySelectorAll(".tab-item");
+      for (var i = 0; i < allTabs.length; i++) {
+        allTabs[i].classList.remove("active");
+      }
+
+      var img = document.getElementById("display-img");
+      var title = document.getElementById("display-title");
+
+      if (service === 'esewa') {
+        document.getElementById("tab-esewa").classList.add("active");
+        title.innerText = "eSewa QR मार्फत भुक्तानी";
+        img.src = "esewa.jpg";
+      } else if (service === 'fonepay') {
+        document.getElementById("tab-fonepay").classList.add("active");
+        title.innerText = "Fonepay QR मार्फत भुक्तानी";
+        img.src = "fonepay.jpg";
+      } else if (service === 'khalti') {
+        document.getElementById("tab-khalti").classList.add("active");
+        title.innerText = "Khalti QR मार्फत भुक्तानी";
+        img.src = "khalti.jpg";
+      } else if (service === 'bank') {
+        document.getElementById("tab-bank").classList.add("active");
+        title.innerText = "Bank Account QR मार्फत भुक्तानी";
+        img.src = "bank.jpg";
+      }
     }
-  });
-</script>
+
+    document.getElementById("pass-input").addEventListener("keyup", function(e) {
+      if (e.key === "Enter") {
+        handleUnlock();
+      }
+    });
+  </script>
 
 </body>
 </html>
