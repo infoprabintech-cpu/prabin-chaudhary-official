@@ -40,6 +40,32 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
+       /* PC मा CV को छेउमा देखिने बटन स्टाइल */
+.nav-pay-btn {
+  background-color: #0284c7;
+  color: #ffffff !important;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+}
+
+.nav-pay-btn:hover {
+  background-color: #0369a1;
+}
+
+/* मोबाइल (३ वटा धर्का) भित्र अटो-फिट हुने स्टाइल */
+@media (max-width: 768px) {
+  .nav-pay-btn {
+    display: block;
+    margin: 8px 0;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+  }
+}
         :root {
             --bg: #030712;
             --bg-glass: rgba(11, 19, 38, 0.88);
@@ -2027,6 +2053,9 @@
                     <a href="Ratna-Prasad-Tharu-CV.pdf" id="navCVBtn" class="btn-nav-cta">
                         <i data-lucide="file-down" style="width: 13px; height: 13px;"></i> CV
                     </a>
+                   <!-- CV लिङ्कको ठीक छेउमा यो राख्नुहोस् -->
+<li><a href="cv.pdf" target="_blank">CV</a></li>
+<li><a href="pay.html" class="nav-pay-btn">💳 Pay Info</a></li>
                     <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
                         <i data-lucide="menu" id="mobileMenuIcon" style="width: 18px; height: 18px;"></i>
                     </button>
