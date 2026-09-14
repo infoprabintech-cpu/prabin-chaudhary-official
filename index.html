@@ -9,7 +9,7 @@
     <meta name="author" content="Prabin Chaudhary">
     <meta name="robots" content="index, follow">
 
-    <!-- Industry Gold Standard Fonts: Outfit (Titles), Inter (Sharp UI), JetBrains Mono (Tech Tags) -->
+    <!-- Fonts: Outfit (Titles), Inter (Clean UI), JetBrains Mono (Tech Data) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
@@ -29,12 +29,14 @@
             --cyan: #06b6d4;
             --purple: #a855f7;
             --emerald: #10b981;
+            --amber: #f59e0b;
+            --pdf-red: #ef4444;
+            --primary-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
+            --name-gradient: linear-gradient(110deg, #ffffff 0%, #38bdf8 35%, #c084fc 70%, #ffffff 100%);
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
             --text-dim: #64748b;
             --code-bg: #020617;
-            --primary-gradient: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
-            --name-gradient: linear-gradient(110deg, #ffffff 0%, #38bdf8 35%, #c084fc 70%, #ffffff 100%);
             --radius-lg: 12px;
             --radius-md: 8px;
             --font-display: 'Outfit', sans-serif;
@@ -120,7 +122,7 @@
             .container { padding: 0 18px; }
         }
 
-        /* ====== 1. COMPACT BANNER (MINIMAL GAP) ====== */
+        /* ====== 1. COMPACT BANNER ====== */
         .header-top-banner {
             background: linear-gradient(90deg, rgba(3, 7, 18, 0.98), rgba(15, 23, 42, 0.98), rgba(3, 7, 18, 0.98));
             border-bottom: 1px solid var(--border);
@@ -162,7 +164,7 @@
             letter-spacing: 0.4px;
         }
 
-        /* ====== 2. COMPACT NAVBAR ====== */
+        /* ====== 2. NAVBAR WITH TECHNICAL ICON ====== */
         .navbar {
             position: sticky;
             top: 0;
@@ -188,7 +190,6 @@
             padding: 2px 4px;
         }
 
-        /* TECHNICAL CODE-BRACKETS SIGN (< / >) */
         .tech-brand-icon {
             width: 26px;
             height: 26px;
@@ -364,7 +365,7 @@
             background: rgba(125, 125, 125, 0.05);
         }
 
-        /* ====== 3. ZERO-WASTE COMPACT SECTIONS (MINIMAL GAP) ====== */
+        /* ====== 3. SECTIONS WITH MINIMAL GAP ====== */
         section {
             padding: 10px 0;
             scroll-margin-top: 50px;
@@ -507,6 +508,21 @@
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
             padding: 10px 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-icon-wrap {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            background: rgba(56, 189, 248, 0.12);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 6px;
         }
 
         /* ====== PHOTO LIGHTBOX MODAL ====== */
@@ -616,7 +632,7 @@
     <div class="ambient-aurora"></div>
     <canvas id="bgCanvas"></canvas>
 
-    <!-- 1. COMPACT TOP HEADER BANNER -->
+    <!-- 1. COMPACT BANNER -->
     <header class="header-top-banner">
         <div class="header-top-title">
             <i data-lucide="sparkles" style="width: 13px; height: 13px; color: #38bdf8;"></i>
@@ -626,12 +642,11 @@
         <span class="header-top-sub">COMPUTER INSTRUCTOR • AI & IT SOLUTIONS • RUPANDEHI, NEPAL</span>
     </header>
 
-    <!-- 2. NAVBAR (TECHNICAL CODE BRACKETS SIGN) -->
+    <!-- 2. NAVBAR (TECHNICAL ICON & DIRECT CONTACT LINK) -->
     <nav class="navbar" id="mainNavbar">
         <div class="container">
             <div class="nav-inner">
                 <a href="#home" class="nav-brand-box">
-                    <!-- Technical Code Icon: < / > -->
                     <div class="tech-brand-icon">
                         <i data-lucide="code-2" style="width: 15px; height: 15px;"></i>
                     </div>
@@ -641,7 +656,7 @@
                     </div>
                 </a>
 
-                <!-- Desktop Nav Menu -->
+                <!-- Desktop Nav Menu (Contact लिङ्क समावेश) -->
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#home" class="nav-item active">Home</a></li>
                     <li><a href="#pdfnotes" class="nav-item">Notes & Vault</a></li>
@@ -649,7 +664,7 @@
                     <li><a href="#skills" class="nav-item">Skills</a></li>
                     <li><a href="#services" class="nav-item">Services</a></li>
                     <li><a href="#experience" class="nav-item">Experience</a></li>
-                    <li><a href="#inquiry" class="nav-item">Inquiry</a></li>
+                    <li><a href="#contact" class="nav-item">Contact</a></li>
                 </ul>
 
                 <div class="nav-actions">
@@ -672,7 +687,7 @@
             </div>
         </div>
 
-        <!-- Mobile Drawer -->
+        <!-- Mobile Drawer (Contact लिङ्क समावेश) -->
         <div class="mobile-drawer" id="mobileDrawer">
             <ul class="mobile-drawer-links">
                 <li><a href="#home" class="drawer-link"><i data-lucide="home" style="width: 14px; height: 14px;"></i> Home</a></li>
@@ -681,8 +696,8 @@
                 <li><a href="#skills" class="drawer-link"><i data-lucide="bar-chart" style="width: 14px; height: 14px;"></i> Technical Skills</a></li>
                 <li><a href="#services" class="drawer-link"><i data-lucide="layers" style="width: 14px; height: 14px;"></i> Solutions & Services</a></li>
                 <li><a href="#experience" class="drawer-link"><i data-lucide="briefcase" style="width: 14px; height: 14px;"></i> Career Timeline</a></li>
+                <li><a href="#contact" class="drawer-link"><i data-lucide="phone-call" style="width: 14px; height: 14px; color: #38bdf8;"></i> Contact & Number</a></li>
                 <li><a href="pay.html" class="drawer-link" style="color: #34d399;"><i data-lucide="credit-card" style="width: 14px; height: 14px;"></i> 💳 Pay Info</a></li>
-                <li><a href="#inquiry" class="drawer-link"><i data-lucide="send" style="width: 14px; height: 14px;"></i> Direct Inquiry</a></li>
             </ul>
         </div>
     </nav>
@@ -725,7 +740,7 @@
                         <a href="#pdfnotes" class="btn btn-primary" style="background: linear-gradient(135deg, #ef4444, #f97316); color: #fff;">PDF Notes</a>
                         <a href="https://wa.me/9779716175657" target="_blank" class="btn btn-secondary">WhatsApp</a>
                         <a href="cv.pdf" class="btn btn-secondary" target="_blank">Download CV</a>
-                        <a href="#inquiry" class="btn btn-secondary">Inquiry</a>
+                        <a href="#contact" class="btn btn-secondary">Contact</a>
                     </div>
                 </div>
             </div>
@@ -738,7 +753,7 @@
             </div>
         </section>
 
-        <!-- 2. NOTES -->
+        <!-- 2. NOTES & VAULT -->
         <section id="pdfnotes">
             <div class="section-header">
                 <h2 class="section-title">Official Study Notes & PDF Vault</h2>
@@ -747,12 +762,12 @@
                 <div class="item-card">
                     <h3 style="font-size: 13.5px; margin-bottom: 3px;">Workplace Generative AI & Prompt Engineering</h3>
                     <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 6px;">Master prompt architecture (Role, Context, Task, Constraints, Examples) for automated drafting and formula fixes.</p>
-                    <a href="#inquiry" class="btn btn-secondary" style="font-size: 10px; padding: 3px 6px;">Request Note</a>
+                    <a href="#contact" class="btn btn-secondary" style="font-size: 10px; padding: 3px 6px;">Request Note</a>
                 </div>
                 <div class="item-card">
                     <h3 style="font-size: 13.5px; margin-bottom: 3px;">Advanced Excel & Dynamic Formulas</h3>
                     <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 6px;">High-yield reference covering XLOOKUP, INDEX/MATCH, Dynamic Arrays, and automated pivot reporting structures.</p>
-                    <a href="#inquiry" class="btn btn-secondary" style="font-size: 10px; padding: 3px 6px;">Request Note</a>
+                    <a href="#contact" class="btn btn-secondary" style="font-size: 10px; padding: 3px 6px;">Request Note</a>
                 </div>
             </div>
         </section>
@@ -798,23 +813,56 @@
             </div>
         </section>
 
-        <!-- 5. SERVICES -->
+        <!-- 5. EXPANDED SERVICES (EXTRA & PRACTICAL IT SOLUTIONS) -->
         <section id="services">
             <div class="section-header">
-                <h2 class="section-title">Solutions & Services</h2>
+                <h2 class="section-title">Professional Solutions & Services</h2>
             </div>
             <div class="grid-3">
                 <div class="item-card">
-                    <h3 style="font-size: 13px; margin-bottom: 3px;">Computer Training</h3>
-                    <p style="font-size: 11px; color: var(--text-muted);">Structured computing courses tailored for schools, institutes, and workforce skills.</p>
+                    <div class="service-icon-wrap"><i data-lucide="monitor" style="width: 16px; height: 16px;"></i></div>
+                    <h3 style="font-size: 13px; margin-bottom: 3px;">Computer Training Classes</h3>
+                    <p style="font-size: 11px; color: var(--text-muted);">Practical hands-on courses in Basic Computing, MS Office Package, and Typing for students and job seekers.</p>
                 </div>
                 <div class="item-card">
-                    <h3 style="font-size: 13px; margin-bottom: 3px;">IT Maintenance</h3>
-                    <p style="font-size: 11px; color: var(--text-muted);">Diagnostic hardware troubleshooting, OS deployment, and institutional lab administration.</p>
+                    <div class="service-icon-wrap"><i data-lucide="wrench" style="width: 16px; height: 16px;"></i></div>
+                    <h3 style="font-size: 13px; margin-bottom: 3px;">PC Repair & Maintenance</h3>
+                    <p style="font-size: 11px; color: var(--text-muted);">Workstation assembly, motherboard/RAM troubleshooting, thermal repasting, and system speedup.</p>
                 </div>
                 <div class="item-card">
-                    <h3 style="font-size: 13px; margin-bottom: 3px;">Data Solutions</h3>
-                    <p style="font-size: 11px; color: var(--text-muted);">Bespoke automated spreadsheets, data validation workflows, and dynamic KPI dashboards.</p>
+                    <div class="service-icon-wrap"><i data-lucide="disc" style="width: 16px; height: 16px;"></i></div>
+                    <h3 style="font-size: 13px; margin-bottom: 3px;">OS Setup & Software Deploy</h3>
+                    <p style="font-size: 11px; color: var(--text-muted);">Windows 10/11 clean formatting, driver initialization, MS Office licensing, and utility installations.</p>
+                </div>
+                <div class="item-card">
+                    <div class="service-icon-wrap"><i data-lucide="file-spreadsheet" style="width: 16px; height: 16px;"></i></div>
+                    <h3 style="font-size: 13px; margin-bottom: 3px;">Excel Sheet Automation</h3>
+                    <p style="font-size: 11px; color: var(--text-muted);">Custom automated spreadsheets, invoice generators, dynamic charts, and financial calculation templates.</p>
+                </div>
+                <div class="item-card">
+                    <div class="service-icon-wrap"><i data-lucide="network" style="width: 16px; height: 16px;"></i></div>
+                    <h3 style="font-size: 13px; margin-bottom: 3px;">Lab & Office LAN Network</h3>
+                    <p style="font-size: 11px; color: var(--text-muted);">Local Area Network (LAN) cabling, Wi-Fi router configuration, static IP routing, and printer sharing.</p>
+                </div>
+                <div class="item-card">
+                    <div class="service-icon-wrap"><i data-lucide="calculator" style="width: 16px; height: 16px;"></i></div>
+                    <h3 style="font-size: 13px; margin-bottom: 3px;">Accounting & Tally Prime</h3>
+                    <p style="font-size: 11px; color: var(--text-muted);">Institutional day-book management, VAT invoice recording, inventory ledgers, and audit assistance.</p>
+                </div>
+                <div class="item-card">
+                    <div class="service-icon-wrap"><i data-lucide="shield-check" style="width: 16px; height: 16px;"></i></div>
+                    <h3 style="font-size: 13px; margin-bottom: 3px;">Antivirus & Virus Removal</h3>
+                    <p style="font-size: 11px; color: var(--text-muted);">Disinfecting pen-drive shortcut malware, spyware protection, firewall setup, and data backup safety.</p>
+                </div>
+                <div class="item-card">
+                    <div class="service-icon-wrap"><i data-lucide="type" style="width: 16px; height: 16px;"></i></div>
+                    <h3 style="font-size: 13px; margin-bottom: 3px;">Typing & Document Drafting</h3>
+                    <p style="font-size: 11px; color: var(--text-muted);">Rapid government Nepali typing (Preeti/Unicode), legal agreement drafting, and PDF conversions.</p>
+                </div>
+                <div class="item-card">
+                    <div class="service-icon-wrap"><i data-lucide="globe" style="width: 16px; height: 16px;"></i></div>
+                    <h3 style="font-size: 13px; margin-bottom: 3px;">Online Forms & Digital Help</h3>
+                    <p style="font-size: 11px; color: var(--text-muted);">Online government forms, smart card applications, official bio-data creation, and digital portal services.</p>
                 </div>
             </div>
         </section>
@@ -842,16 +890,64 @@
             </div>
         </section>
 
-        <!-- 7. INQUIRY -->
-        <section id="inquiry">
+        <!-- 7. CONTACT & INQUIRY (OFFICIAL NUMBER INCLUDED) -->
+        <section id="contact">
             <div class="section-header">
-                <h2 class="section-title">Inquiry & Contact</h2>
+                <h2 class="section-title">Contact & Direct Connect</h2>
             </div>
-            <div class="item-card" style="max-width: 440px; margin: 0 auto; text-align: center;">
-                <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">Direct inquiry for computer courses, IT support, or payment details:</p>
-                <div style="display: flex; justify-content: center; gap: 6px; flex-wrap: wrap;">
-                    <a href="https://wa.me/9779716175657" target="_blank" class="btn btn-primary" style="background: #22c55e; color: #fff;">WhatsApp</a>
-                    <a href="pay.html" class="btn btn-primary" style="background: #0284c7; color: #fff;">💳 Pay Info</a>
+            <div class="grid-2">
+                <!-- Direct Calling & Number Card -->
+                <div class="item-card">
+                    <h3 style="font-size: 14px; margin-bottom: 6px;">Direct Phone & WhatsApp</h3>
+                    <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 10px;">
+                        तालिम, कम्प्युटर मर्मत वा कुनै पनि सोधपुछका लागि सिधै सम्पर्क गर्नुहोस्:
+                    </p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <a href="tel:+9779716175657" class="btn btn-secondary" style="justify-content: flex-start; padding: 8px 12px;">
+                            <i data-lucide="phone-call" style="width: 15px; height: 15px; color: var(--primary);"></i>
+                            <span style="font-family: var(--font-mono); font-size: 13px; font-weight: 700;">+977-9716175657</span>
+                        </a>
+                        <a href="https://wa.me/9779716175657" target="_blank" class="btn btn-primary" style="justify-content: flex-start; padding: 8px 12px; background: #22c55e; color: #fff;">
+                            <i data-lucide="message-circle" style="width: 15px; height: 15px;"></i>
+                            <span style="font-size: 12px; font-weight: 700;">Chat on WhatsApp (+977-9716175657)</span>
+                        </a>
+                        <a href="mailto:info.prabintech@gmail.com" class="btn btn-secondary" style="justify-content: flex-start; padding: 8px 12px;">
+                            <i data-lucide="mail" style="width: 15px; height: 15px; color: var(--primary);"></i>
+                            <span style="font-size: 12px; font-weight: 600;">info.prabintech@gmail.com</span>
+                        </a>
+                        <div style="font-size: 11px; color: var(--text-dim); margin-top: 4px;">
+                            📍 Kanchan-05, Rupandehi, Lumbini Province, Nepal
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instant Inquiry Form -->
+                <div class="item-card">
+                    <h3 style="font-size: 14px; margin-bottom: 4px;">Send Message via WhatsApp</h3>
+                    <form id="inquiryForm">
+                        <div style="margin-bottom: 6px;">
+                            <label style="display: block; font-size: 10px; font-weight: 700; color: var(--text-muted); margin-bottom: 2px;">YOUR NAME</label>
+                            <input type="text" id="inqName" style="width: 100%; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; color: var(--text-main); font-size: 11.5px; outline: none;" placeholder="e.g. Ramesh Sharma" required>
+                        </div>
+                        <div style="margin-bottom: 6px;">
+                            <label style="display: block; font-size: 10px; font-weight: 700; color: var(--text-muted); margin-bottom: 2px;">SELECT SERVICE / TOPIC</label>
+                            <select id="inqSubject" style="width: 100%; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; color: var(--text-main); font-size: 11.5px; outline: none;">
+                                <option value="Computer Training Classes">Computer Training Classes</option>
+                                <option value="PC Repair & Hardware Setup">PC Repair & Hardware Setup</option>
+                                <option value="Excel Automation & Dashboards">Excel Automation & Dashboards</option>
+                                <option value="Networking & Wi-Fi Configuration">Networking & Wi-Fi Configuration</option>
+                                <option value="General IT Inquiry">General IT Inquiry</option>
+                            </select>
+                        </div>
+                        <div style="margin-bottom: 8px;">
+                            <label style="display: block; font-size: 10px; font-weight: 700; color: var(--text-muted); margin-bottom: 2px;">MESSAGE DETAILS</label>
+                            <textarea id="inqMsg" style="width: 100%; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; color: var(--text-main); font-size: 11.5px; outline: none; resize: vertical; min-height: 48px;" placeholder="Describe your requirement..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i data-lucide="send" style="width: 12px; height: 12px;"></i> Send Instant Message
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -861,12 +957,12 @@
     <div id="photoModal">
         <div class="modal-photo-container">
             <button class="modal-close-btn" id="closePhotoModal" aria-label="Close photo">
-                <i data-lucide="x" style="width: 15px; height: 15px;"></i>
+                <i data-lucide="x" style="width: 16px; height: 16px;"></i>
             </button>
             <img src="prabin.jpg" alt="Prabin Chaudhary" class="modal-img-full" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800';">
             <div class="modal-photo-caption">
                 <h4 style="font-size: 13px; font-weight: 800; color: var(--text-main);">Prabin Chaudhary</h4>
-                <p style="font-size: 10.5px; color: var(--primary);">Computer Instructor & IT Specialist • Rupandehi, Nepal</p>
+                <p style="font-size: 10px; color: var(--primary);">Computer Instructor & IT Specialist • Rupandehi, Nepal</p>
             </div>
         </div>
     </div>
@@ -890,7 +986,7 @@
     <script>
         lucide.createIcons();
 
-        // Nav Keys: Active Switch on Click
+        // 1. Nav Keys: Click Active Switch
         const navItems = document.querySelectorAll(".nav-menu .nav-item");
         navItems.forEach(item => {
             item.addEventListener("click", function () {
@@ -899,7 +995,7 @@
             });
         });
 
-        // Theme Toggle
+        // 2. Theme Toggle
         const themeBtn = document.getElementById("themeToggleBtn");
         const themeIcon = document.getElementById("themeIcon");
         themeBtn?.addEventListener("click", () => {
@@ -910,7 +1006,7 @@
             lucide.createIcons();
         });
 
-        // Mobile Drawer
+        // 3. Mobile Drawer
         const menuBtn = document.getElementById("mobileMenuToggle");
         const drawer = document.getElementById("mobileDrawer");
         menuBtn?.addEventListener("click", () => drawer.classList.toggle("active"));
@@ -918,12 +1014,12 @@
             link.addEventListener("click", () => drawer.classList.remove("active"));
         });
 
-        // Role Typewriter
+        // 4. Role Typewriter
         const roles = [
             "Computer Instructor & Lab Mentor",
             "Generative AI & Prompt Trainer",
             "Advanced Excel Architect",
-            "Data Analytics & Typing Expert"
+            "Hardware & Lab Support Specialist"
         ];
         let rIndex = 0, charIndex = 0, isDeleting = false;
         const twSpan = document.getElementById("roleTypewriter");
@@ -950,7 +1046,18 @@
         }
         typeLoop();
 
-        // Lightbox Modal
+        // 5. WhatsApp Form Direct Action
+        document.getElementById("inquiryForm")?.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.getElementById("inqName").value.trim();
+            const subject = document.getElementById("inqSubject").value;
+            const message = document.getElementById("inqMsg").value.trim();
+
+            const text = `*New Inquiry for Prabin Chaudhary*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Service:* ${encodeURIComponent(subject)}%0A*Details:* ${encodeURIComponent(message || "Interested in services.")}`;
+            window.open(`https://wa.me/9779716175657?text=${text}`, "_blank");
+        });
+
+        // 6. Photo Lightbox Modal
         const photoModal = document.getElementById("photoModal");
         document.getElementById("openPhotoModal")?.addEventListener("click", () => {
             photoModal.classList.add("active");
