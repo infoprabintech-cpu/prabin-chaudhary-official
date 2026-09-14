@@ -71,7 +71,7 @@
             --aurora-opacity: 0.12;
         }
 
-        /* Light Mode High-Contrast Ultra-Clean Theme */
+        /* Light Mode High-Contrast Clean Theme */
         [data-theme="light"] {
             --bg: #f8fafc;
             --bg-glass: rgba(255, 255, 255, 0.94);
@@ -105,9 +105,7 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -115,7 +113,6 @@
             color: var(--text-main);
             line-height: 1.5;
             overflow-x: hidden;
-            font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
             padding-bottom: 68px;
             -webkit-overflow-scrolling: touch;
         }
@@ -167,13 +164,14 @@
         section {
             padding: 30px 0;
             position: relative;
-            scroll-margin-top: 70px;
+            scroll-margin-top: 75px;
         }
 
         @media (min-width: 768px) {
             section { padding: 44px 0; }
         }
 
+        /* ====== NAVBAR ====== */
         .navbar {
             position: sticky;
             top: 0;
@@ -278,10 +276,7 @@
         }
 
         @media (min-width: 768px) {
-            .brand-name {
-                font-size: 14.5px;
-                letter-spacing: 0.6px;
-            }
+            .brand-name { font-size: 14.5px; letter-spacing: 0.6px; }
         }
 
         .brand-sub {
@@ -297,10 +292,11 @@
             .brand-sub { font-size: 10px; letter-spacing: 0.4px; }
         }
 
+        /* ====== MENU LINKS: HOVER EFFECT & ACTIVE STATE ====== */
         .nav-menu {
             display: none;
             list-style: none;
-            gap: 4px;
+            gap: 6px;
             align-items: center;
         }
 
@@ -313,19 +309,33 @@
             color: var(--text-muted);
             font-size: 13px;
             font-weight: 600;
-            padding: 7px 11px;
+            padding: 6px 13px;
             border-radius: 20px;
-            transition: all 0.2s ease;
+            border: 1px solid transparent;
+            transition: all 0.22s ease;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
         }
 
-        .nav-menu a:hover,
+        /* कर्सर राख्दा आउने विशिष्ट साइबर ग्लो */
+        .nav-menu a:hover {
+            color: #38bdf8;
+            background: rgba(56, 189, 248, 0.08);
+            border-color: rgba(56, 189, 248, 0.35);
+            box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
+            transform: translateY(-1px);
+        }
+
+        /* क्लिक हुँदा केवल एउटा मात्र हाइलाइट रहने */
         .nav-menu a.active {
-            color: var(--text-main);
-            background: rgba(56, 189, 248, 0.12);
-            border: 1px solid var(--border-glow);
-            box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+            color: #ffffff !important;
+            background: rgba(56, 189, 248, 0.18) !important;
+            border-color: #38bdf8 !important;
+            box-shadow: 0 0 12px rgba(56, 189, 248, 0.45) !important;
         }
 
+        /* ====== ACTION BUTTONS (CV & PAY INFO) ====== */
         .nav-actions {
             display: flex;
             align-items: center;
@@ -357,7 +367,6 @@
             background: rgba(56, 189, 248, 0.15);
         }
 
-        /* CV र Pay Info Buttons (Single Inline Alignment) */
         .btn-nav-cta {
             padding: 6px 12px;
             height: 34px;
@@ -1472,35 +1481,32 @@
                     </div>
                 </a>
 
-                <!-- Desktop Nav Menu (१००% काम गर्ने लिङ्कहरू) -->
+                <!-- Desktop Nav Menu (Home सुरुमा मात्र Active, बाँकीमा छुट्टै Hover Sign) -->
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="#pdfnotes" class="nav-link">Notes & Vault</a></li>
-                    <li><a href="#vault" class="nav-link">AI & Tech Tips</a></li>
-                    <li><a href="#curriculum" class="nav-link">Curriculum</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#experience" class="nav-link">Experience</a></li>
-                    <li><a href="#inquiry" class="nav-link">Inquiry</a></li>
+                    <li><a href="#home" class="nav-item active">Home</a></li>
+                    <li><a href="#pdfnotes" class="nav-item">Notes & Vault</a></li>
+                    <li><a href="#vault" class="nav-item">AI & Tech Tips</a></li>
+                    <li><a href="#curriculum" class="nav-item">Curriculum</a></li>
+                    <li><a href="#skills" class="nav-item">Skills</a></li>
+                    <li><a href="#services" class="nav-item">Services</a></li>
+                    <li><a href="#experience" class="nav-item">Experience</a></li>
+                    <li><a href="#inquiry" class="nav-item">Inquiry</a></li>
                 </ul>
 
-                <!-- Desktop Actions (NO DUPLICATE CV) -->
+                <!-- Desktop Actions -->
                 <div class="nav-actions">
                     <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme">
                         <i data-lucide="sun" id="themeIcon" style="width: 16px; height: 16px;"></i>
                     </button>
                     
-                    <!-- १. CV बटन -->
                     <a href="cv.pdf" id="navCVBtn" class="btn-nav-cta" target="_blank">
                         <i data-lucide="file-down" style="width: 13px; height: 13px;"></i> CV
                     </a>
 
-                    <!-- २. Pay Info बटन -->
                     <a href="pay.html" class="btn-nav-pay">
                         💳 Pay Info
                     </a>
 
-                    <!-- ३. मोबाइल ३ धर्का बटन -->
                     <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Menu">
                         <i data-lucide="menu" id="mobileMenuIcon" style="width: 18px; height: 18px;"></i>
                     </button>
@@ -1508,7 +1514,7 @@
             </div>
         </div>
 
-        <!-- मोबाइल ड्रयर मेनु (३ धर्का थिच्दा खुल्ने) -->
+        <!-- मोबाइल ड्रयर मेनु -->
         <div class="mobile-drawer" id="mobileDrawer">
             <div class="mobile-drawer-header">
                 <span style="font-size: 11.5px; font-weight: 700; font-family: 'JetBrains Mono', monospace; color: var(--primary);">NAVIGATION MENU</span>
@@ -1544,10 +1550,6 @@
                         <div class="orbit-inner"></div>
                         <div class="avatar-core" id="openPhotoModal" title="Click to view full photo">
                             <img src="prabin.jpg" alt="Prabin Chaudhary" class="avatar-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500';">
-                            <div class="photo-expand-hint">
-                                <i data-lucide="maximize-2" style="width: 15px; height: 15px;"></i>
-                                <span>Full View</span>
-                            </div>
                         </div>
                         <div class="verified-badge" title="Verified Professional Instructor">
                             <i data-lucide="check" style="width: 13px; height: 13px;"></i>
@@ -1676,7 +1678,6 @@
                 </div>
 
                 <div class="pdf-cards-grid" id="pdfCardsGrid">
-                    <!-- Note 1 -->
                     <div class="pdf-item-card" data-cat="ai" data-title="generative ai prompt engineering workplace productivity handbook">
                         <div>
                             <div class="pdf-card-top">
@@ -1692,13 +1693,10 @@
                             <button class="btn-view-textnote" data-note="ai">
                                 <i data-lucide="book-open" style="width: 11px; height: 11px;"></i> Instant Note
                             </button>
-                            <a href="#inquiry" class="btn-download-pdf">
-                                <i data-lucide="download" style="width: 11px; height: 11px;"></i> Request PDF
-                            </a>
+                            <a href="#inquiry" class="btn" style="background: rgba(239, 68, 68, 0.14); color: var(--pdf-red); font-size: 11px; padding: 4px 8px;">Request PDF</a>
                         </div>
                     </div>
 
-                    <!-- Note 2 -->
                     <div class="pdf-item-card" data-cat="excel" data-title="advanced excel formula architecture cheatsheet data analytics">
                         <div>
                             <div class="pdf-card-top">
@@ -1714,13 +1712,10 @@
                             <button class="btn-view-textnote" data-note="excel">
                                 <i data-lucide="book-open" style="width: 11px; height: 11px;"></i> Instant Note
                             </button>
-                            <a href="#inquiry" class="btn-download-pdf">
-                                <i data-lucide="download" style="width: 11px; height: 11px;"></i> Request PDF
-                            </a>
+                            <a href="#inquiry" class="btn" style="background: rgba(239, 68, 68, 0.14); color: var(--pdf-red); font-size: 11px; padding: 4px 8px;">Request PDF</a>
                         </div>
                     </div>
 
-                    <!-- Note 3 -->
                     <div class="pdf-item-card" data-cat="nepali" data-title="preeti font to nepali unicode keyboard map guide typing speed">
                         <div>
                             <div class="pdf-card-top">
@@ -1730,22 +1725,20 @@
                                 <span class="pdf-meta-tag">TYPING GUIDE</span>
                             </div>
                             <h3 class="pdf-item-title">Preeti to Nepali Unicode Typing Map & Special Ligatures</h3>
-                            <p class="pdf-item-desc">Reference chart of complex ligatures (ज्ञ, त्र, क्ष, द्ध, द्व), half-letters, and rapid government typing techniques.</p>
+                            <p class="pdf-item-desc">Reference chart of complex ligatures (ज्ञ, त्र, क्ष, द्ध, द्व), half-letters, and rapid typing techniques.</p>
                         </div>
                         <div class="pdf-card-footer">
                             <button class="btn-view-textnote" data-note="nepali">
                                 <i data-lucide="book-open" style="width: 11px; height: 11px;"></i> Instant Note
                             </button>
-                            <a href="#inquiry" class="btn-download-pdf">
-                                <i data-lucide="download" style="width: 11px; height: 11px;"></i> Request PDF
-                            </a>
+                            <a href="#inquiry" class="btn" style="background: rgba(239, 68, 68, 0.14); color: var(--pdf-red); font-size: 11px; padding: 4px 8px;">Request PDF</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ३. VAULT SECTION -->
+        <!-- ३. TECH VAULT SECTION -->
         <section id="vault">
             <div class="section-header">
                 <span class="section-tag"><i data-lucide="sparkles" style="width: 11px; height: 11px;"></i> Pro Knowledge</span>
@@ -1776,10 +1769,10 @@
                             <span class="insight-badge badge-ai" id="insightCategory">AI PROMPT ENGINEERING</span>
                             <span style="font-size: 10.5px; font-family: 'JetBrains Mono'; color: var(--text-dim);" id="insightIndex">TIP #01</span>
                         </div>
-                        <h3 class="insight-title" id="insightTitle">The 'Chain-of-Thought' Framework for Business Tasks</h3>
-                        <div class="insight-codeblock" id="insightSnippet">"Act as a Senior Data Strategist. Analyze this balance sheet step-by-step. First, identify liquidity ratios. Second, highlight anomalous expenses. Third, write a bulleted executive briefing."</div>
+                        <h3 class="insight-title" id="insightTitle">The 'Chain-of-Thought' Framework for Complex Business Tasks</h3>
+                        <div class="insight-codeblock" id="insightSnippet">"Act as a Senior Data Strategist. Analyze this balance sheet step-by-step. First, identify liquidity ratios. Second, highlight anomalous expenses exceeding 15%. Third, write an executive briefing with recommendations."</div>
                         <p class="insight-explanation" id="insightExplanation">
-                            By demanding sequential steps (first, second, third), large language models produce dramatically fewer hallucinations.
+                            Demanding sequential steps forces AI models to allocate attention tokens to internal verification, eliminating inaccurate calculations.
                         </p>
                     </div>
 
@@ -1811,7 +1804,7 @@
                         <span style="font-size: 11px; color: var(--primary); font-weight: bold; margin-top: 6px; display: inline-block;">४५ घण्टा</span>
                     </div>
                     <div class="curr-card">
-                        <h4 style="font-size: 14px; margin-bottom: 4px;">Tally Prime & Accounting Automation</h4>
+                        <h4 style="font-size: 14px; margin-bottom: 4px;">Tally Prime & Business Ledgers</h4>
                         <p style="font-size: 12px; color: var(--text-muted);">Double-entry bookkeeping, VAT calculation, inventory reconciliation, balance sheets.</p>
                         <span style="font-size: 11px; color: var(--primary); font-weight: bold; margin-top: 6px; display: inline-block;">४० घण्टा</span>
                     </div>
@@ -1829,17 +1822,17 @@
                         <tr>
                             <td style="font-weight: 700; color: var(--text-main);">Advanced MS Excel Architecture</td>
                             <td>XLOOKUP, Dynamic Arrays, Interactive KPI Dashboards, Slicers & Macros</td>
-                            <td><span style="color: var(--primary);">45 Hours</span></td>
+                            <td><span style="color: var(--primary); font-weight: bold;">45 Hours</span></td>
                         </tr>
                         <tr>
                             <td style="font-weight: 700; color: var(--text-main);">Tally Prime & Business Ledgers</td>
                             <td>Double-entry bookkeeping, VAT calculation, inventory reconciliation, balance sheets</td>
-                            <td><span style="color: var(--primary);">40 Hours</span></td>
+                            <td><span style="color: var(--primary); font-weight: bold;">40 Hours</span></td>
                         </tr>
                         <tr>
                             <td style="font-weight: 700; color: var(--text-main);">Workstation Hardware & OS Setup</td>
                             <td>Assembly, clean Windows 10/11 deployment, IP routing, lab maintenance</td>
-                            <td><span style="color: var(--primary);">30 Hours</span></td>
+                            <td><span style="color: var(--primary); font-weight: bold;">30 Hours</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -1968,7 +1961,7 @@
                     <h3 style="font-size: 16px; font-weight: 800; color: var(--text-main); margin-bottom: 4px; display: flex; align-items: center; gap: 7px;">
                         <i data-lucide="message-square" style="color: var(--primary); width: 17px; height: 17px;"></i> Connect with Prabin
                     </h3>
-                    <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 14px;">Select your area of interest or type a message:</p>
+                    <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 14px;">Select your area of interest or type a custom message:</p>
                     
                     <form id="inquiryForm">
                         <div class="form-group">
@@ -1990,8 +1983,8 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="inqMsg">Message / Details</label>
-                            <textarea id="inqMsg" class="form-control" placeholder="Describe your goal or timetable..."></textarea>
+                            <label class="form-label" for="inqMsg">Message / Specific Requirements</label>
+                            <textarea id="inqMsg" class="form-control" placeholder="Describe your goal, timetable or inquiry..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary" style="width: 100%;">
                             <i data-lucide="send" style="width: 14px; height: 14px;"></i> Send via WhatsApp Instant
@@ -2019,8 +2012,8 @@
                     <a href="pay.html" class="channel-pill-row" style="border-color: var(--primary);">
                         <i data-lucide="credit-card" style="width: 20px; height: 20px; color: #38bdf8;"></i>
                         <div>
-                            <div style="font-size: 10.5px; text-transform: uppercase; color: var(--primary); font-weight: 700;">QR भुक्तानी पेज</div>
-                            <div style="font-size: 13px; font-weight: 700; color: var(--text-main);">Pay Info (Password Protected)</div>
+                            <div style="font-size: 10.5px; text-transform: uppercase; color: var(--primary); font-weight: 700;">QR भुक्तानी सेक्सन</div>
+                            <div style="font-size: 13px; font-weight: 700; color: var(--text-main);">Pay Info (Password: saru)</div>
                         </div>
                     </a>
 
@@ -2052,13 +2045,13 @@
         </div>
     </div>
 
-    <!-- Photo Modal -->
+    <!-- Photo Lightbox Modal -->
     <div id="photoModal">
         <div class="modal-content-wrap">
-            <button class="modal-close-btn" id="closePhotoModal" aria-label="Close photo" style="position: absolute; top: 10px; right: 10px; z-index: 10;">
+            <button class="modal-close-btn" id="closePhotoModal" aria-label="Close photo preview" style="position: absolute; top: 10px; right: 10px; z-index: 10;">
                 <i data-lucide="x" style="width: 15px; height: 15px;"></i>
             </button>
-            <img src="prabin.jpg" alt="Prabin Chaudhary" class="modal-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800';">
+            <img src="prabin.jpg" alt="Prabin Chaudhary at Workstation" class="modal-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800';">
             <div class="modal-caption">
                 <h4 style="font-size: 13.5px; font-weight: 800; color: var(--text-main);">PRABIN CHAUDHARY</h4>
                 <span style="font-size: 11px; color: var(--primary);">Computer Instructor & IT Specialist</span>
@@ -2066,7 +2059,7 @@
         </div>
     </div>
 
-    <!-- Mobile Sticky Quick Dock -->
+    <!-- Mobile Sticky Bottom Dock -->
     <div class="mobile-quick-dock">
         <a href="tel:+9779716175657" class="dock-btn">
             <i data-lucide="phone-call"></i>
@@ -2097,7 +2090,7 @@
         <span id="toastMsg">Action completed successfully.</span>
     </div>
 
-    <!-- FOOTER (फुटरमा PRABIN CHAUDHARY मात्र) -->
+    <!-- FOOTER (PRABIN CHAUDHARY मात्र) -->
     <footer>
         <div class="container">
             <p>&copy; 2026 PRABIN CHAUDHARY. All rights reserved. Kanchan-05, Rupandehi, Lumbini Province, Nepal.</p>
@@ -2105,47 +2098,56 @@
     </footer>
 
     <script>
-        // 1. Initialize Lucide Icons
+        // 1. Initialize Icons
         lucide.createIcons();
 
-        // 2. Dark / Light Mode Toggle
+        // 2. Click Event for Menu Active Highlight (केवल क्लिक गर्दा मात्र एक्टिभ सर्ने)
+        const navItems = document.querySelectorAll(".nav-menu .nav-item");
+        navItems.forEach(item => {
+            item.addEventListener("click", function () {
+                navItems.forEach(link => link.classList.remove("active"));
+                this.classList.add("active");
+            });
+        });
+
+        // 3. Dark Mode & Light Mode Toggle
         const themeToggleBtn = document.getElementById("themeToggleBtn");
         const themeIcon = document.getElementById("themeIcon");
         const htmlElement = document.documentElement;
 
+        function applyTheme(theme) {
+            htmlElement.setAttribute("data-theme", theme);
+            localStorage.setItem("prabin_portfolio_theme", theme);
+            themeIcon.setAttribute("data-lucide", theme === "dark" ? "sun" : "moon");
+            lucide.createIcons();
+        }
+
+        const savedTheme = localStorage.getItem("prabin_portfolio_theme") || "dark";
+        applyTheme(savedTheme);
+
         themeToggleBtn?.addEventListener("click", () => {
             const currentTheme = htmlElement.getAttribute("data-theme");
-            const newTheme = currentTheme === "dark" ? "light" : "dark";
-            htmlElement.setAttribute("data-theme", newTheme);
-            themeIcon.setAttribute("data-lucide", newTheme === "dark" ? "sun" : "moon");
-            lucide.createIcons();
+            applyTheme(currentTheme === "dark" ? "light" : "dark");
         });
 
-        // 3. Mobile Menu Drawer Toggle (३-धर्का)
+        // 4. Mobile Drawer Toggle
         const menuBtn = document.getElementById("mobileMenuToggle");
         const drawer = document.getElementById("mobileDrawer");
         const drawerCloseBtn = document.getElementById("mobileDrawerCloseBtn");
 
-        menuBtn?.addEventListener("click", () => {
-            drawer.classList.toggle("active");
-        });
-
-        drawerCloseBtn?.addEventListener("click", () => {
-            drawer.classList.remove("active");
-        });
-
+        menuBtn?.addEventListener("click", () => drawer.classList.toggle("active"));
+        drawerCloseBtn?.addEventListener("click", () => drawer.classList.remove("active"));
         document.querySelectorAll(".drawer-link").forEach(link => {
-            link.addEventListener("click", () => {
-                drawer.classList.remove("active");
-            });
+            link.addEventListener("click", () => drawer.classList.remove("active"));
         });
 
-        // 4. Role Typewriter
+        // 5. Role Typewriter
         const roles = [
             "Computer Instructor & Lab Mentor",
             "Generative AI & Prompt Engineering Trainer",
             "Advanced Excel Architect (XLOOKUP & Arrays)",
-            "Data Analytics & Nepali Typing (Preeti/Unicode) Expert"
+            "Data Analytics & Nepali Typing (Preeti/Unicode) Expert",
+            "IT Systems & Hardware Diagnosis Specialist"
         ];
         let rIndex = 0, charIndex = 0, isDeleting = false;
         const twSpan = document.getElementById("roleTypewriter");
@@ -2161,7 +2163,7 @@
             }
             let speed = isDeleting ? 25 : 50;
             if (!isDeleting && charIndex === currentRole.length) {
-                speed = 2000;
+                speed = 2200;
                 isDeleting = true;
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
@@ -2172,7 +2174,7 @@
         }
         typeLoop();
 
-        // 5. Direct WhatsApp Form Submission
+        // 6. Direct WhatsApp Form Submission
         document.getElementById("inquiryForm")?.addEventListener("submit", (e) => {
             e.preventDefault();
             const name = document.getElementById("inqName").value.trim();
@@ -2180,11 +2182,49 @@
             const subject = document.getElementById("inqSubject").value;
             const message = document.getElementById("inqMsg").value.trim();
 
-            const text = `*New Inquiry for Prabin Chaudhary*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Contact:* ${encodeURIComponent(contact)}%0A*Subject:* ${encodeURIComponent(subject)}%0A*Message:* ${encodeURIComponent(message || "Interested in training/services.")}`;
+            const text = `*New Inquiry for Prabin Chaudhary*%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Contact:* ${encodeURIComponent(contact)}%0A*Interest Area:* ${encodeURIComponent(subject)}%0A*Requirements:* ${encodeURIComponent(message || "Interested in learning more.")}`;
             window.open(`https://wa.me/9779716175657?text=${text}`, "_blank");
         });
 
-        // 6. Photo Lightbox Modal
+        // 7. Instant Notes Modal Dataset
+        const textNotesDB = {
+            ai: {
+                title: "Workplace AI & Prompt Engineering Framework",
+                category: "AI PRODUCTIVITY",
+                content: "1. Role: Persona निर्धारण गर्नुहोस्।\n2. Task: स्पष्ट काम तोक्नुहोस्।\n3. Constraints: नियम वा ढाँचा उल्लेख गर्नुहोस्।"
+            },
+            excel: {
+                title: "Advanced Excel Architecture & Dynamic Arrays",
+                category: "DATA ANALYTICS",
+                content: "=XLOOKUP(lookup_val, lookup_arr, return_arr, 'Not Found', 0)\n=FILTER(A2:D100, B2:B100='Kanchan', 'No Data')"
+            },
+            nepali: {
+                title: "Preeti Font to Nepali Unicode Keyboard Mapping",
+                category: "NEPALI TYPING",
+                content: "Shift+4: त्र | Shift+5: ज्ञ | Shift+8: श्र | Alt+0170: आधा अक्षर"
+            }
+        };
+
+        const textNoteModal = document.getElementById("textNoteModal");
+        document.querySelectorAll(".btn-view-textnote").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const noteKey = btn.getAttribute("data-note");
+                const data = textNotesDB[noteKey];
+                if (!data) return;
+                document.getElementById("textNoteModalTitle").textContent = data.title;
+                document.getElementById("textNoteModalCategory").textContent = data.category;
+                document.getElementById("textNoteModalBody").innerHTML = `<div style="white-space: pre-line;">${data.content}</div>`;
+                textNoteModal.classList.add("active");
+                document.body.style.overflow = "hidden";
+            });
+        });
+
+        document.getElementById("closeTextNoteModal")?.addEventListener("click", () => {
+            textNoteModal.classList.remove("active");
+            document.body.style.overflow = "";
+        });
+
+        // 8. Photo Modal
         const photoModal = document.getElementById("photoModal");
         document.getElementById("openPhotoModal")?.addEventListener("click", () => {
             photoModal.classList.add("active");
@@ -2195,22 +2235,7 @@
             document.body.style.overflow = "";
         });
 
-        // 7. Tech Vault Tips
-        const techVault = [
-            { category: "AI PROMPT", title: "Chain-of-Thought Framework", snippet: "Act as a Data Strategist. Analyze step-by-step: 1. Liquidity, 2. Overheads, 3. Summary.", exp: "Forces the model to think step-by-step." },
-            { category: "EXCEL", title: "Dynamic Arrays with UNIQUE & FILTER", snippet: "=SORT(UNIQUE(FILTER(A2:A500, B2:B500=\"Approved\")))", exp: "Extracts an instant unique list of approved records." }
-        ];
-        let vIdx = 0;
-        document.getElementById("randomizeBtn")?.addEventListener("click", () => {
-            vIdx = (vIdx + 1) % techVault.length;
-            const item = techVault[vIdx];
-            document.getElementById("insightCategory").textContent = item.category;
-            document.getElementById("insightTitle").textContent = item.title;
-            document.getElementById("insightSnippet").textContent = item.snippet;
-            document.getElementById("insightExplanation").textContent = item.exp;
-        });
-
-        // 8. Scroll back to top
+        // 9. Back to Top Scroll Button
         const toTopBtn = document.getElementById("toTop");
         window.addEventListener("scroll", () => {
             if (window.scrollY > 300) toTopBtn.classList.add("show");
