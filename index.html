@@ -200,7 +200,7 @@
         @media (min-width: 992px) { .mobile-quick-dock { display: none; } }
         .dock-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); font-size: 8.5px; font-weight: 700; text-decoration: none; }
         
-        /* मोबाइलमा फुटर लुकाउने (Hide) र पीसी/ल्यापटपमा मात्र देखाउने */
+        /* फुटर केवल डेस्कटपमा मात्र देखाउने, मोबाइलमा लुकाउने */
         footer { border-top: 1px solid var(--border); padding: 16px 0 24px 0; text-align: center; font-size: 11px; color: var(--text-dim); background: var(--surface-card); display: none; }
         @media (min-width: 992px) { footer { display: block; } }
     </style>
@@ -468,7 +468,7 @@
             </div>
         </section>
 
-        <!-- 8. CONTACT SECTION (NEPALI TEXT REMOVED, +977-9716175657 & SOCIAL LINKS) -->
+        <!-- 8. CONTACT SECTION (+977-9716175657 & SOCIAL LINKS) -->
         <section id="contact">
             <div class="section-header"><h2 class="section-title">Contact & Direct Connect</h2></div>
             <div class="grid-2">
@@ -507,13 +507,13 @@
                 <div class="item-card">
                     <h3 style="font-size: 14px; margin-bottom: 4px;">Send Message via WhatsApp</h3>
                     <form id="inquiryForm">
-                        <div style="margin-bottom: 6px;">
-                            <label style="display: block; font-size: 10px; font-weight: 700; color: var(--text-muted); margin-bottom: 2px;">YOUR NAME</label>
-                            <input type="text" id="inqName" style="width: 100%; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; color: var(--text-main); font-size: 11.5px; outline: none;" placeholder="e.g. Ramesh Sharma" required>
+                        <div style="margin-bottom: 5px;">
+                            <label style="display: block; font-size: 9.5px; font-weight: 700; color: var(--text-muted); margin-bottom: 2px;">YOUR NAME</label>
+                            <input type="text" id="inqName" style="width: 100%; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 5px 8px; color: var(--text-main); font-size: 11px; outline: none;" placeholder="e.g. Ramesh Sharma" required>
                         </div>
-                        <div style="margin-bottom: 6px;">
-                            <label style="display: block; font-size: 10px; font-weight: 700; color: var(--text-muted); margin-bottom: 2px;">SELECT SERVICE / TOPIC</label>
-                            <select id="inqSubject" style="width: 100%; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; color: var(--text-main); font-size: 11.5px; outline: none;">
+                        <div style="margin-bottom: 5px;">
+                            <label style="display: block; font-size: 9.5px; font-weight: 700; color: var(--text-muted); margin-bottom: 2px;">SELECT SERVICE / TOPIC</label>
+                            <select id="inqSubject" style="width: 100%; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 5px 8px; color: var(--text-main); font-size: 11px; outline: none;">
                                 <option value="Computer Training Classes">Computer Training Classes</option>
                                 <option value="PC Repair & Hardware Setup">PC Repair & Hardware Setup</option>
                                 <option value="Excel Automation & Dashboards">Excel Automation & Dashboards</option>
@@ -521,11 +521,11 @@
                                 <option value="General IT Inquiry">General IT Inquiry</option>
                             </select>
                         </div>
-                        <div style="margin-bottom: 8px;">
-                            <label style="display: block; font-size: 10px; font-weight: 700; color: var(--text-muted); margin-bottom: 2px;">MESSAGE DETAILS</label>
-                            <textarea id="inqMsg" style="width: 100%; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; color: var(--text-main); font-size: 11.5px; outline: none; resize: vertical; min-height: 48px;" placeholder="Describe your requirement..."></textarea>
+                        <div style="margin-bottom: 6px;">
+                            <label style="display: block; font-size: 9.5px; font-weight: 700; color: var(--text-muted); margin-bottom: 2px;">MESSAGE DETAILS</label>
+                            <textarea id="inqMsg" style="width: 100%; background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px; padding: 5px 8px; color: var(--text-main); font-size: 11px; outline: none; resize: vertical; min-height: 40px;" placeholder="Describe your requirement..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 6px 10px; font-size: 11px; font-weight: 800; letter-spacing: 0.3px; box-shadow: 0 2px 8px rgba(56, 189, 248, 0.3);">
                             <i data-lucide="send" style="width: 12px; height: 12px;"></i> Send Instant Message
                         </button>
                     </form>
@@ -579,7 +579,7 @@
         <a href="cv.pdf" class="dock-btn" target="_blank"><i data-lucide="file-down" style="width: 14px; height: 14px; color: var(--purple);"></i><span>CV</span></a>
     </div>
 
-    <!-- FOOTER (HIDDEN ON MOBILE, VISIBLE ON PC) -->
+    <!-- FOOTER -->
     <footer>
         <div class="container"><p>&copy; 2026 Prabin Chaudhary. All rights reserved.</p></div>
     </footer>
