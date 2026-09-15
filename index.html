@@ -145,9 +145,19 @@
 
         .spot-card { background: var(--surface-card); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18); }
         .hero-avatar-card { text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .avatar-stage { position: relative; width: 105px; height: 105px; margin: 2px auto 5px; cursor: pointer; }
-        .avatar-core { width: 100%; height: 100%; border-radius: 50%; padding: 2.5px; background: var(--primary-gradient); box-shadow: 0 0 14px rgba(56, 189, 248, 0.25); overflow: hidden; }
-        .avatar-img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 18% !important; border-radius: 50%; display: block; }
+        .avatar-stage { position: relative; width: 105px; height: 105px; margin: 2px auto 5px; cursor: pointer; animation: portraitFloat 4.8s ease-in-out infinite; isolation: isolate; }
+        .avatar-stage::before { content:""; position:absolute; inset:-7px; z-index:-2; border-radius:50%; background:conic-gradient(from 0deg,transparent 0 18%,#38bdf8 30%,transparent 42% 62%,#a855f7 75%,transparent 88%); opacity:.8; animation:portraitOrbit 7s linear infinite; filter:drop-shadow(0 0 6px rgba(56,189,248,.45)); }
+        .avatar-stage::after { content:""; position:absolute; inset:-12px; z-index:-3; border-radius:50%; border:1px solid rgba(56,189,248,.24); box-shadow:0 0 0 0 rgba(56,189,248,.2); animation:portraitPulse 3.2s ease-out infinite; }
+        .avatar-core { position:relative; width:100%; height:100%; border-radius:50%; padding:2.5px; background:var(--primary-gradient); box-shadow:0 8px 25px rgba(0,0,0,.36),0 0 18px rgba(56,189,248,.28); overflow:hidden; transform:translateZ(0); }
+        .avatar-core::after { content:""; position:absolute; top:-35%; left:-80%; width:42%; height:170%; background:linear-gradient(90deg,transparent,rgba(255,255,255,.38),transparent); transform:rotate(18deg); animation:portraitShine 5.5s ease-in-out infinite; pointer-events:none; }
+        .avatar-img { width:100%; height:100%; object-fit:cover; object-position:50% 18% !important; border-radius:50%; display:block; transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .45s ease; filter:saturate(1.03) contrast(1.02); }
+        .avatar-stage:hover .avatar-img { transform:scale(1.065); filter:saturate(1.09) contrast(1.04); }
+        .avatar-stage:hover::before { animation-duration:3.5s; opacity:1; }
+        @keyframes portraitFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
+        @keyframes portraitOrbit { to{transform:rotate(360deg)} }
+        @keyframes portraitPulse { 0%{transform:scale(.94);opacity:.65;box-shadow:0 0 0 0 rgba(56,189,248,.22)} 70%,100%{transform:scale(1.12);opacity:0;box-shadow:0 0 0 9px rgba(56,189,248,0)} }
+        @keyframes portraitShine { 0%,58%{left:-80%;opacity:0} 68%{opacity:1} 82%,100%{left:135%;opacity:0} }
+        @media (prefers-reduced-motion:reduce){.avatar-stage,.avatar-stage::before,.avatar-stage::after,.avatar-core::after{animation:none}.avatar-img{transition:none}}
 
         .identity-badge-wrap { display: flex; flex-direction: column; gap: 4px; width: 100%; margin-top: 8px; padding-top: 6px; border-top: 1px dashed rgba(56, 189, 248, 0.25); }
         .id-row-card { display: flex; align-items: center; justify-content: space-between; background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.65)); border: 1px solid rgba(56, 189, 248, 0.2); padding: 5px 8px; border-radius: 7px; text-align: left; }
