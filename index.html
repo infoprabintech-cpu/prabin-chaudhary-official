@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title> Prabin Chaudahry | Personal Portfolio</title>
-<meta name="description" content="Official portfolio of Prabin Chaudhary. Explore professional services, skills, experience and contact information.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://ratnaprasadtharu.com.np/">
-    <meta name="title" content="Prabin Chaudhary | Official Portfolio">
-    <meta name="description" content="Official portfolio of Prabin Chaudhary - IT Instructor, Web Developer, and Computer Specialist, Rupandehi, Nepal.">
-    <meta name="author" content="Prabin Chaudhary">
-    <meta name="robots" content="index, follow">
+    <title>Ratna Prasad Tharu (Prabin Chaudhary) | Computer Instructor Nepal</title>
+    <meta name="description" content="Official portfolio of Ratna Prasad Tharu, professionally known as Prabin Chaudhary—Computer Instructor, Digital Skills Trainer, Excel specialist and IT Support professional from Rupandehi, Nepal.">
+    <meta name="author" content="Ratna Prasad Tharu">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://ratnaprasadtharu.com.np/">
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="Ratna Prasad Tharu Official Portfolio">
+    <meta property="og:title" content="Ratna Prasad Tharu | Computer Instructor & IT Professional">
+    <meta property="og:description" content="Computer training, Excel, digital skills, AI tools and IT support in Rupandehi, Nepal.">
+    <meta property="og:url" content="https://ratnaprasadtharu.com.np/">
+    <meta property="og:image" content="https://ratnaprasadtharu.com.np/prabin.jpg">
+    <meta name="twitter:card" content="summary_large_image">
 
     <!-- Fonts: Outfit, Inter, JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 
     <style>
         :root {
@@ -125,6 +129,7 @@
         .btn-nav-cta, .btn-nav-pay { padding: 3px 9px; height: 28px; font-size: 10.5px; font-weight: 700; border-radius: 14px; text-decoration: none; display: inline-flex; align-items: center; gap: 3px; white-space: nowrap; }
         .btn-nav-cta { background: var(--primary-gradient); color: #030712 !important; }
         .btn-nav-pay { background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%); color: #ffffff !important; }
+        .btn-ai-bot { height: 28px; padding: 3px 9px; border: 1px solid rgba(168,85,247,.55); border-radius: 14px; background: linear-gradient(135deg,rgba(56,189,248,.18),rgba(168,85,247,.22)); color: var(--text-main); font-size: 10.5px; font-weight: 800; cursor: pointer; display:inline-flex; align-items:center; gap:4px; }
 
         @media (min-width: 992px) { .mobile-menu-btn { display: none; } }
 
@@ -202,22 +207,44 @@
         .mobile-quick-dock { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--bg-glass); backdrop-filter: blur(12px); border-top: 1px solid var(--border); display: grid; grid-template-columns: repeat(5, 1fr); padding: 4px 0; z-index: 9999; }
         @media (min-width: 992px) { .mobile-quick-dock { display: none; } }
         .dock-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text-muted); font-size: 8.5px; font-weight: 700; text-decoration: none; }
+
+        /* SMART PORTFOLIO ASSISTANT */
+        .ai-chat { position:fixed; right:14px; bottom:58px; z-index:10050; width:min(360px,calc(100vw - 24px)); height:500px; max-height:calc(100vh - 90px); display:none; flex-direction:column; overflow:hidden; border:1px solid var(--border-glow); border-radius:16px; background:var(--bg-glass); backdrop-filter:blur(18px); box-shadow:0 22px 70px rgba(0,0,0,.55); }
+        .ai-chat.open { display:flex; animation:botIn .2s ease-out; }
+        .ai-chat.maximized { inset:12px; width:auto; height:auto; max-height:none; }
+        @keyframes botIn { from{opacity:0;transform:translateY(14px) scale(.97)} to{opacity:1;transform:none} }
+        .ai-head { display:flex; align-items:center; gap:9px; padding:10px 12px; border-bottom:1px solid var(--border); background:linear-gradient(135deg,rgba(56,189,248,.14),rgba(168,85,247,.14)); }
+        .ai-avatar { width:32px;height:32px;border-radius:9px;display:grid;place-items:center;background:var(--primary-gradient);color:#07111f; }
+        .ai-title { flex:1; } .ai-title b{font-size:12px;display:block}.ai-title small{font-size:9px;color:#34d399}.ai-controls{display:flex;gap:4px}.ai-controls button{width:25px;height:25px;border-radius:6px;border:1px solid var(--border);background:rgba(125,125,125,.08);color:var(--text-main);cursor:pointer;display:grid;place-items:center}
+        .ai-messages { flex:1; overflow:auto; padding:10px; display:flex; flex-direction:column; gap:7px; scrollbar-width:thin; }
+        .bot-msg,.user-msg { max-width:88%; padding:8px 10px; border-radius:11px; font-size:11px; line-height:1.45; white-space:pre-line; }
+        .bot-msg { align-self:flex-start;background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.2); }
+        .user-msg { align-self:flex-end;background:linear-gradient(135deg,#0284c7,#7c3aed);color:white; }
+        .ai-quick { display:flex; gap:5px; overflow-x:auto; padding:7px 9px; border-top:1px solid var(--border); }
+        .ai-quick button { flex:0 0 auto;border:1px solid var(--border);background:rgba(125,125,125,.07);color:var(--text-main);font-size:9px;padding:5px 8px;border-radius:12px;cursor:pointer; }
+        .ai-form { display:flex;gap:6px;padding:8px;border-top:1px solid var(--border); }
+        .ai-form input { flex:1;min-width:0;background:rgba(125,125,125,.07);border:1px solid var(--border);border-radius:9px;padding:8px 9px;color:var(--text-main);font-size:11px;outline:none; }
+        .ai-form button { width:34px;border:0;border-radius:9px;background:var(--primary-gradient);color:#07111f;cursor:pointer;display:grid;place-items:center; }
+        @media(max-width:991px){.btn-nav-pay{display:none}.ai-chat{bottom:64px}.btn-ai-bot span{display:none}}
         
         /* फुटर केवल डेस्कटपमा मात्र देखाउने, मोबाइलमा लुकाउने */
         footer { border-top: 1px solid var(--border); padding: 16px 0 24px 0; text-align: center; font-size: 11px; color: var(--text-dim); background: var(--surface-card); display: none; }
         @media (min-width: 992px) { footer { display: block; } }
     </style>
-    <link rel="canonical" href="https://ratnaprasadtharu.com.np/">
-
-<meta property="og:site_name" content="Prabin Chaudhary">
-<meta property="og:title" content="Prabin Chaudhary | Computer Instructor & IT Specialist">
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Prabin Chaudhary",
-  "url": "https://ratnaprasadtharu.com.np/"
+  "@type": "Person",
+  "@id": "https://ratnaprasadtharu.com.np/#person",
+  "name": "Ratna Prasad Tharu",
+  "alternateName": "Prabin Chaudhary",
+  "url": "https://ratnaprasadtharu.com.np/",
+  "image": "https://ratnaprasadtharu.com.np/prabin.jpg",
+  "jobTitle": "Computer Instructor and Digital Skills Trainer",
+  "email": "mailto:info.prabintech@gmail.com",
+  "telephone": "+9779716175657",
+  "address": {"@type":"PostalAddress","addressLocality":"Kanchan-05","addressRegion":"Rupandehi, Lumbini","addressCountry":"NP"},
+  "knowsAbout": ["Computer Training","Microsoft Excel","Digital Skills","IT Support","AI Tools","Computer Hardware","Data Analysis"]
 }
 </script>
 </head>
@@ -257,6 +284,7 @@
                 </ul>
 
                 <div class="nav-actions">
+                    <button class="btn-ai-bot" id="aiOpenBtn" aria-label="Open AI Assistant"><i data-lucide="bot" style="width:13px;height:13px"></i><span>AI Assistant</span></button>
                     <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme"><i data-lucide="sun" id="themeIcon" style="width: 13px; height: 13px;"></i></button>
                     <a href="cv.pdf" class="btn-nav-cta" target="_blank"><i data-lucide="file-down" style="width: 11px; height: 11px;"></i> CV</a>
                     <a href="pay.html" class="btn-nav-pay">💳 Pay Info</a>
@@ -274,6 +302,7 @@
                 <li><a href="#services" class="drawer-link"><i data-lucide="layers" style="width: 14px; height: 14px;"></i> Services</a></li>
                 <li><a href="#experience" class="drawer-link"><i data-lucide="briefcase" style="width: 14px; height: 14px;"></i> Experience</a></li>
                 <li><a href="#contact" class="drawer-link"><i data-lucide="phone-call" style="width: 14px; height: 14px; color: #38bdf8;"></i> Contact (+977-9716175657)</a></li>
+                <li><a href="#" class="drawer-link" id="aiDrawerBtn"><i data-lucide="bot" style="width:14px;height:14px;color:#a855f7"></i> Ask AI Assistant</a></li>
                 <li><a href="pay.html" class="drawer-link" style="color: #34d399;"><i data-lucide="credit-card" style="width: 14px; height: 14px;"></i> 💳 Pay Info</a></li>
             </ul>
         </div>
@@ -587,6 +616,13 @@
     <!-- BACK TO TOP BUTTON -->
     <button id="toTop" aria-label="Scroll to top"><i data-lucide="arrow-up" style="width: 16px; height: 16px;"></i></button>
 
+    <aside class="ai-chat" id="aiChat" aria-label="Prabin Portfolio Assistant" aria-hidden="true">
+      <div class="ai-head"><div class="ai-avatar"><i data-lucide="bot" style="width:19px;height:19px"></i></div><div class="ai-title"><b>Prabin AI Assistant</b><small>● Online · Instant portfolio help</small></div><div class="ai-controls"><button id="aiMaxBtn" title="Maximize"><i data-lucide="maximize-2" style="width:13px"></i></button><button id="aiCloseBtn" title="Close"><i data-lucide="x" style="width:14px"></i></button></div></div>
+      <div class="ai-messages" id="aiMessages"><div class="bot-msg">Namaste! I’m Prabin’s portfolio assistant. Ask about services, training, skills, experience, fees, availability or contact details.</div></div>
+      <div class="ai-quick"><button data-q="What services do you provide?">Services</button><button data-q="Tell me about computer training">Training</button><button data-q="What are your Excel skills?">Excel</button><button data-q="Show experience">Experience</button><button data-q="How can I contact Prabin?">Contact</button></div>
+      <form class="ai-form" id="aiForm"><input id="aiInput" autocomplete="off" placeholder="Ask a question…" aria-label="Ask the assistant"><button aria-label="Send"><i data-lucide="send" style="width:15px"></i></button></form>
+    </aside>
+
     <!-- Mobile Sticky Bottom Dock -->
     <div class="mobile-quick-dock">
         <a href="tel:+9779716175657" class="dock-btn"><i data-lucide="phone-call" style="width: 14px; height: 14px;"></i><span>Call</span></a>
@@ -602,16 +638,16 @@
     </footer>
 
     <script>
-        lucide.createIcons();
+        if (window.lucide) lucide.createIcons();
 
         // 1. Nav Active Switching
         const navItems = document.querySelectorAll(".nav-menu .nav-item");
-        navItems.item?.forEach ? navItems.forEach(item => {
+        navItems.forEach(item => {
             item.addEventListener("click", function () {
                 navItems.forEach(link => link.classList.remove("active"));
                 this.classList.add("active");
             });
-        }) : null;
+        });
 
         // 2. Theme Toggle
         const themeBtn = document.getElementById("themeToggleBtn");
@@ -621,7 +657,7 @@
             const next = isDark ? "light" : "dark";
             document.documentElement.setAttribute("data-theme", next);
             themeIcon.setAttribute("data-lucide", isDark ? "moon" : "sun");
-            lucide.createIcons();
+            if (window.lucide) lucide.createIcons();
         });
 
         // 3. Mobile Drawer
@@ -708,6 +744,54 @@
             else toTopBtn.classList.remove("show");
         });
         toTopBtn?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+        // 10. Smart Portfolio Assistant — 100+ natural keyword variations
+        const botKnowledge = [
+          {k:["hello","hi","hey","namaste","good morning","good evening","start"],a:"Namaste! Welcome to Prabin Chaudhary’s official portfolio. I can help with services, computer training, Excel, AI tools, IT support, experience, education and contact information."},
+          {k:["who are you","your name","about you","about prabin","prabin chaudhary","ratna prasad","ratna prasad tharu","legal name"],a:"Ratna Prasad Tharu, professionally known as Prabin Chaudhary, is a Computer Instructor, Digital Skills Trainer and IT Support professional based in Kanchan-05, Rupandehi, Nepal."},
+          {k:["service","services","what do you do","work","solutions","help available","professional service"],a:"Services include computer training, MS Office and Excel support, PC repair, Windows/software setup, Excel automation, LAN/Wi-Fi setup, Tally/accounting assistance, digital services and practical AI guidance."},
+          {k:["computer training","computer class","basic computer","course","courses","training class","learn computer","student training"],a:"Computer training is practical and beginner-friendly, covering computer fundamentals, Windows, typing, Word, Excel, PowerPoint, internet, email and digital safety. Contact Prabin for the current schedule and fee."},
+          {k:["excel","advanced excel","spreadsheet","formula","dashboard","vlookup","xlookup","pivot table","excel automation","data cleaning"],a:"Excel support covers formulas, VLOOKUP/XLOOKUP, INDEX-MATCH, PivotTables, charts, data cleaning, validation, conditional formatting, business records and automated dashboards."},
+          {k:["ai","artificial intelligence","chatgpt","prompt","prompt engineering","ai tools","generative ai","automation"],a:"Prabin provides beginner-friendly AI guidance for prompting, office productivity, content support, research workflows and responsible use. Training focuses on practical results, not hype."},
+          {k:["repair","pc repair","computer repair","hardware","laptop","slow computer","ram","ssd","motherboard","troubleshooting"],a:"IT support includes diagnostics, RAM/SSD guidance, system speed-up, thermal and component checks, software troubleshooting and practical maintenance assistance."},
+          {k:["windows","os","format","formatting","windows 10","windows 11","software install","driver","office install"],a:"Windows and software service includes clean OS setup, essential drivers, updates, utility installation and system configuration. Valid software licensing is recommended."},
+          {k:["network","lan","wifi","router","printer sharing","internet setup","static ip"],a:"Network support covers LAN planning, Wi-Fi/router configuration, printer sharing, basic static-IP setup and computer-lab connectivity."},
+          {k:["tally","accounting","bookkeeping","vat","invoice","ledger","day book","inventory"],a:"Accounting support includes Tally Prime basics, voucher entry, day book, ledgers, VAT invoice records, inventory basics and organized Excel accounting sheets."},
+          {k:["typing","nepali typing","preeti","unicode","english typing","typing speed"],a:"Typing guidance covers English, Preeti and Nepali Unicode layouts, common conjunct characters, accuracy practice and speed-building methods."},
+          {k:["education","qualification","study","college","campus","bbs","plus two","+2","certificate"],a:"Prabin completed +2 Management from Lumbini Gyan Niketan and is pursuing BBS at Haraiya Multiple Campus. His technical learning includes PDICA and computer hardware/software training."},
+          {k:["experience","career","job history","work history","qatar","nbk","teacher","accountant","salesman"],a:"Experience includes EDP Clerk cum Accountant at NBK Company, Qatar (2022–2024), accounting and computer instruction in Rupandehi, plus earlier sales experience in Butwal."},
+          {k:["skill","skills","expertise","strength","technical skill","what can prabin do"],a:"Core skills include Advanced Excel, Microsoft Office, computer training, data entry, basic accounting, digital services, AI tools, IT support, hardware/software troubleshooting and basic web design."},
+          {k:["note","notes","study material","pdf","cheatsheet","guide","handbook"],a:"Study materials are available for AI prompting, Advanced Excel, Nepali typing, hardware troubleshooting, Tally Prime and cyber hygiene. Open Notes Vault and select ‘Request Note’."},
+          {k:["fee","fees","price","cost","rate","charge","how much","discount","cheap","budget"],a:"Fees depend on the selected course, service scope and required time. For a genuine current quote, send the exact requirement through WhatsApp—there are no hidden commitments."},
+          {k:["time","duration","how long","delivery","complete time","schedule","class timing"],a:"Duration depends on the service or training level. Share your requirement and preferred schedule on WhatsApp to receive a realistic timeline."},
+          {k:["available","availability","open","working hour","today","appointment","book","booking"],a:"Availability can change with classes and field work. Please confirm today’s time directly on WhatsApp before visiting or booking."},
+          {k:["contact","phone","call","mobile","number","whatsapp","message","reach","talk"],a:"Contact Prabin at +977 9716175657 or WhatsApp: https://wa.me/9779716175657. You can also use the contact form on this page."},
+          {k:["email","gmail","mail","email address"],a:"Official contact email: info.prabintech@gmail.com"},
+          {k:["facebook","instagram","tiktok","social","social media","profile"],a:"Official social links are available in the Contact section: Facebook, Instagram @p4_prbn and TikTok @prabin_360."},
+          {k:["location","address","where","rupandehi","kanchan","nepal","butwal"],a:"Prabin is based in Kanchan-05, Rupandehi, Lumbini Province, Nepal, and can also assist clients remotely depending on the service."},
+          {k:["cv","resume","download cv","bio","portfolio"],a:"Use the CV button in the navbar or mobile dock to view the available CV. This website presents Prabin’s professional profile, skills, education and services."},
+          {k:["web","website","web design","html","css","javascript","portfolio website"],a:"Basic web services include responsive portfolio and informational websites, contact integration, clean layout and foundational SEO setup. Discuss exact features for a quote."},
+          {k:["seo","google","search engine","ranking","indexing","sitemap"],a:"SEO support includes page titles, descriptions, structured data, canonical URL, robots.txt, sitemap and Search Console guidance. No ethical provider can guarantee an instant #1 Google ranking."},
+          {k:["data","data entry","data analysis","report","chart","analytics","reporting"],a:"Data services include accurate data entry, Excel data cleaning, summaries, charts, basic analysis and practical reports for schools or small organizations."},
+          {k:["school","institute","lab","teacher training","student","education support"],a:"For schools and institutes, Prabin can support computer lab setup, practical classes, Office/Excel training, typing, digital records and basic IT troubleshooting."},
+          {k:["online service","digital service","form","application","document","government form"],a:"Digital assistance may include online forms, document formatting, email support and organized submissions. Personal documents are handled only with the owner’s permission."},
+          {k:["security","cyber","virus","backup","password","privacy","safe"],a:"Cyber-hygiene guidance covers strong passwords, 2-step verification, safe downloads, phishing awareness, USB protection and basic backup practices."},
+          {k:["payment","pay","esewa","khalti","bank","payment info"],a:"Use the Pay Info button for available payment details. Always confirm the service and amount directly before transferring money."},
+          {k:["language","nepali","english","speak"],a:"Support can be provided in simple Nepali or English, depending on the learner’s comfort."},
+          {k:["remote","online class","online support","distance","home service"],a:"Some training and digital support can be provided remotely. Hardware or network work may require physical inspection; confirm availability first."},
+          {k:["thanks","thank you","dhanyabad","bye","goodbye"],a:"You’re welcome! For direct assistance, contact Prabin on WhatsApp at +977 9716175657. Dhanyabad."}
+        ];
+        const aiChat=document.getElementById('aiChat'), aiMessages=document.getElementById('aiMessages'), aiInput=document.getElementById('aiInput');
+        function toggleAI(force){const open=force ?? !aiChat.classList.contains('open');aiChat.classList.toggle('open',open);aiChat.setAttribute('aria-hidden',String(!open));if(open)setTimeout(()=>aiInput.focus(),100)}
+        function addAIMessage(text,who='bot'){const el=document.createElement('div');el.className=who==='user'?'user-msg':'bot-msg';el.textContent=text;aiMessages.appendChild(el);aiMessages.scrollTop=aiMessages.scrollHeight}
+        function botReply(q){const s=q.toLowerCase().replace(/[^a-z0-9+\s]/g,' ');let best=null,score=0;for(const item of botKnowledge){let n=0;for(const key of item.k)if(s.includes(key))n+=key.split(' ').length;if(n>score){score=n;best=item}}return best?best.a:"I don’t want to guess. Please ask about services, training, Excel, AI, IT support, experience, education, fees, location or contact—or message Prabin directly on WhatsApp: +977 9716175657."}
+        function askAI(q){if(!q.trim())return;addAIMessage(q.trim(),'user');aiInput.value='';const typing=document.createElement('div');typing.className='bot-msg';typing.textContent='Typing…';aiMessages.appendChild(typing);aiMessages.scrollTop=aiMessages.scrollHeight;setTimeout(()=>{typing.remove();addAIMessage(botReply(q))},450)}
+        document.getElementById('aiOpenBtn')?.addEventListener('click',()=>toggleAI());
+        document.getElementById('aiDrawerBtn')?.addEventListener('click',e=>{e.preventDefault();drawer.classList.remove('active');toggleAI(true)});
+        document.getElementById('aiCloseBtn')?.addEventListener('click',()=>toggleAI(false));
+        document.getElementById('aiMaxBtn')?.addEventListener('click',()=>aiChat.classList.toggle('maximized'));
+        document.getElementById('aiForm')?.addEventListener('submit',e=>{e.preventDefault();askAI(aiInput.value)});
+        document.querySelectorAll('.ai-quick button').forEach(b=>b.addEventListener('click',()=>askAI(b.dataset.q)));
     </script>
 </body>
 </html>
